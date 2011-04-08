@@ -1,0 +1,172 @@
+/*******Cerebellar Golgi Cell Model **********
+
+Developers:    Sergio Solinas & Egidio D'Angelo
+Code contributors:  Thierry Neius, Shyam Diwakar, Lia Forti
+Data Analysis: Sergio Solinas
+
+Work Progress: April 2004 - May 2007
+
+Developed At:  Università Degli Studi Di Pavia
+	       Dipartimento Di Scienze Fisiologiche
+	       Pavia - Italia
+	       
+Model Published in: 
+             Sergio M. Solinas, Lia Forti, Elisabetta Cesana, 
+             Jonathan Mapelli, Erik De Schutter and Egidio D`Angelo (2008)
+             Computational reconstruction of pacemaking and intrinsic 
+             electroresponsiveness in cerebellar golgi cells
+             Frontiers in Cellular Neuroscience 2:2
+
+
+********************************************/
+
+// In this configuration the ion channels 
+// were not corrected for the Liquid Junction potential.
+// The ion reversal potential were corrected in agreement
+// with the voltage shift.
+// See Table 1 Solinas et al. 2008 Frontiers Neurosci 2:2
+
+begintemplate Goc
+public soma,axon,elec,seal,dend
+public SpikeTrain, RT_Vm, EL_Vm
+public exc, inh, synapses
+
+create soma
+create axon
+create elec,seal
+create dend[3]
+
+objref SpikeTrain, netcon, nil
+objref exc[78], inh[27], synapses
+objref RT_Vm, EL_Vm
+
+proc init() {
+
+    RT_Vm = new Vector()
+    EL_Vm = new Vector()
+    create soma
+    soma {
+	nseg = 1
+	diam = 27 // 22 pF Dieudonne98
+	L = 27
+	Ra = 100 // From Roth&Hausser2000
+	celsius = 23
+	
+	insert Golgi_lkg
+	
+	insert Golgi_Na
+	insert Golgi_NaR
+	insert Golgi_NaP
+	
+	insert Golgi_Ca_HVA
+	insert Golgi_Ca_LVA
+		
+	insert Golgi_KV
+	insert Golgi_KM
+	insert Golgi_KA
+	
+	insert Golgi_BK
+ 	insert Golgi_SK2
+	
+        insert Golgi_hcn1
+        insert Golgi_hcn2
+
+	insert Golgi_CALC
+	insert Golgi_CALC_ca2
+	
+ 	usetable_Golgi_BK = 1
+ 	usetable_Golgi_LVA = 1
+ 	usetable_Golgi_HVA = 1
+ 	usetable_Golgi_KA = 1
+ 	usetable_Golgi_KV = 1
+ 	usetable_Golgi_NaR = 1
+ 	usetable_Golgi_KM = 1
+ 	usetable_Golgi_Na = 1
+ 	usetable_Golgi_NaP = 1
+	
+	cai0_ca_ion = 50e-6
+	ca2i0_ca2_ion = cai0_ca_ion
+	
+	cai = cai0_ca_ion
+	
+	ca2i = cai
+	ca2o = cao
+	
+	cai0_Golgi_CALC = cai0_ca_ion
+	ca2i0_Golgi_CALC_ca2 = cai0_ca_ion
+	
+ 	ena=87.39
+	ek=-84.69
+		
+	SpikeTrain = new Vector()
+	netcon = new NetCon(&v(0.5),nil)
+	netcon.threshold=-20
+	netcon.record(SpikeTrain)
+	
+	RT_Vm.record(&v(0.5))
+    }
+    
+    create dend[3]
+    for i=0,2 {
+	dend[i] {
+	    nseg = 10
+	    diam = 3
+	    L = 113
+	    Ra = 100
+	    celsius = 23
+	    
+	    insert Golgi_lkg
+	    for k=0, 25 {
+		exc[(i*26)+k] = new Synapse(0.5)
+	    }
+	    for k=0, 8 {
+		inh[(i*9)+k] = new Synapse(0.5)
+		inh[(i*9)+k].Erev = -60
+	    }
+	}
+	connect dend[i](0), soma(1)	
+    }
+    
+    
+    create axon
+    axon {
+	nseg = 100
+	diam = 2.4 // gives 90 pF to get to the 145 pF Forti06
+	L = 1200
+	Ra = 100
+	celsius = 23
+	
+	insert Golgi_lkg
+    }
+    
+    connect axon(0), soma(0)
+    
+    create elec,seal
+    elec {
+	nseg = 1
+	diam = 3
+	L = 1000
+	Ra = 36
+	cm = 0.0015
+	celsius = 23
+	EL_Vm.record(&v(0.5))
+
+    }
+        
+    seal {
+	nseg = 1
+	diam = 3
+	L = 1
+	Ra = 1
+	cm = 0.0001
+	celsius = 23
+	
+    }
+       
+    connect seal(1), soma(1)
+    connect elec(1), seal(0)
+
+}
+
+		    
+endtemplate Goc
