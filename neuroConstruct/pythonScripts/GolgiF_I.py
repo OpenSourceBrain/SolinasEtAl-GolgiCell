@@ -29,12 +29,18 @@ from math import *
 sys.path.append(os.environ["NC_HOME"]+"/pythonNeuroML/nCUtils")
 
 import ncutils as nc
+from ucl.physiol.neuroconstruct.hpc.mpi import MpiSettings
 
 
 
 
-# Change this number to the number of processors you wish to use on your local machine
+
+mpiConfig =            MpiSettings.LOCAL_SERIAL    # Default setting: run on one local processor
+#mpiConfig =            MpiSettings.MATLEM_1PROC    # Run on one processor on UCL cluster
+
 numConcurrentSims = 4
+if mpiConfig != MpiSettings.LOCAL_SERIAL: numConcurrentSims = 12
+suggestedRemoteRunTime = 9   # mins
 
 
 
@@ -56,8 +62,8 @@ preStimDel = 0
 preStimDur = 200
 
 stimAmpLow = -0.04
-stimAmpInc = 0.01
-stimAmpHigh = 0.4
+stimAmpInc = 0.002
+stimAmpHigh = 0.05
 
 stimDel = preStimDur
 stimDur = 5000
@@ -79,4 +85,6 @@ simManager.generateFICurve("NEURON",
                  simDuration,
                  analyseStartTime,
                  analyseStopTime,
-                 analyseThreshold)
+                 analyseThreshold,
+                 mpiConfig =                mpiConfig,
+                 suggestedRemoteRunTime =   suggestedRemoteRunTime)
