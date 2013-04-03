@@ -28,7 +28,7 @@ sys.path.append(os.environ["NC_HOME"]+"/pythonNeuroML/nCUtils")
 
 import ncutils as nc
 
-projFile = File(os.getcwd(), "../SolinasEtAl_GolgiCell.ncx")
+projFile = File(os.getcwd(), "../SolinasEtAl-GolgiCell.ncx")
 
 
 ##############  Main settings  ##################

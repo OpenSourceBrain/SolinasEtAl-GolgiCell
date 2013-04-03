@@ -46,7 +46,7 @@ suggestedRemoteRunTime = 9   # mins
 
 # Load neuroConstruct project
 
-projFile = File("../SolinasEtAl_GolgiCell.ncx")
+projFile = File("../SolinasEtAl-GolgiCell.ncx")
 
 
 simManager = nc.SimulationManager(projFile,

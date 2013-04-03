@@ -65,7 +65,7 @@
             <meta:uri>http://senselab.med.yale.edu/modeldb/ShowModel.asp?model=112685</meta:uri>
         </meta:modelDBref>
 
-       <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="9" default_erev = "-85">
+       <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="9" default_erev = "-84.69">
             
             <conc_dependence name="Calcium" ion="ca" charge="2" variable_name="ca_conc" min_conc="7.55e-7" max_conc="0.050"/>  
                 

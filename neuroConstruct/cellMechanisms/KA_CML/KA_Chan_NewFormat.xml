@@ -69,7 +69,7 @@
         </meta:modelDBref>
 	
 	        
-        <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="48" default_erev="-85">
+        <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="48" default_erev="-84.69">
 	            
 	        <q10_settings q10_factor="3" experimental_temp="25.5"/>	     
             

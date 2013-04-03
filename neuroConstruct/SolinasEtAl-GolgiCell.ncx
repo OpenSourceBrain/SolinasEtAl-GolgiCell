@@ -35,7 +35,7 @@ Resonance - the response to a current injection is enhanced during repeated stim
    <string>neuroConstruct v1.5.1</string>
   </void>
   <void property="projectName">
-   <string>SolinasEtAl_GolgiCell</string>
+   <string>SolinasEtAl-GolgiCell</string>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.RegionsInfo">
