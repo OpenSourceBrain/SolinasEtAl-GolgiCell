@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><!--
+    Example of a simple leak current specified in ChannelML. 
+    Taken from Michael Hines's initial proposal
+-->
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="LeakCond">
+
+    <notes>ChannelML file containing a single Channel description</notes>
+
+    <ionChannel id="LeakCond" conductance="10pS" type="ionChannelPassive">
+
+        <notes>Simple example of a leak/passive conductance. Note: for GENESIS cells with a single leak conductance,
+        it is better to use the Rm and Em variables for a passive current.</notes>
+                                    Not yet implemented....
+                            
+                            
+    </ionChannel>
+
+</neuroml>

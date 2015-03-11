@@ -1,3 +1,6 @@
+/neuroConstruct/generatedNeuroML2/Golgi_CML.cell.svg
+neuroConstruct/generatedNeuroML2/*.dat
+LEMS_Test*ml
 *.pyc
 *i686
 *x86_64
