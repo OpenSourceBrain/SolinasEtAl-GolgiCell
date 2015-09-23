@@ -40,30 +40,24 @@ access Golgi[0].soma
 
 cvode.active(1)
 
-/*
+
 // Set output
 load_file("Save_data.hoc")
 // Initialize the counter
 simcnt = cplus()
 
-// Plot the Vm of the major compartments
-load_file("sessions/Vm.ses")
-*/
+
 // Initialize all mechanisms
 tstop=1
 run()
 init()
-/*
+
 // Create new data directory
 strdef dirname, command
 sprint(dirname,"SimData_%d",simcnt)
 sprint(command,"mkdir -p %s",dirname)
 system(command)
-// Store the Scripts in the data directory
-sprint(command,"mkdir -p %s/Scripts",dirname)
-system(command)
-sprint(command,"cp -r *.hoc *.mod sessions %s/Scripts/",dirname)
-system(command)
+
 
 // Synaptic activation
 xopen("Synapses.hoc")
@@ -82,8 +76,6 @@ axon_surf = area(0.5)*1e-8
 cell_surf_cm = cell_surf_cm + area(0.5)*1e-8*nseg
 conv_mA_pA = 1e9
 
-// Load the Golgi control panel
-xopen("Golgi_ComPanel.hoc")
 
 // Load scripts for electroresponsiveness study
 load_file("utils.hoc")
@@ -125,4 +117,32 @@ store = new Vector()
 
 tstop = 4000
 
-*/
+
+objref v_time
+v_time = new Vector()
+{ v_time.record(&t) }
+
+
+objref Soma_v
+{ Soma_v = new Vector() }
+{ Soma_v.record(&Golgi[0].soma.v(0.5))} 
+objref f_Soma_v
+
+run()
+
+
+
+f_Soma_v = new File()
+strdef filenameSoma
+{sprint(filenameSoma, "Soma.dat")}
+f_Soma_v.wopen(filenameSoma)
+
+for i=0, Soma_v.size()-1 {
+   f_Soma_v.printf("%f\t%f\n", v_time.x[i]/1000, Soma_v.x[i]/1000)
+}
+
+f_Soma_v.close()
+
+
+
+quit()
