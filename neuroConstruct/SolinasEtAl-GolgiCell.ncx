@@ -9,9 +9,11 @@ part of NeuroML or any standardised XML specification. -->
 
  <object class="ucl.physiol.neuroconstruct.project.BasicProjectInfo">
   <void property="projectDescription">
-   <string>Multicompartmental model of cerebellar Golgi cell from: Solinas S, Forti L, Cesana E, Mapelli J, De Schutter E, D&apos;Angelo E. (2007) Computational reconstruction of pacemaking and intrinsic electroresponsiveness in cerebellar Golgi cells.  Front Cell Neurosci. 2007;1:2. Based on implemetation in NEURON taken from: http://senselab.med.yale.edu/modeldb/ShowModel.asp?model=112685.  
+   <string>Multicompartmental model of cerebellar Golgi cell from: Solinas S, Forti L, Cesana E, Mapelli J, De Schutter E, D&apos;Angelo E. (2007) Computational reconstruction of pacemaking and intrinsic electroresponsiveness in cerebellar Golgi cells.  Front Cell Neurosci. 2007;1:2. 
 
-SIMULATION CONFIGURATIONS:
+Based on implemetation in NEURON taken from: http://senselab.med.yale.edu/modeldb/ShowModel.asp?model=112685.  
+
+SIMULATION CONFIGURATIONS: 
 
 Default Simulation Configuration - Compares the behaviour of the NeuroML model (using ChannelML for channels) versus the oiginal NEURON model (using the original mod files for channels), in a single compartment cell and in the Solinas et al model.
 
@@ -4013,7 +4015,11 @@ Resonance - the response to a current injection is enhanced during repeated stim
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.ProjectProperties"/>
+ <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
+  <void property="preferredSaveFormat">
+   <string>NeuroML v1.8.1 Format</string>
+  </void>
+ </object>
  <object class="ucl.physiol.neuroconstruct.utils.Display3DProperties">
   <void property="antiAliasing">
    <int>1</int>
@@ -4093,6 +4099,10 @@ print &quot;Note that a procedure setUseTables(0) is present to switch off all u
     <string></string>
    </void>
    <void method="put">
+    <float>-1.0</float>
+    <string></string>
+   </void>
+   <void method="put">
     <float>1.0</float>
     <string>print &quot;Changing values of ena, ek. Note: the ChannelML &quot;
 
@@ -4107,10 +4117,6 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
 }
 
 </string>
-   </void>
-   <void method="put">
-    <float>-1.0</float>
-    <string></string>
    </void>
    <void method="put">
     <float>2.0</float>
