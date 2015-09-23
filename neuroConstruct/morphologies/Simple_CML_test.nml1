@@ -56,18 +56,6 @@
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="NaR_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.17">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="NaT_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="48.0">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
                 <bio:mechanism name="hcn1s_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="0.05">
                         <bio:group>all</bio:group>

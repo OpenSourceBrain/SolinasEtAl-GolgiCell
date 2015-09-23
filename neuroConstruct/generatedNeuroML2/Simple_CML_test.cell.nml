@@ -15,10 +15,6 @@
 
     <include href="NaP_CML.channel.nml"/>
 
-    <include href="NaR_CML.channel.nml"/>
-
-    <include href="NaT_CML.channel.nml"/>
-
     <cell id="Simple_CML_test">
 
         <notes>A single segment/compartment cell</notes>
@@ -69,10 +65,6 @@
                 <channelDensity condDensity="0.025 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
                 
                 <channelDensity condDensity="0.19 mS_per_cm2" id="NaP_CML_all" ionChannel="NaP_CML" ion="na" erev="87.39 mV"/>
-                
-                <channelDensity condDensity="0.17 mS_per_cm2" id="NaR_CML_all" ionChannel="NaR_CML" ion="na" erev="87.39 mV"/>
-                
-                <channelDensity condDensity="48.0 mS_per_cm2" id="NaT_CML_all" ionChannel="NaT_CML" ion="na" erev="87.39 mV"/>
                 
 
                 <spikeThresh value="0 mV"/>

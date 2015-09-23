@@ -4099,10 +4099,6 @@ print &quot;Note that a procedure setUseTables(0) is present to switch off all u
     <string></string>
    </void>
    <void method="put">
-    <float>-1.0</float>
-    <string></string>
-   </void>
-   <void method="put">
     <float>1.0</float>
     <string>print &quot;Changing values of ena, ek. Note: the ChannelML &quot;
 
@@ -4117,6 +4113,10 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
 }
 
 </string>
+   </void>
+   <void method="put">
+    <float>-1.0</float>
+    <string></string>
    </void>
    <void method="put">
     <float>2.0</float>
@@ -4141,7 +4141,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    <float>1000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_839</string>
+   <string>Sim_847</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -7025,7 +7025,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
       </void>
      </void>
      <void property="simDuration">
-      <float>200.0</float>
+      <float>400.0</float>
      </void>
     </object>
    </void>

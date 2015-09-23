@@ -3,7 +3,7 @@
 
     <notes>
 
-Network structure (NeuroML 2beta4) for project: SolinasEtAl-GolgiCell saved with neuroConstruct v1.7.1 on: 13:08:56, 23-Sep-15
+Network structure (NeuroML 2beta4) for project: SolinasEtAl-GolgiCell saved with neuroConstruct v1.7.1 on: 15:04:06, 23-Sep-15
 
 Cell Group: CML_test contains 1 cells
 
@@ -19,8 +19,6 @@ Cell Group: CML_test contains 1 cells
     <include href="KV_CML.channel.nml"/>
     <include href="LeakCond.channel.nml"/>
     <include href="NaP_CML.channel.nml"/>
-    <include href="NaR_CML.channel.nml"/>
-    <include href="NaT_CML.channel.nml"/>
     <include href="Simple_CML_test.cell.nml"/>
     <network id="network_SolinasEtAl_GolgiCell" type="networkWithTemperature" temperature="23.0 degC">
 
@@ -31,7 +29,7 @@ Cell Group: CML_test contains 1 cells
                 <property tag="color" value="0.00390625 0.59375 0.2109375"/>
             </annotation>
             <instance id="0">
-                <location x="255.33829" y="334.3609" z="14.257717"/>
+                <location x="52.38354" y="135.9715" z="324.58176"/>
             </instance>
         </population>
 

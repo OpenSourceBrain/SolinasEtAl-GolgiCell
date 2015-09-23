@@ -162,15 +162,6 @@ The scaling factor for converting current into change in ion concentration shoul
                 </bio:mechanism>
 
                 <bio:mechanism name="LeakCond" type="Channel Mechanism" passive_conductance="true">
-                    <bio:parameter name="e" value="-64.5">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                    <bio:parameter name="gmax" value="0.021">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="LeakCond" type="Channel Mechanism" passive_conductance="true">
                     <bio:parameter name="e" value="-55.0">
                         <bio:group>axon_group</bio:group>
                         <bio:group>dendrite_group</bio:group>
@@ -178,6 +169,15 @@ The scaling factor for converting current into change in ion concentration shoul
                     <bio:parameter name="gmax" value="0.021">
                         <bio:group>axon_group</bio:group>
                         <bio:group>dendrite_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="LeakCond" type="Channel Mechanism" passive_conductance="true">
+                    <bio:parameter name="e" value="-64.5">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="gmax" value="0.021">
+                        <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
