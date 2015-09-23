@@ -29,21 +29,6 @@
 
             <biophysics units="Physiological Units">
 
-                <bio:mechanism name="CaLVA_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.25">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="Golgi_CALC_CML" type="Ion Concentration">    <!--Note: Calcium pools are not proper ion channels, thus this parameter does not represent a proper maximum conductance.
-The scaling factor for converting current into change in ion concentration should be
- determined from ChannelML file for the CaPool...-->
-
-                    <bio:parameter name="gmax" value="0.0">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
                 <bio:mechanism name="KV_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="32.0">
                         <bio:group>all</bio:group>

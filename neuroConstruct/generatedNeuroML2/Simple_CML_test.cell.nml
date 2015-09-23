@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Simple_CML_test">
+
+    <include href="hcn1s_CML.channel.nml"/>
+
+    <include href="hcn2f_CML.channel.nml"/>
+
+    <include href="hcn2s_CML.channel.nml"/>
+
+    <include href="Kslow_CML.channel.nml"/>
+
+    <include href="KV_CML.channel.nml"/>
+
+    <include href="LeakCond.channel.nml"/>
+
+    <include href="NaP_CML.channel.nml"/>
+
+    <include href="NaR_CML.channel.nml"/>
+
+    <include href="NaT_CML.channel.nml"/>
+
+    <cell id="Simple_CML_test">
+
+        <notes>A single segment/compartment cell</notes>
+
+        <morphology id="morphology_Simple_CML_test">
+
+            <segment id="0" name="Soma">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="11.0"/>
+                <distal x="0.0" y="37.766" z="0.0" diameter="11.0"/>
+            </segment>
+
+            <segmentGroup id="Soma" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="0"/>
+            </segmentGroup>
+
+            <segmentGroup id="all">
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+
+            <segmentGroup id="soma_group" neuroLexId="GO:0043025">    <!--Soma group-->
+
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+
+            
+        </morphology>
+
+            <!--Adding the biophysical parameters-->
+
+        <biophysicalProperties id="biophys">
+
+            <membraneProperties>
+                
+                <channelDensity condDensity="0.05 mS_per_cm2" id="hcn1s_CML_all" ionChannel="hcn1s_CML" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2f_CML_soma_group" ionChannel="hcn2f_CML" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_CML_soma_group" ionChannel="hcn2s_CML" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="1.0 mS_per_cm2" id="Kslow_CML_all" ionChannel="Kslow_CML" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="32.0 mS_per_cm2" id="KV_CML_all" ionChannel="KV_CML" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="0.025 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
+                
+                <channelDensity condDensity="0.19 mS_per_cm2" id="NaP_CML_all" ionChannel="NaP_CML" ion="na" erev="-85.0 mV"/>
+                
+                <channelDensity condDensity="0.17 mS_per_cm2" id="NaR_CML_all" ionChannel="NaR_CML" ion="na" erev="-85.0 mV"/>
+                
+                <channelDensity condDensity="48.0 mS_per_cm2" id="NaT_CML_all" ionChannel="NaT_CML" ion="na" erev="-85.0 mV"/>
+                
+
+                <spikeThresh value="0 mV"/>
+
+                <specificCapacitance value="0.9 uF_per_cm2"/>
+
+                <initMembPotential value="-60.0 mV"/>
+
+            </membraneProperties>
+
+            <intracellularProperties>
+
+                <resistivity value="0.1 kohm_cm"/>
+
+            </intracellularProperties>
+
+        </biophysicalProperties>
+
+    </cell>
+    
+</neuroml>
