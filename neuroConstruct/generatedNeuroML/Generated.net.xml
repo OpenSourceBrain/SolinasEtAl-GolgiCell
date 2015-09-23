@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<networkml xmlns="http://morphml.org/networkml/schema" xmlns:meta="http://morphml.org/metadata/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://morphml.org/networkml/schema  http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level3/NetworkML_v1.8.1.xsd" lengthUnits="micrometer">
+
+    <meta:notes>
+
+Network structure (NeuroML 1.x) for project: SolinasEtAl-GolgiCell saved with neuroConstruct v1.7.1 on: 13:15:18, 23-Sep-15
+
+Cell Group: Golgi_CML contains 1 cells
+
+
+
+    </meta:notes>
+
+<meta:properties>
+    <meta:property tag="neuroConstruct_random_seed" value="-257642584"/>
+
+    <meta:property tag="neuroConstruct_sim_config" value="Fig. 2A: Pacemaking"/>
+
+    <meta:property tag="neuroConstruct_sim_duration" value="1000.0"/>
+
+    <meta:property tag="neuroConstruct_sim_time_step" value="0.001"/>
+
+    <meta:property tag="neuroConstruct_temperature" value="23.0"/>
+</meta:properties>
+
+        <populations>
+    <population name="Golgi_CML" cell_type="Golgi_CML">
+        <meta:properties>
+            <meta:property tag="color" value="0.0 0.3984375 0.0"/>
+        </meta:properties>
+        <instances size="1">
+            <instance id="0">
+                <location x="222.75691" y="28.55568" z="275.3645"/>
+            </instance>
+        </instances>
+    </population>
+</populations>
+
+
+
+            <!--There are no synaptic connections present in the network-->
+
+
+            <!--There are no electrical inputs present in the network-->
+
+
+
+
+</networkml>
