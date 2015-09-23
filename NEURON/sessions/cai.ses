@@ -1,0 +1,18 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[5]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{
+save_window_ = new Graph(0)
+save_window_.size(-100,5000,50,107)
+scene_vector_[3] = save_window_
+{save_window_.view(-100, 50, 5100, 57, 0, 621, 557.76, 319.36)}
+graphList[1].append(save_window_)
+save_window_.save_name("graphList[1].")
+save_window_.label(0.5, 0, "time (ms)", 2, 1, 1, 0, 1)
+save_window_.label(0, 0.5, "[ca] (nM)", 2, 1, 0, 1, 1)
+save_window_.addexpr("Golgi[0].soma.cai( 0.5 )*1e6", 1, 1, 0.8, 0.9, 2)
+save_window_.addexpr("Golgi[0].soma.ca2i( 0.5 )*1e6", 4, 1, 0.8, 0.9, 2)
+}
+objectvar scene_vector_[1]
+{doNotify()}
