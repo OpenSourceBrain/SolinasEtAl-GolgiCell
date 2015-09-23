@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_75" class="java.beans.XMLDecoder">
+<java version="1.7.0_79" class="java.beans.XMLDecoder">
 
 <!-- Note that this XML is specific to the neuroConstruct Java cell object model and not any part of the NeuroML framework -->
 
- <object class="ucl.physiol.neuroconstruct.cell.Cell">
+ <object class="ucl.physiol.neuroconstruct.cell.Cell" id="Cell0">
   <void property="allSegments">
    <void method="add">
     <object class="ucl.physiol.neuroconstruct.cell.Segment">
@@ -23,7 +23,7 @@
       <float>5.5</float>
      </void>
      <void property="section">
-      <object class="ucl.physiol.neuroconstruct.cell.Section">
+      <object class="ucl.physiol.neuroconstruct.cell.Section" id="Section0">
        <void property="groups">
         <void method="add">
          <string>soma_group</string>
@@ -62,10 +62,10 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>3.0E-8</float>
+      <float>3.8E-7</float>
      </void>
      <void property="name">
-      <string>KC_CML</string>
+      <string>KAHP_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -77,10 +77,10 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>5.0E-10</float>
+      <float>8.0E-8</float>
      </void>
      <void property="name">
-      <string>hcn1s_CML</string>
+      <string>KA_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -119,6 +119,21 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
+      <float>3.0E-8</float>
+     </void>
+     <void property="name">
+      <string>KC_CML</string>
+     </void>
+    </object>
+    <object class="java.util.Vector">
+     <void method="add">
+      <string>soma_group</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
+     <void property="density">
       <float>2.5E-9</float>
      </void>
      <void property="name">
@@ -134,10 +149,10 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>5.0E-10</float>
+      <float>1.0E-8</float>
      </void>
      <void property="name">
-      <string>hcn1f_CML</string>
+      <string>Kslow_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -149,10 +164,37 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>3.8E-7</float>
+      <float>3.2E-7</float>
      </void>
      <void property="name">
-      <string>KAHP_CML</string>
+      <string>KV_CML</string>
+     </void>
+    </object>
+    <object class="java.util.Vector">
+     <void method="add">
+      <string>all</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
+     <void property="density">
+      <float>1.9E-9</float>
+     </void>
+     <void property="name">
+      <string>NaP_CML</string>
+     </void>
+    </object>
+    <object class="java.util.Vector">
+     <void method="add">
+      <string>all</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
+     <void property="name">
+      <string>Golgi_CALC_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -164,25 +206,10 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>4.6E-9</float>
+      <float>5.0E-10</float>
      </void>
      <void property="name">
-      <string>CaHVA_CML</string>
-     </void>
-    </object>
-    <object class="java.util.Vector">
-     <void method="add">
-      <string>all</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
-     <void property="density">
-      <float>1.0E-8</float>
-     </void>
-     <void property="name">
-      <string>Kslow_CML</string>
+      <string>hcn1s_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -209,37 +236,10 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>8.0E-10</float>
+      <float>5.0E-10</float>
      </void>
      <void property="name">
-      <string>hcn2f_CML</string>
-     </void>
-    </object>
-    <object class="java.util.Vector">
-     <void method="add">
-      <string>soma_group</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
-     <void property="name">
-      <string>Golgi_CALC_CML</string>
-     </void>
-    </object>
-    <object class="java.util.Vector">
-     <void method="add">
-      <string>soma_group</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
-     <void property="density">
-      <float>8.0E-8</float>
-     </void>
-     <void property="name">
-      <string>KA_CML</string>
+      <string>hcn1f_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -266,10 +266,25 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>1.9E-9</float>
+      <float>8.0E-10</float>
      </void>
      <void property="name">
-      <string>NaP_CML</string>
+      <string>hcn2f_CML</string>
+     </void>
+    </object>
+    <object class="java.util.Vector">
+     <void method="add">
+      <string>soma_group</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
+     <void property="density">
+      <float>4.6E-9</float>
+     </void>
+     <void property="name">
+      <string>CaHVA_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -290,21 +305,6 @@
     <object class="java.util.Vector">
      <void method="add">
       <string>soma_group</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
-     <void property="density">
-      <float>3.2E-7</float>
-     </void>
-     <void property="name">
-      <string>KV_CML</string>
-     </void>
-    </object>
-    <object class="java.util.Vector">
-     <void method="add">
-      <string>all</string>
      </void>
     </object>
    </void>

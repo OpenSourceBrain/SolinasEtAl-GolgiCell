@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_75" class="java.beans.XMLDecoder">
+<java version="1.7.0_79" class="java.beans.XMLDecoder">
 
 <!-- This is a neuroConstruct project file. It's best to open this
 file with neuroConstruct, as opposed to editing it directly. 
@@ -38,8 +38,8 @@ Resonance - the response to a current injection is enhanced during repeated stim
    <string>SolinasEtAl-GolgiCell</string>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.RegionsInfo">
-  <void property="internalData">
+ <object class="ucl.physiol.neuroconstruct.project.RegionsInfo" id="RegionsInfo0">
+  <void id="Hashtable0" property="internalData">
    <void method="get">
     <string>Name</string>
     <void method="add">
@@ -60,8 +60,8 @@ Resonance - the response to a current injection is enhanced during repeated stim
    <void method="get">
     <string>Description</string>
     <void method="add">
-     <object class="ucl.physiol.neuroconstruct.project.RectangularBox">
-      <void property="parameterList">
+     <object class="ucl.physiol.neuroconstruct.project.RectangularBox" id="RectangularBox0">
+      <void id="InternalParameterArray0" property="parameterList">
        <void id="InternalParameter0" index="3">
         <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
          <string>value</string>
@@ -95,8 +95,8 @@ Resonance - the response to a current injection is enhanced during repeated stim
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.CellGroupsInfo">
-  <void property="internalData">
+ <object class="ucl.physiol.neuroconstruct.project.CellGroupsInfo" id="CellGroupsInfo0">
+  <void id="Hashtable1" property="internalData">
    <void method="get">
     <string>Cell Packing Adapter</string>
     <void method="add">
@@ -110,8 +110,8 @@ Resonance - the response to a current injection is enhanced during repeated stim
      </object>
     </void>
     <void method="add">
-     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter">
-      <void property="parameterList">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter" id="RandomCellPackingAdapter0">
+      <void id="InternalParameterArray1" property="parameterList">
        <void id="InternalParameter3" index="0">
         <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
          <string>value</string>
@@ -125,8 +125,8 @@ Resonance - the response to a current injection is enhanced during repeated stim
      </object>
     </void>
     <void method="add">
-     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter">
-      <void property="parameterList">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter" id="RandomCellPackingAdapter1">
+      <void id="InternalParameterArray2" property="parameterList">
        <void id="InternalParameter4" index="0">
         <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
          <string>value</string>
@@ -138,6 +138,9 @@ Resonance - the response to a current injection is enhanced during repeated stim
        </void>
       </void>
      </object>
+    </void>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
     </void>
     <void method="add">
      <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
@@ -340,6 +343,9 @@ Resonance - the response to a current injection is enhanced during repeated stim
     <void method="add">
      <string>Golgi_CML_KA_block</string>
     </void>
+    <void method="add">
+     <string>Simple_CML_test</string>
+    </void>
    </void>
    <void method="get">
     <string>Priority</string>
@@ -447,6 +453,9 @@ Resonance - the response to a current injection is enhanced during repeated stim
     </void>
     <void method="add">
      <int>-26</int>
+    </void>
+    <void method="add">
+     <int>-25</int>
     </void>
    </void>
    <void method="get">
@@ -716,9 +725,20 @@ Resonance - the response to a current injection is enhanced during repeated stim
       <int>255</int>
      </object>
     </void>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>1</int>
+      <int>152</int>
+      <int>54</int>
+      <int>255</int>
+     </object>
+    </void>
    </void>
    <void method="get">
     <string>Region Name</string>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
     <void method="add">
      <string>Regions_1</string>
     </void>
@@ -932,10 +952,13 @@ Resonance - the response to a current injection is enhanced during repeated stim
     <void method="add">
      <string>Golgi_CML_KAblock</string>
     </void>
+    <void method="add">
+     <string>CML_test</string>
+    </void>
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.SimPlotInfo">
+ <object class="ucl.physiol.neuroconstruct.project.SimPlotInfo" id="SimPlotInfo0">
   <void property="allSimPlots">
    <void method="add">
     <object class="ucl.physiol.neuroconstruct.project.SimPlot">
@@ -3960,10 +3983,41 @@ Resonance - the response to a current injection is enhanced during repeated stim
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>CML_test</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>CML_test_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>CML_test_v</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.ProjectProperties"/>
  <object class="ucl.physiol.neuroconstruct.utils.Display3DProperties">
+  <void property="antiAliasing">
+   <int>1</int>
+  </void>
   <void property="backgroundColour3D">
    <object class="java.awt.Color">
     <int>144</int>
@@ -3981,7 +4035,7 @@ Resonance - the response to a current injection is enhanced during repeated stim
    </object>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings">
+ <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings" id="NeuronSettings0">
   <void property="copySimFiles">
    <boolean>true</boolean>
   </void>
@@ -4039,10 +4093,6 @@ print &quot;Note that a procedure setUseTables(0) is present to switch off all u
     <string></string>
    </void>
    <void method="put">
-    <float>-1.0</float>
-    <string></string>
-   </void>
-   <void method="put">
     <float>1.0</float>
     <string>print &quot;Changing values of ena, ek. Note: the ChannelML &quot;
 
@@ -4057,6 +4107,10 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
 }
 
 </string>
+   </void>
+   <void method="put">
+    <float>-1.0</float>
+    <string></string>
    </void>
    <void method="put">
     <float>2.0</float>
@@ -4081,7 +4135,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    <float>1000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_823</string>
+   <string>Sim_826</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -4093,10 +4147,10 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    <int>2</int>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.ElecInputInfo">
+ <object class="ucl.physiol.neuroconstruct.project.ElecInputInfo" id="ElecInputInfo0">
   <void property="allStims">
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings0">
      <void property="amp">
       <void property="fixedNum">
        <float>1.0</float>
@@ -4128,7 +4182,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings1">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.18</float>
@@ -4234,7 +4288,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings2">
      <void property="amp">
       <void property="fixedNum">
        <float>0.8</float>
@@ -4340,7 +4394,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings3">
      <void property="amp">
       <void property="fixedNum">
        <float>0.5</float>
@@ -4375,7 +4429,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings4">
      <void property="amp">
       <void property="fixedNum">
        <float>0.2</float>
@@ -4407,7 +4461,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings5">
      <void property="amp">
       <void property="fixedNum">
        <float>0.2</float>
@@ -4439,7 +4493,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings6">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.2</float>
@@ -4471,7 +4525,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings7">
      <void property="amp">
       <void property="fixedNum">
        <float>0.02</float>
@@ -4498,7 +4552,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings8">
      <void property="amp">
       <void property="fixedNum">
        <float>0.02</float>
@@ -4525,7 +4579,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings9">
      <void property="cellGroup">
       <string>test_CaLVA_mod</string>
      </void>
@@ -4547,7 +4601,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings10">
      <void property="cellGroup">
       <string>test_CaLVA_CML</string>
      </void>
@@ -4569,7 +4623,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings11">
      <void property="cellGroup">
       <string>test_KA_mod</string>
      </void>
@@ -4588,7 +4642,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings12">
      <void property="cellGroup">
       <string>test_KA_CML</string>
      </void>
@@ -4607,7 +4661,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings13">
      <void property="amp">
       <void property="fixedNum">
        <float>0.05</float>
@@ -4639,7 +4693,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings14">
      <void property="amp">
       <void property="fixedNum">
        <float>0.05</float>
@@ -4671,7 +4725,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings15">
      <void property="amp">
       <void property="fixedNum">
        <float>0.07</float>
@@ -4698,7 +4752,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings16">
      <void property="amp">
       <void property="fixedNum">
        <float>0.07</float>
@@ -4725,7 +4779,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings17">
      <void property="cellGroup">
       <string>test_Kslow_mod</string>
      </void>
@@ -4744,7 +4798,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings18">
      <void property="cellGroup">
       <string>test_Kslow_CML</string>
      </void>
@@ -4763,7 +4817,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings19">
      <void property="cellGroup">
       <string>test_KV_mod</string>
      </void>
@@ -4782,7 +4836,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings20">
      <void property="cellGroup">
       <string>test_KV_CML</string>
      </void>
@@ -4801,7 +4855,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings21">
      <void property="cellGroup">
       <string>test_NaP_mod</string>
      </void>
@@ -4820,7 +4874,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings22">
      <void property="cellGroup">
       <string>test_NaP_CML</string>
      </void>
@@ -4839,7 +4893,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings23">
      <void property="amp">
       <void property="fixedNum">
        <float>0.01</float>
@@ -4866,7 +4920,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings24">
      <void property="amp">
       <void property="fixedNum">
        <float>0.01</float>
@@ -4893,7 +4947,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings25">
      <void property="amp">
       <void property="fixedNum">
        <float>0.005</float>
@@ -4920,7 +4974,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings26">
      <void property="amp">
       <void property="fixedNum">
        <float>0.005</float>
@@ -4947,7 +5001,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings27">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.05</float>
@@ -4974,7 +5028,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings28">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.05</float>
@@ -5001,7 +5055,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings29">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.02</float>
@@ -5028,7 +5082,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings30">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.02</float>
@@ -5055,7 +5109,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings31">
      <void property="amp">
       <void property="fixedNum">
        <float>0.5</float>
@@ -5090,7 +5144,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings32">
      <void property="amp">
       <void property="fixedNum">
        <float>1.0</float>
@@ -5122,7 +5176,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings33">
      <void property="amp">
       <void property="fixedNum">
        <float>1.0</float>
@@ -5154,7 +5208,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings34">
      <void property="amp">
       <void property="fixedNum">
        <float>1.0</float>
@@ -5186,7 +5240,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings35">
      <void property="amp">
       <void property="fixedNum">
        <float>0.0</float>
@@ -5210,7 +5264,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings36">
      <void property="amp">
       <void property="fixedNum">
        <float>0.2</float>
@@ -5242,7 +5296,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings37">
      <void property="amp">
       <void property="fixedNum">
        <float>-0.2</float>
@@ -5275,10 +5329,10 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.SimConfigInfo">
+ <object class="ucl.physiol.neuroconstruct.project.SimConfigInfo" id="SimConfigInfo0">
   <void property="allSimConfigs">
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig0">
      <void property="cellGroups">
       <void method="add">
        <string>CML</string>
@@ -5351,7 +5405,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig1">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_CML</string>
@@ -5377,7 +5431,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig2">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_Fig3</string>
@@ -5411,7 +5465,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig3">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_CML</string>
@@ -5437,7 +5491,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig4">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_CML</string>
@@ -5465,7 +5519,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig5">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_CML</string>
@@ -5517,7 +5571,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig6">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_Noise_Reset</string>
@@ -5548,7 +5602,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig7">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_CML</string>
@@ -5582,7 +5636,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig8">
      <void property="cellGroups">
       <void method="add">
        <string>test_CaHVA_CML</string>
@@ -5952,7 +6006,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig9">
      <void property="cellGroups">
       <void method="add">
        <string>test_CaHVA_CML</string>
@@ -6010,7 +6064,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig10">
      <void property="cellGroups">
       <void method="add">
        <string>test_CaLVA_CML</string>
@@ -6062,7 +6116,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig11">
      <void property="cellGroups">
       <void method="add">
        <string>test_KA_CML</string>
@@ -6108,7 +6162,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig12">
      <void property="cellGroups">
       <void method="add">
        <string>test_KAHP_CML</string>
@@ -6184,7 +6238,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig13">
      <void property="cellGroups">
       <void method="add">
        <string>test_KC_CML</string>
@@ -6230,7 +6284,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig14">
      <void property="cellGroups">
       <void method="add">
        <string>test_Kslow_CML</string>
@@ -6270,7 +6324,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig15">
      <void property="cellGroups">
       <void method="add">
        <string>test_KV_CML</string>
@@ -6310,7 +6364,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig16">
      <void property="cellGroups">
       <void method="add">
        <string>test_NaP_CML</string>
@@ -6350,7 +6404,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig17">
      <void property="cellGroups">
       <void method="add">
        <string>test_NaR_CML</string>
@@ -6396,7 +6450,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig18">
      <void property="cellGroups">
       <void method="add">
        <string>test_NaT_CML</string>
@@ -6442,7 +6496,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig19">
      <void property="cellGroups">
       <void method="add">
        <string>test_hcn1_CML</string>
@@ -6488,7 +6542,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig20">
      <void property="cellGroups">
       <void method="add">
        <string>test_hcn2_CML</string>
@@ -6534,7 +6588,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig21">
      <void property="cellGroups">
       <void method="add">
        <string>test_KV_CML</string>
@@ -6916,7 +6970,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     </object>
    </void>
    <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig22">
      <void property="cellGroups">
       <void method="add">
        <string>Golgi_CML</string>
@@ -6943,6 +6997,29 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
      </void>
      <void property="simDuration">
       <float>5000.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig23">
+     <void property="cellGroups">
+      <void method="add">
+       <string>CML_test</string>
+      </void>
+     </void>
+     <void property="description">
+      <string>Test mappings to nml2</string>
+     </void>
+     <void property="name">
+      <string>TestNML2</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>CML_test_v</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>1000.0</float>
      </void>
     </object>
    </void>

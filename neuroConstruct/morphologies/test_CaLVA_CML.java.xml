@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_75" class="java.beans.XMLDecoder">
+<java version="1.7.0_79" class="java.beans.XMLDecoder">
 
 <!-- Note that this XML is specific to the neuroConstruct Java cell object model and not any part of the NeuroML framework -->
 
- <object class="ucl.physiol.neuroconstruct.cell.Cell">
+ <object class="ucl.physiol.neuroconstruct.cell.Cell" id="Cell0">
   <void property="allSegments">
    <void method="add">
     <object class="ucl.physiol.neuroconstruct.cell.Segment">
@@ -23,7 +23,7 @@
       <float>5.5</float>
      </void>
      <void property="section">
-      <object class="ucl.physiol.neuroconstruct.cell.Section">
+      <object class="ucl.physiol.neuroconstruct.cell.Section" id="Section0">
        <void property="groups">
         <void method="add">
          <string>soma_group</string>
@@ -76,11 +76,8 @@
    </void>
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
-     <void property="density">
-      <float>1.0E-8</float>
-     </void>
      <void property="name">
-      <string>CaLVA_CML</string>
+      <string>Golgi_CALC_ca2_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -91,8 +88,11 @@
    </void>
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
+     <void property="density">
+      <float>1.0E-8</float>
+     </void>
      <void property="name">
-      <string>Golgi_CALC_ca2_CML</string>
+      <string>CaLVA_CML</string>
      </void>
     </object>
     <object class="java.util.Vector">
