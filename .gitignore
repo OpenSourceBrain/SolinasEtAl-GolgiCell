@@ -1,4 +1,4 @@
-/NEURON/Soma.dat
+/NEURON/*.dat
 /NEURON/Golgi_count.txt
 /neuroConstruct/generatedNeuroML/README
 /neuroConstruct/generatedNeuroML2/*.svg
