@@ -70,7 +70,7 @@
 	
 
 
-        <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="48" default_erev="-85">
+        <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="48" default_erev="87.39">
 
             <q10_settings q10_factor="3" experimental_temp="20"/>
 
