@@ -6,14 +6,14 @@
 This is the readme for the model associated with the publications:
 
 1. Solinas S, Forti L, Cesana E, Mapelli J, De Schutter E, D`Angelo E
-(2007) Computational reconstruction of pacemaking and intrinsic
+(2007) **Computational reconstruction of pacemaking and intrinsic
 electroresponsiveness in cerebellar golgi
-cells. Front. Cell. Neurosci.
+cells**. [Front. Cell. Neurosci.](http://journal.frontiersin.org/article/10.3389/neuro.03.002.2007/abstract)
 
 2. Solinas S, Forti L, Cesana E, Mapelli J , De Schutter E, D`Angelo E
-(2007) Fast-reset of pacemaking and theta-frequency resonance patterns
+(2007) **Fast-reset of pacemaking and theta-frequency resonance patterns
 in cerebellar golgi cells: Simulations of their impact in
-vivo. Front. Cell. Neurosci.
+vivo**. [Front. Cell. Neurosci.](http://journal.frontiersin.org/article/10.3389/neuro.03.004.2007/abstract)
 
 The cerebellar cortex input is profoundly influenced by the inhibitory
 action of Golgi cells. Golgi cells display complex excitable
@@ -43,29 +43,25 @@ suggest that the Golgi cell may exploit these mechanisms to obtain a
 fine regulation of timing of incoming mossy fiber responses and
 granular layer circuit oscillation and bursting.
 
-Usage:
+### Usage
 
 Auto-launch from ModelDB or download and extract the archive.  Then
 under:
 
-----
-MSWIN
+#### MSWIN
 
-run mknrndll, cd to the archive and make the nrnmech.dll.  Then double
+Run mknrndll, cd to the archive and make the nrnmech.dll.  Then double
 click on the mosinit.hoc file.
 
-----
-MAC OS X
+#### MAC OS X
 
 Drag and drop the Golgi_cell folder onto the mknrndll icon.  Drag and
 drop the mosinit.hoc file onto the nrngui icon.
 
-----
-Linux/Unix
+###Linux/Unix
 
-Change directory to the Golgi_cell folder. run nrnivmodl. Then type
-nrngui mosinit.hoc
-----
+Change directory to the Golgi_cell folder. run nrnivmodl. Then type nrngui mosinit.hoc
+
 
 Once the simulation is running press Init & Run to generate a graph
 similar to fig 2. from "Computational reconstruction of pacemaking and
