@@ -23,5 +23,6 @@ simulations
 *.bak
 *py.class
 *~
+NEURON/SimData*
 
 
