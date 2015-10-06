@@ -1,3 +1,4 @@
+/NEURON/test/*.dat
 /NEURON/*.dat
 /NEURON/Golgi_count.txt
 /neuroConstruct/generatedNeuroML/README
