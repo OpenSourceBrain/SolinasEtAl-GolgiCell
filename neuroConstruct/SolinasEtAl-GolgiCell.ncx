@@ -4141,7 +4141,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    <float>1000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_847</string>
+   <string>Sim_849</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -7026,6 +7026,32 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
      </void>
      <void property="simDuration">
       <float>400.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig24">
+     <void property="cellGroups">
+      <void method="add">
+       <string>Golgi_CML</string>
+      </void>
+     </void>
+     <void property="description">
+      <string>To compare to NEURON code</string>
+     </void>
+     <void property="name">
+      <string>PacemakerTest</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>Golgi_CML_v</string>
+      </void>
+      <void method="add">
+       <string>Golgi_v</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>4000.0</float>
      </void>
     </object>
    </void>

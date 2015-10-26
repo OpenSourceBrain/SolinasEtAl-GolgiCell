@@ -29,17 +29,17 @@
 
             <biophysics units="Physiological Units">
 
+                <bio:mechanism name="hcn2" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.08">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
                 <bio:mechanism name="LeakCond" type="Channel Mechanism" passive_conductance="true">
                     <bio:parameter name="e" value="-55.0">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                     <bio:parameter name="gmax" value="0.025">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>

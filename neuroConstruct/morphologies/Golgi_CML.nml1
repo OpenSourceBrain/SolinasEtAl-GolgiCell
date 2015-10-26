@@ -105,19 +105,6 @@
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="Golgi_CALC_CML" type="Ion Concentration">    <!--Note: Calcium pools are not proper ion channels, thus this parameter does not represent a proper maximum conductance.
-The scaling factor for converting current into change in ion concentration should be
- determined from ChannelML file for the CaPool...-->
-
-                    <bio:parameter name="gmax" value="0.0">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                    <bio:parameter name="thickness" value="0.20304">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
-
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
                 <bio:mechanism name="Golgi_CALC_ca2_CML" type="Ion Concentration">    <!--Note: Calcium pools are not proper ion channels, thus this parameter does not represent a proper maximum conductance.
 The scaling factor for converting current into change in ion concentration should be
  determined from ChannelML file for the CaPool...-->
@@ -131,8 +118,39 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="KAHP_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="38.0">
+                <bio:mechanism name="Golgi_CALC_CML" type="Ion Concentration">    <!--Note: Calcium pools are not proper ion channels, thus this parameter does not represent a proper maximum conductance.
+The scaling factor for converting current into change in ion concentration should be
+ determined from ChannelML file for the CaPool...-->
+
+                    <bio:parameter name="gmax" value="0.0">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="thickness" value="0.20304">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn1f_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.05">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn1s_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.05">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn2f_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.08">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn2s_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.08">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -143,20 +161,26 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
 
+                <bio:mechanism name="KAHP_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="38.0">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
                 <bio:mechanism name="KC_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="3.0">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="KV_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="32.0">
+                <bio:mechanism name="Kslow_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="1.0">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="Kslow_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="1.0">
+                <bio:mechanism name="KV_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="32.0">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -187,30 +211,6 @@ The scaling factor for converting current into change in ion concentration shoul
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
-
-                <bio:mechanism name="hcn1f_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.05">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn1s_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.05">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2f_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2s_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
                 
 
                 <bio:spec_capacitance>
@@ -231,15 +231,15 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:init_memb_potential>
 
-                <bio:ion_props name="na">
-                    <bio:parameter name="e" value="87.39">
+                <bio:ion_props name="k">
+                    <bio:parameter name="e" value="-84.69">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:ion_props>
             
 
-                <bio:ion_props name="k">
-                    <bio:parameter name="e" value="-84.69">
+                <bio:ion_props name="na">
+                    <bio:parameter name="e" value="87.39">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:ion_props>

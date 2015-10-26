@@ -59,6 +59,18 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
 
+                <bio:mechanism name="hcn1" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.05">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn2" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.08">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
                 <bio:mechanism name="KA" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="8.0">
                         <bio:group>all</bio:group>
@@ -77,14 +89,14 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="KV" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="32.0">
+                <bio:mechanism name="Kslow" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="1.0">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="Kslow" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="1.0">
+                <bio:mechanism name="KV" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="32.0">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -112,18 +124,6 @@ The scaling factor for converting current into change in ion concentration shoul
 
                 <bio:mechanism name="NaT" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="48.0">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn1" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.05">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
