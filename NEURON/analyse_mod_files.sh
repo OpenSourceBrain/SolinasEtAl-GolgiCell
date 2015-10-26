@@ -2,3 +2,5 @@
 # plots for the activation variables, etc. of selected channels in mod files
 
 pynml-modchananalysis Golgi_NaP -stepV 5 -temperature 23 
+pynml-modchananalysis Golgi_KV -stepV 5 -temperature 23 
+pynml-modchananalysis Golgi_hcn1 -stepV 5 -temperature 23 

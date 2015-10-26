@@ -4099,6 +4099,10 @@ print &quot;Note that a procedure setUseTables(0) is present to switch off all u
     <string></string>
    </void>
    <void method="put">
+    <float>-1.0</float>
+    <string></string>
+   </void>
+   <void method="put">
     <float>1.0</float>
     <string>print &quot;Changing values of ena, ek. Note: the ChannelML &quot;
 
@@ -4113,10 +4117,6 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
 }
 
 </string>
-   </void>
-   <void method="put">
-    <float>-1.0</float>
-    <string></string>
    </void>
    <void method="put">
     <float>2.0</float>
@@ -4135,7 +4135,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
  <object class="ucl.physiol.neuroconstruct.simulation.SimulationParameters">
   <void property="dt">
-   <float>0.001</float>
+   <float>0.005</float>
   </void>
   <void property="duration">
    <float>1000.0</float>

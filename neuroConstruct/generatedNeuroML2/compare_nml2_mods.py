@@ -5,10 +5,11 @@ import os.path
 
 chans = {}
 chans['NaP_CML']='Golgi_NaP'
+chans['KV_CML']='Golgi_KV'
 
 problematic = ['Im']
 
-gates = ['m', 'h']
+gates = ['m', 'h', 'n']
 
 for channel_id in chans.keys():
     
