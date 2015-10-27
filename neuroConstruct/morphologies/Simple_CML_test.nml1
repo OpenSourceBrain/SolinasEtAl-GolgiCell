@@ -29,24 +29,6 @@
 
             <biophysics units="Physiological Units">
 
-                <bio:mechanism name="hcn1s_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.05">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2f_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2s_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
                 <bio:mechanism name="Kslow_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="1.0">
                         <bio:group>all</bio:group>
@@ -70,6 +52,12 @@
 
                 <bio:mechanism name="NaP_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="0.19">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="NaT_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="48.0">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>

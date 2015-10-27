@@ -36,47 +36,17 @@ Channel information
 </tr>
     <tr>
 <td width="120px">
-            <sup><b>hcn1s_CML</b><br/>
-            <a href="../hcn1s_CML.channel.nml">hcn1s_CML.channel.nml</a><br/>
-            <b>Ion: h</b><br/>
-            <i>g = gmax * s </i><br/>
-            hcn1 channel - slow component</sup>
+            <sup><b>Kslow_CML</b><br/>
+            <a href="../Kslow_CML.channel.nml">Kslow_CML.channel.nml</a><br/>
+            <b>Ion: k</b><br/>
+            <i>g = gmax * n </i><br/>
+            A slow M-like K+ channel, based on mod file supplied with Solinas et al 2007 (ModelDB 112685)</sup>
 </td>
 <td>
-<a href="hcn1s_CML.inf.png"><img alt="hcn1s_CML steady state" src="hcn1s_CML.inf.png" height="220"/></a>
+<a href="Kslow_CML.inf.png"><img alt="Kslow_CML steady state" src="Kslow_CML.inf.png" height="220"/></a>
 </td>
 <td>
-<a href="hcn1s_CML.tau.png"><img alt="hcn1s_CML time course" src="hcn1s_CML.tau.png" height="220"/></a>
-</td>
-</tr>
-    <tr>
-<td width="120px">
-            <sup><b>hcn2s_CML</b><br/>
-            <a href="../hcn2s_CML.channel.nml">hcn2s_CML.channel.nml</a><br/>
-            <b>Ion: h</b><br/>
-            <i>g = gmax * s </i><br/>
-            hcn2 channel - slow component</sup>
-</td>
-<td>
-<a href="hcn2s_CML.inf.png"><img alt="hcn2s_CML steady state" src="hcn2s_CML.inf.png" height="220"/></a>
-</td>
-<td>
-<a href="hcn2s_CML.tau.png"><img alt="hcn2s_CML time course" src="hcn2s_CML.tau.png" height="220"/></a>
-</td>
-</tr>
-    <tr>
-<td width="120px">
-            <sup><b>hcn2f_CML</b><br/>
-            <a href="../hcn2f_CML.channel.nml">hcn2f_CML.channel.nml</a><br/>
-            <b>Ion: h</b><br/>
-            <i>g = gmax * f </i><br/>
-            hcn2 channel - fast component</sup>
-</td>
-<td>
-<a href="hcn2f_CML.inf.png"><img alt="hcn2f_CML steady state" src="hcn2f_CML.inf.png" height="220"/></a>
-</td>
-<td>
-<a href="hcn2f_CML.tau.png"><img alt="hcn2f_CML time course" src="hcn2f_CML.tau.png" height="220"/></a>
+<a href="Kslow_CML.tau.png"><img alt="Kslow_CML time course" src="Kslow_CML.tau.png" height="220"/></a>
 </td>
 </tr>
 </table>
