@@ -21,6 +21,21 @@ Channel information
 </tr>
     <tr>
 <td width="120px">
+            <sup><b>NaT_CML</b><br/>
+            <a href="../NaT_CML.channel.nml">NaT_CML.channel.nml</a><br/>
+            <b>Ion: na</b><br/>
+            <i>g = gmax * m<sup>3</sup> * h </i><br/>
+            Transient Na+ channel</sup>
+</td>
+<td>
+<a href="NaT_CML.inf.png"><img alt="NaT_CML steady state" src="NaT_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="NaT_CML.tau.png"><img alt="NaT_CML time course" src="NaT_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
             <sup><b>KV_CML</b><br/>
             <a href="../KV_CML.channel.nml">KV_CML.channel.nml</a><br/>
             <b>Ion: k</b><br/>

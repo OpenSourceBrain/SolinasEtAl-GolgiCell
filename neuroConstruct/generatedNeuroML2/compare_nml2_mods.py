@@ -5,7 +5,9 @@ import os.path
 
 chans = {}
 chans['NaP_CML']='Golgi_NaP'
+chans['NaT_CML']='Golgi_Na'
 chans['KV_CML']='Golgi_KV'
+chans['Kslow_CML']='Golgi_KM'
 
 problematic = ['Im']
 
