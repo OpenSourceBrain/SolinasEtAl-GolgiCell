@@ -29,8 +29,23 @@
 
             <biophysics units="Physiological Units">
 
+                <bio:mechanism name="CaHVA_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="4.6E-11">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="Golgi_CALC_CML" type="Ion Concentration">    <!--Note: Calcium pools are not proper ion channels, thus this parameter does not represent a proper maximum conductance.
+The scaling factor for converting current into change in ion concentration should be
+ determined from ChannelML file for the CaPool...-->
+
+                    <bio:parameter name="gmax" value="0.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
                 <bio:mechanism name="Kslow_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="1.0">
+                    <bio:parameter name="gmax" value="1.0E-10">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -51,7 +66,7 @@
                 </bio:mechanism>
 
                 <bio:mechanism name="NaP_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.19">
+                    <bio:parameter name="gmax" value="1.9E-11">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -80,6 +95,17 @@
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:init_memb_potential>
+
+                <bio:ion_props name="ca">
+                    <bio:parameter name="conc_e" value="2.0E-6">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                
+                    <bio:parameter name="conc_i" value="5.0E-11">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:ion_props>
+            
 
                 <bio:ion_props name="k">
                     <bio:parameter name="e" value="-84.69">
