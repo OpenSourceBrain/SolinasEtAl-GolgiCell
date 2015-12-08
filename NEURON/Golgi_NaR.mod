@@ -102,7 +102,7 @@ DERIVATIVE states {
 } 
  
 PROCEDURE rate(v (mV)) { LOCAL a_s,b_s,a_f,b_f
-	TABLE s_inf,tau_s,f_inf,tau_f DEPEND celsius FROM -100 TO 30 WITH 13000	
+	TABLE s_inf,tau_s,f_inf,tau_f DEPEND celsius FROM -100 TO 100 WITH 20000	
 
 	a_s = alp_s(v)  
 	b_s = bet_s(v) 

@@ -1,4 +1,12 @@
-**This directory contains a copy of the original NEURON code for the Solinas et al. 2007 model taken from ModelDB on 23 Sept 2015.**
+**This directory contains an updated version of the original NEURON code for the Solinas et al. 2007 model.**
+
+**Key changes:**
+
+- **Updated TABLE statements in mod files:** See https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4 for more details.
+- **Adding the option to generate more figures from original paper:** See https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/1
+
+The original code as submitted to ModelDB is [here](../NEURON_2007).
+
 
 **Below is a copy of the readme.html from the original code**
 

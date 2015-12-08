@@ -125,7 +125,7 @@ PROCEDURE rate(v (mV)) {LOCAL a_a, b_a, a_b, b_b
 	DEPEND Aalpha_a, Kalpha_a, V0alpha_a, 
 	       Abeta_a, Kbeta_a, V0beta_a,
                Aalpha_b, Kalpha_b, V0alpha_b,
-               Abeta_b, Kbeta_b, V0beta_b, celsius FROM -100 TO 30 WITH 13000 
+               Abeta_b, Kbeta_b, V0beta_b, celsius FROM -100 TO 100 WITH 20000 
 	a_a = alp_a(v)  
 	b_a = bet_a(v) 
 	a_b = alp_b(v)  
