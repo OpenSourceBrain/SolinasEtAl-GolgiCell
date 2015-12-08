@@ -1,0 +1,92 @@
+/*******Cerebellar Golgi Cell Model **********
+
+Developers:    Sergio Solinas & Egidio D'Angelo
+Code contributors:  Thierry Neius, Shyam Diwakar, Lia Forti
+Data Analysis: Sergio Solinas
+
+Work Progress: April 2004 - May 2007
+
+Developed At:  Università Degli Studi Di Pavia
+	       Dipartimento Di Scienze Fisiologiche
+	       Pavia - Italia
+	       
+Model Published in: 
+             Sergio M. Solinas, Lia Forti, Elisabetta Cesana, 
+             Jonathan Mapelli, Erik De Schutter and Egidio D`Angelo (2008)
+             Computational reconstruction of pacemaking and intrinsic 
+             electroresponsiveness in cerebellar golgi cells
+             Frontiers in Cellular Neuroscience 2:2
+
+
+********************************************/
+
+objref trace, filename
+strdef sys_comm
+
+// Append a string to a text file
+proc name2file() {
+    filename = new File()
+    filename.aopen($s1)
+    filename.printf("%s\n",$s2)
+    filename.close()
+}
+
+// Write a two column matrix to file
+proc tr2file() { 
+    filename = new File()
+    filename.wopen($s1)
+    trace = new Matrix($o2.size(),2)
+    trace.setcol(0,$o2)
+    trace.setcol(1,$o3)
+    trace.fprint(filename,"%g\t")
+    filename.close()
+    sprint(sys_comm,"~/bin/flrm.sh %s",$s1)
+    system(sys_comm)
+}
+
+// Write a spike train vector to file
+proc spt2file() { 
+    filename = new File()
+    filename.wopen($s1)
+    $o2.printf(filename)
+    filename.close()
+    sprint(sys_comm,"~/bin/flrm.sh %s",$s1)
+    system(sys_comm)
+}
+
+// Write a matrix to file
+proc SaveRates() {
+    filename = new File()
+    filename.wopen($s1)
+    trace = new Matrix(3,$o2.getcol(1).size())
+    trace.setrow(0,$o2.getcol(1))
+    trace.setrow(1,$o2.getcol(1).div($o2.getcol(1).get(0)/100).sub(100))
+    trace.setrow(2,$o2.getcol(9))
+    trace.fprint(filename,"%-4.1f\t")
+    filename.close($s1)
+    sprint(sys_comm,"~/bin/flrm.sh %s",$s1)
+    system(sys_comm)
+}
+
+// Read from file Golgi_count.txt the simulation index
+// and write the index+1
+func cplus() { local cnt
+    
+    filename = new File()
+    strdef countfile
+    countfile = "Golgi_count.txt"
+    filename.ropen(countfile)
+    if (!filename.isopen()) {
+	system("echo 0 > Golgi_count.txt")
+	filename.ropen(countfile)
+    }
+    cnt = filename.scanvar()
+    filename.ropen(countfile)
+    filename.close()
+    filename.wopen(countfile)
+    cnt =cnt+1
+    filename.printf("%f",cnt)
+    filename.close()    
+    print "Simulation number : ",cnt
+    return cnt
+    }

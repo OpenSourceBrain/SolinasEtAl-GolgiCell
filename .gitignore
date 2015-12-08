@@ -1,6 +1,8 @@
-/NEURON/test/*.dat
-/NEURON/*.dat
-/NEURON/Golgi_count.txt
+/NEURON*/test/*.dat
+/NEURON*/*.dat
+/NEURON*/Golgi_count.txt
+/NEURON*/SimData*
+
 /neuroConstruct/generatedNeuroML/README
 /neuroConstruct/generatedNeuroML2/*.svg
 neuroConstruct/generatedNeuroML2/*.dat
@@ -26,6 +28,5 @@ simulations
 *.bak
 *py.class
 *~
-NEURON/SimData*
 
 

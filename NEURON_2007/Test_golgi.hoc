@@ -1,0 +1,148 @@
+/*******Cerebellar Golgi Cell Model **********
+
+Developers:    Sergio Solinas & Egidio D'Angelo
+Code contributors:  Thierry Neius, Shyam Diwakar, Lia Forti
+Data Analysis: Sergio Solinas
+
+Work Progress: April 2004 - May 2007
+
+Developed At:  Universita Degli Studi Di Pavia
+	       Dipartimento Di Scienze Fisiologiche
+	       Pavia - Italia
+	       
+Model Published in: 
+             Sergio M. Solinas, Lia Forti, Elisabetta Cesana, 
+             Jonathan Mapelli, Erik De Schutter and Egidio D`Angelo (2008)
+             Computational reconstruction of pacemaking and intrinsic 
+             electroresponsiveness in cerebellar golgi cells
+             Frontiers in Cellular Neuroscience 2:2
+
+
+********************************************/
+
+
+/********************************************
+  This file has been added by Padraig Gleeson to facilitate testing the 
+  expected behaviour of the Golgi cell model
+********************************************/
+
+load_file("nrngui.hoc")
+
+// Load the Golgi cell template
+xopen("Golgi_template.hoc")
+objref Golgi[1]
+Golgi[0] = new Goc()
+
+v_init = -60
+dt = 0.025
+
+access Golgi[0].soma
+
+cvode.active(1)
+
+
+// Set output
+load_file("Save_data.hoc")
+// Initialize the counter
+simcnt = cplus()
+
+
+// Initialize all mechanisms
+tstop=1
+run()
+init()
+
+// Create new data directory
+strdef dirname, command
+sprint(dirname,"SimData_%d",simcnt)
+sprint(command,"mkdir -p %s",dirname)
+system(command)
+
+
+// Synaptic activation
+xopen("Synapses.hoc")
+
+// Model surface
+cell_surf_um = 0
+access Golgi[0].soma
+soma_surf = area(0.5)*1e-8 // cm2
+cell_surf_cm = cell_surf_cm + area(0.5)*1e-8*nseg
+for i = 0,2 {
+access Golgi[0].dend[i]
+cell_surf_cm = cell_surf_cm + area(0.5)*1e-8*nseg}
+dend_surf = cell_surf_cm - soma_surf
+access Golgi[0].axon
+axon_surf = area(0.5)*1e-8
+cell_surf_cm = cell_surf_cm + area(0.5)*1e-8*nseg
+conv_mA_pA = 1e9
+
+
+// Load scripts for electroresponsiveness study
+load_file("utils.hoc")
+access Golgi[0].soma
+objref time_tr
+time_tr = new Vector()
+time_tr.record(&t)
+print "Cell membrane area in um2 = ",cell_surf_cm*1e8
+
+// Inject current with gaussian noise
+access Golgi[0].soma
+objref gnoise
+gnoisestate = 0
+gnoise = new IClamp(0.5)
+gnoise.del = 1e9
+gnoise.dur = 100000
+gnoise.amp = 0
+objref r
+gauss_noise_amp = 0.032 // pA
+r = new Random()
+r.normal(0,gauss_noise_amp)
+r.play(&gnoise.amp)
+
+// Here we must choose where to place the VC and CC
+// electrodes: soma or micropipette?
+// use soma for gaussian noise injections!!!
+// use the micropipette for all other simulations
+// in order to reproduce the experimental setup
+access Golgi[0].elec
+// access Golgi[0].soma
+
+// Current & Voltage Clamp elements
+objref vclampy,cclampy[3]
+vclampy = new VClamp(0.5)
+cclampy[0] = new IClamp(0.5)
+cclampy[1] = new IClamp(0.5)
+objref store
+store = new Vector()
+
+tstop = 4000
+
+
+objref v_time
+v_time = new Vector()
+{ v_time.record(&t) }
+
+
+objref Soma_v
+{ Soma_v = new Vector() }
+{ Soma_v.record(&Golgi[0].soma.v(0.5))} 
+objref f_Soma_v
+
+run()
+
+
+
+f_Soma_v = new File()
+strdef filenameSoma
+{sprint(filenameSoma, "Soma.dat")}
+f_Soma_v.wopen(filenameSoma)
+
+for i=0, Soma_v.size()-1 {
+   f_Soma_v.printf("%f\t%f\n", v_time.x[i]/1000, Soma_v.x[i]/1000)
+}
+
+f_Soma_v.close()
+
+
+
+quit()

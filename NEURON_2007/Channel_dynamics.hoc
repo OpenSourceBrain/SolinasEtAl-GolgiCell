@@ -1,0 +1,264 @@
+/*******Cerebellar Golgi Cell Model **********
+
+Developers:    Sergio Solinas & Egidio D'Angelo
+Code contributors:  Thierry Neius, Shyam Diwakar, Lia Forti
+Data Analysis: Sergio Solinas
+
+Work Progress: April 2004 - May 2007
+
+Developed At:  Università Degli Studi Di Pavia
+	       Dipartimento Di Scienze Fisiologiche
+	       Pavia - Italia
+	       
+Model Published in: 
+             Sergio M. Solinas, Lia Forti, Elisabetta Cesana, 
+             Jonathan Mapelli, Erik De Schutter and Egidio D`Angelo (2008)
+             Computational reconstruction of pacemaking and intrinsic 
+             electroresponsiveness in cerebellar golgi cells
+             Frontiers in Cellular Neuroscience 2:2
+	     
+********************************************/
+	     
+objref h2,h3
+h2 = new HBox()
+h2.intercept(1)
+access Golgi[0].soma
+
+xpanel("1")
+xlabel("Sodium channels")
+xlabel("Na transient current activation")
+Aalpha_m_NaT = Aalpha_m_Golgi_Na*tcorr_Golgi_Na
+xvalue("Aalpha_m (/ms-mV)","Aalpha_m_NaT")
+Abeta_m_NaT = Abeta_m_Golgi_Na*tcorr_Golgi_Na
+xvalue("Abeta_m (/ms)","Abeta_m_NaT")
+xvalue("V0alpha_m","V0alpha_m_Golgi_Na", 1,"", 0, 0 )
+xvalue("V0beta_m","V0beta_m_Golgi_Na", 1,"", 0, 0 )
+xvalue("Kalpha_m","Kalpha_m_Golgi_Na", 1,"", 0, 0 )
+xvalue("Kbeta_m","Kbeta_m_Golgi_Na", 1,"", 0, 0 )
+xlabel("Na transient current inactivation")
+Aalpha_h_NaT = Aalpha_h_Golgi_Na*tcorr_Golgi_Na
+xvalue("Aalpha_h (/ms)","Aalpha_h_NaT")
+Abeta_h_NaT = Abeta_h_Golgi_Na*tcorr_Golgi_Na
+xvalue("Abeta_h (/ms)","Abeta_h_NaT")
+xvalue("V0alpha_h","V0alpha_h_Golgi_Na", 1,"", 0, 0 )
+xvalue("V0beta_h","V0beta_h_Golgi_Na", 1,"", 0, 0 )
+xvalue("Kalpha_h","Kalpha_h_Golgi_Na", 1,"", 0, 0 )
+xvalue("Kbeta_h","Kbeta_h_Golgi_Na", 1,"", 0, 0 )
+
+xlabel("Na persistent current")
+Aalpha_m_NaP = Aalpha_m_Golgi_NaP * tcorr_Golgi_NaP
+xvalue("Aalpha_m (/ms-mV)","Aalpha_m_NaP")
+Abeta_m_NaP = Abeta_m_Golgi_NaP * tcorr_Golgi_NaP
+xvalue("Abeta_m (/ms-mV)","Abeta_m_NaP")
+xvalue("V0alpha_m","V0alpha_m_Golgi_NaP", 1,"", 0, 0 )
+xvalue("V0beta_m","V0beta_m_Golgi_NaP", 1,"", 0, 0 )
+xvalue("Kalpha_m","Kalpha_m_Golgi_NaP", 1,"", 0, 0 )
+xvalue("Kbeta_m","Kbeta_m_Golgi_NaP", 1,"", 0, 0 )
+xvalue("V0_minf","V0_minf_Golgi_NaP", 1,"", 0, 0 )
+xvalue("K_minf","B_minf_Golgi_NaP", 1,"", 0, 0 )
+
+xlabel("Na resurgent current activation")
+Shiftalpha_s_NaR = Shiftalpha_s_Golgi_NaR*tcorr_Golgi_NaR
+xvalue("Shiftalpha_s (/ms)","Shiftalpha_s_NaR")
+Aalpha_s_NaR = Aalpha_s_Golgi_NaR*tcorr_Golgi_NaR
+xvalue("Aalpha_s (/ms)","Aalpha_s_NaR")
+Shiftbeta_s_NaR = Shiftbeta_s_Golgi_NaR*tcorr_Golgi_NaR
+xvalue("Shiftbeta_s (/ms)","Shiftbeta_s_NaR")
+Abeta_s_NaR = Abeta_s_Golgi_NaR*tcorr_Golgi_NaR
+xvalue("Abeta_s (/ms)","Abeta_s_NaR")
+xvalue("V0alpha_s","V0alpha_s_Golgi_NaR", 1,"", 0, 0 )
+xvalue("V0beta_s","V0beta_s_Golgi_NaR", 1,"", 0, 0 )
+xvalue("Kalpha_s","Kalpha_s_Golgi_NaR", 1,"", 0, 0 )
+xvalue("Kbeta_s","Kbeta_s_Golgi_NaR", 1,"", 0, 0 )
+xlabel("Na resurgent current inactivation")
+Aalpha_f_NaR = Aalpha_f_Golgi_NaR*tcorr_Golgi_NaR
+xvalue("Aalpha_f (/ms)","Aalpha_f_NaR")
+Abeta_f_NaR = Abeta_f_Golgi_NaR*tcorr_Golgi_NaR
+xvalue("Abeta_f (/ms)","Abeta_f_NaR")
+xvalue("V0alpha_f","V0alpha_f_Golgi_NaR", 1,"", 0, 0 ) 
+xvalue("V0beta_f","V0beta_f_Golgi_NaR", 1,"", 0, 0 )
+xvalue("Kalpha_f","Kalpha_f_Golgi_NaR", 1,"", 0, 0 )
+xvalue("Kbeta_f","Kbeta_f_Golgi_NaR", 1,"", 0, 0 )
+xpanel(1)
+
+xpanel("2")
+xlabel("Potassium channels")
+xlabel("KV current")
+Aalpha_n_KV = Aalpha_n_Golgi_KV*tcorr_Golgi_KV
+xvalue("Aalpha_n (/ms-mV)","Aalpha_n_KV")
+Abeta_n_KV = Abeta_n_Golgi_KV*tcorr_Golgi_KV
+xvalue("Abeta_n (/ms)","Abeta_n_KV")
+xvalue("V0alpha_n","V0alpha_n_Golgi_KV", 1,"", 0, 0 )
+xvalue("V0beta_n","V0beta_n_Golgi_KV", 1,"", 0, 0 )
+xvalue("Kalpha_n","Kalpha_n_Golgi_KV", 1,"", 0, 0 )
+xvalue("Kbeta_n","Kbeta_n_Golgi_KV", 1,"", 0, 0 )
+
+xlabel("KA current activation")
+Aalpha_a_KA = Aalpha_a_Golgi_KA*tcorr_Golgi_KA
+xvalue("Aalpha_a (/ms)","Aalpha_a_KA")
+Abeta_a_KA = Abeta_a_Golgi_KA*tcorr_Golgi_KA
+xvalue("Abeta_a (/ms)","Abeta_a_KA")
+xvalue("V0alpha_a","V0alpha_a_Golgi_KA", 1,"", 0, 0 )
+xvalue("V0beta_a","V0beta_a_Golgi_KA", 1,"", 0, 0 )
+xvalue("Kalpha_a","Kalpha_a_Golgi_KA", 1,"", 0, 0 )
+xvalue("Kbeta_a","Kbeta_a_Golgi_KA", 1,"", 0, 0 )
+xvalue("V0_ainf","V0_ainf_Golgi_KA", 1,"", 0, 0 )
+xvalue("K_ainf","K_ainf_Golgi_KA", 1,"", 0, 0 )
+
+xlabel("KA current inactivation")
+Aalpha_b_KA = Aalpha_b_Golgi_KA*tcorr_Golgi_KA
+xvalue("Aalpha_b (/ms)","Aalpha_b_KA")
+Abeta_b_KA = Abeta_b_Golgi_KA*tcorr_Golgi_KA
+xvalue("Abeta_b (/ms)","Abeta_b_KA")
+xvalue("V0alpha_b","V0alpha_b_Golgi_KA", 1,"", 0, 0 )
+xvalue("V0beta_b","V0beta_b_Golgi_KA", 1,"", 0, 0 )
+xvalue("Kalpha_b","Kalpha_b_Golgi_KA", 1,"", 0, 0 )
+xvalue("Kbeta_b","Kbeta_b_Golgi_KA", 1,"", 0, 0 )
+xvalue("V0_binf","V0_binf_Golgi_KA", 1,"", 0, 0 )
+xvalue("K_binf","K_binf_Golgi_KA", 1,"", 0, 0 )
+
+xlabel("KM current")
+Aalpha_n_KM = Aalpha_n_Golgi_KM * tcorr_Golgi_KM
+xvalue("Aalpha_n (/ms)","Aalpha_n_KM")
+Abeta_n_KM = Abeta_n_Golgi_KM * tcorr_Golgi_KM
+xvalue("Abeta_n (/ms)","Abeta_n_KM")
+xvalue("V0alpha_n","V0alpha_n_Golgi_KM", 1,"", 0, 0 )
+xvalue("V0beta_n","V0beta_n_Golgi_KM", 1,"", 0, 0 )
+xvalue("Kalpha_n","Kalpha_n_Golgi_KM", 1,"", 0, 0 )
+xvalue("Kbeta_n","Kbeta_n_Golgi_KM", 1,"", 0, 0 )
+xvalue("V0_ninf","V0_ninf_Golgi_KM", 1,"", 0, 0 )
+xvalue("K_ninf","B_ninf_Golgi_KM", 1,"", 0, 0 )
+xpanel()
+
+xpanel("3")
+xlabel("Calcium channels")
+xlabel("Ca-HVA current activation")
+Aalpha_s_HVA = Aalpha_s_Golgi_Ca_HVA*tcorr_Golgi_Ca_HVA
+xvalue("Aalpha_s (/ms)","Aalpha_s_HVA")
+Abeta_s_HVA = Abeta_s_Golgi_Ca_HVA*tcorr_Golgi_Ca_HVA
+xvalue("Abeta_s (/ms)","Abeta_s_HVA")
+xvalue("V0alpha_s","V0alpha_s_Golgi_Ca_HVA", 1,"", 0, 0 )
+xvalue("V0beta_s","V0beta_s_Golgi_Ca_HVA", 1,"", 0, 0 )
+xvalue("Kalpha_s","Kalpha_s_Golgi_Ca_HVA", 1,"", 0, 0 )
+xvalue("Kbeta_s","Kbeta_s_Golgi_Ca_HVA", 1,"", 0, 0 )
+
+xlabel("Ca_HVA current inactivation")
+Aalpha_u_HVA = Aalpha_u_Golgi_Ca_HVA*tcorr_Golgi_Ca_HVA
+xvalue("Aalpha_u (/ms)","Aalpha_u_HVA")
+Abeta_u_HVA = Abeta_u_Golgi_Ca_HVA*tcorr_Golgi_Ca_HVA
+xvalue("Abeta_u (/ms)","Abeta_u_HVA")
+xvalue("V0alpha_u","V0alpha_u_Golgi_Ca_HVA", 1,"", 0, 0 )
+xvalue("V0beta_u","V0beta_u_Golgi_Ca_HVA", 1,"", 0, 0 )
+xvalue("Kalpha_u","Kalpha_u_Golgi_Ca_HVA", 1,"", 0, 0 )
+xvalue("Kbeta_u","Kbeta_u_Golgi_Ca_HVA", 1,"", 0, 0 )
+
+xlabel("Ca-LVA current activation")
+xvalue("v0_m_inf","v0_m_inf_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("k_m_inf","k_m_inf_Golgi_Ca_LVA", 1,"", 0, 0 )
+	
+xvalue("C_tau_m","C_tau_m_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("A_tau_m","A_tau_m_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("v0_tau_m1","v0_tau_m1_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("v0_tau_m2","v0_tau_m2_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("k_tau_m1","k_tau_m1_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("k_tau_m2","k_tau_m2_Golgi_Ca_LVA", 1,"", 0, 0 )
+
+xlabel("Ca-LVA current intivation")
+xvalue("v0_h_inf","v0_h_inf_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("k_h_inf","k_h_inf_Golgi_Ca_LVA", 1,"", 0, 0 )
+
+xvalue("C_tau_h","C_tau_h_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("A_tau_h","A_tau_h_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("v0_tau_h1","v0_tau_h1_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("v0_tau_h2","v0_tau_h2_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("k_tau_h1","k_tau_h1_Golgi_Ca_LVA", 1,"", 0, 0 )
+xvalue("k_tau_h2","k_tau_h2_Golgi_Ca_LVA", 1,"", 0, 0 )
+
+xpanel()
+
+xpanel("4")
+xlabel("Potassium [Ca]-dependent channels")
+xlabel("KCa current activation")
+Aalpha_c_BK = Aalpha_c_Golgi_BK * tcorr_Golgi_BK
+xvalue("Aalpha_c (/ms)","Aalpha_c_BK")
+Abeta_c_BK = Abeta_c_Golgi_BK * tcorr_Golgi_BK
+xvalue("Abeta_c (/ms)","Abeta_c_BK")
+xvalue("Balpha_c","Balpha_c_Golgi_BK", 1,"", 0, 0 )
+xvalue("Bbeta_c","Bbeta_c_Golgi_BK", 1,"", 0, 0 )
+xvalue("Kalpha_c","Kalpha_c_Golgi_BK", 1,"", 0, 0 )
+xvalue("Kbeta_c","Kbeta_c_Golgi_BK", 1,"", 0, 0 )
+
+xlabel("SK current")
+xlabel("Markov 6-state model")
+dirc2t = dirc2_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c1->c2 (/ms-mM)","dirc2t")
+invc1t = invc1_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c1<-c2 (/ms)","invc1t")
+
+dirc3t = dirc3_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c2->c3 (/ms-mM)","dirc3t")
+invc2t = invc2_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c2<-c3 (/ms)","invc2t")
+
+dirc4t = dirc4_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c3->c4 (/ms-mM)","dirc4t")
+invc3t = invc3_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c3<-c4 (/ms)","invc3t")
+
+diro1t = diro1_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c3->o1 (/ms)","diro1t")
+invo1t = invo1_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c3<-o1 (/ms)","invo1t")
+
+diro2t = diro2_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c4->o2 (/ms)","diro2t")
+invo2t = invo2_Golgi_SK2 * tcorr_Golgi_SK2
+xvalue("c4<-o2 (/ms)","invo2t")
+
+xpanel()
+
+h2.intercept(0)
+h2.map("Golgi Channel Kinetics")
+
+h3 = new HBox()
+h3.intercept(1)
+
+xpanel("5")
+xlabel("Hyperpolarization activated current")
+xlabel("HCN1 channel")
+xlabel("Fast/Slow components")
+xvalue("fraction shift","rB_Golgi_hcn1")
+xvalue("fraction farctor","rA_Golgi_hcn1")
+xlabel("Activation")
+xvalue("Vhalf","Ehalf_Golgi_hcn1")
+xvalue("Slope","c_Golgi_hcn1")
+xlabel("Fast time course")
+xvalue("Vm factor","tCf_Golgi_hcn1")
+xvalue("Vm half","tDf_Golgi_hcn1")
+xvalue("Slope","tEf_Golgi_hcn1")
+xlabel("Slow time course")
+xvalue("Vm factor","tCs_Golgi_hcn1")
+xvalue("Vm half","tDs_Golgi_hcn1")
+xvalue("Slope","tEs_Golgi_hcn1")
+
+xlabel("HCN2 channel")
+xlabel("Fast/Slow components")
+xvalue("fraction shift","rB_Golgi_hcn2")
+xvalue("fraction farctor","rA_Golgi_hcn2")
+xlabel("Activation")
+xvalue("Vhalf","Ehalf_Golgi_hcn2")
+xvalue("Slope","c_Golgi_hcn2")
+xlabel("Fast time course")
+xvalue("Vm factor","tCf_Golgi_hcn2")
+xvalue("Vm half","tDf_Golgi_hcn2")
+xvalue("Slope","tEf_Golgi_hcn2")
+xlabel("Slow time course")
+xvalue("Vm factor","tCs_Golgi_hcn2")
+xvalue("Vm half","tDs_Golgi_hcn2")
+xvalue("Slope","tEs_Golgi_hcn2")
+xpanel()
+
+h3.intercept(0)
+h3.map("Golgi Channel Kinetics")
+
+
