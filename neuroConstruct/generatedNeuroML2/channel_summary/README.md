@@ -64,5 +64,20 @@ Channel information
 <a href="Kslow_CML.tau.png"><img alt="Kslow_CML time course" src="Kslow_CML.tau.png" height="220"/></a>
 </td>
 </tr>
+    <tr>
+<td width="120px">
+            <sup><b>CaHVA_CML</b><br/>
+            <a href="../CaHVA_CML.channel.nml">CaHVA_CML.channel.nml</a><br/>
+            <b>Ion: ca</b><br/>
+            <i>g = gmax * s<sup>2</sup> * u </i><br/>
+            High voltage Activated Ca2+ channel, based on mod file supplied with Solinas et al 2007 (ModelDB 112685)</sup>
+</td>
+<td>
+<a href="CaHVA_CML.inf.png"><img alt="CaHVA_CML steady state" src="CaHVA_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="CaHVA_CML.tau.png"><img alt="CaHVA_CML time course" src="CaHVA_CML.tau.png" height="220"/></a>
+</td>
+</tr>
 </table>
 

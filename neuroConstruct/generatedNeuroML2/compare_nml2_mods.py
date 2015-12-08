@@ -8,10 +8,11 @@ chans['NaP_CML']='Golgi_NaP'
 chans['NaT_CML']='Golgi_Na'
 chans['KV_CML']='Golgi_KV'
 chans['Kslow_CML']='Golgi_KM'
+chans['CaHVA_CML']='Golgi_Ca_HVA'
 
 problematic = ['Im']
 
-gates = ['m', 'h', 'n']
+gates = ['m', 'h', 'n', 's', 'u']
 
 temperatures = [20,23]
 

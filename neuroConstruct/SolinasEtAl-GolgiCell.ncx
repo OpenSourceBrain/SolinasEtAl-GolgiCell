@@ -4200,7 +4200,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    <float>1000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_884</string>
+   <string>Sim_892</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>

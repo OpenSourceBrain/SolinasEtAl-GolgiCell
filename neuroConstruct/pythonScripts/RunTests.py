@@ -79,9 +79,14 @@ def testAll(argv=None):
 
     # These were discovered using analyseSims = True above.
     # They need to hold for all simulators
-    spikeTimesToCheck = {'Golgi_CML_0': [41.48, 195.21, 354.82, 514.2, 673.29, 832.15, 990.82]}
+    spikes1 = [41.4649, 200.148, 364.018, 527.592, 690.815, 853.762]
+    spikes2 = [10.6423, 52.8202, 80.461, 123.383, 374.107, 554.01, 731.468, 907.188]
+    spikeTimesToCheck = {'Golgi_CML_0': spikes1,
+                         'Golgi_0': spikes1,
+                         'CML_0': spikes2,
+                         'mod_0': spikes2}
     
-    spikeTimeAccuracy = 0.05
+    spikeTimeAccuracy = 0.09
 
     report = simManager.checkSims(spikeTimesToCheck = spikeTimesToCheck,
                                   spikeTimeAccuracy = spikeTimeAccuracy)
