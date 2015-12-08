@@ -5,6 +5,9 @@ COMMENT
    
 	Author: E.DAngelo, T.Nieus, A. Fontana
 	Last revised: 8.5.2000
+
+        Note: Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4
+        PGleeson 12/2015
 ENDCOMMENT
  
 NEURON { 
@@ -115,7 +118,7 @@ PROCEDURE rate(v (mV)) {LOCAL a_s, b_s, a_u, b_u
 	DEPEND Aalpha_s, Kalpha_s, V0alpha_s, 
 	       Abeta_s, Kbeta_s, V0beta_s,
                Aalpha_u, Kalpha_u, V0alpha_u,
-               Abeta_u, Kbeta_u, V0beta_u, celsius FROM -100 TO 30 WITH 13000 
+               Abeta_u, Kbeta_u, V0beta_u, celsius FROM -100 TO 100 WITH 20000 
 	a_s = alp_s(v)  
 	b_s = bet_s(v) 
 	a_u = alp_u(v)  

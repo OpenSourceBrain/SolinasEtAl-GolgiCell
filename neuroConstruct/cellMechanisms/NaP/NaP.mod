@@ -5,6 +5,9 @@ COMMENT
    
 	Author: E.D Angelo, T.Nieus, A. Fontana 
 	Last revised: 8.5.2000
+
+        Note: Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4
+        PGleeson 12/2015
 ENDCOMMENT
  
 NEURON { 
@@ -84,7 +87,7 @@ FUNCTION bet_m(v(mV))(/ms) {
 PROCEDURE rate(v (mV)) {LOCAL a_m, b_m 
 	TABLE m_inf, tau_m 
 	DEPEND Aalpha_m, Kalpha_m, V0alpha_m, 
-	       Abeta_m, Kbeta_m, V0beta_m, celsius FROM -100 TO 30 WITH 13000
+	       Abeta_m, Kbeta_m, V0beta_m, celsius FROM -100 TO 100 WITH 20000
 	a_m = alp_m(v)  
 	b_m = bet_m(v) 
 :	m_inf = a_m/(a_m + b_m) 

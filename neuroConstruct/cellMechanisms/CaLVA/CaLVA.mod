@@ -23,6 +23,8 @@ TITLE Low threshold calcium current Cerebellum Golgi Cell Model
 :
 :   Written by Alain Destexhe, Salk Institute, Sept 18, 1992
 :
+:   See comments below regarding changes in TABLE information
+:
 
 INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 
@@ -131,9 +133,12 @@ PROCEDURE evaluate_fct(v(mV)) {
         phi_h = 3.0 ^ ((celsius-24)/10)
 
 :   NOTE: celsius added as dependency for table by PG 2010, differs from original mod file!
+
+:       Note: Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4
+:       PGleeson 12/2015
         
 	TABLE m_inf, tau_m, h_inf, tau_h
-	DEPEND shift, phi_m, phi_h, celsius FROM -100 TO 30 WITH 13000
+	DEPEND shift, phi_m, phi_h, celsius FROM -100 TO 100 WITH 20000
         m_inf = 1.0 / ( 1 + exp((v + shift - v0_m_inf)/k_m_inf) )
         h_inf = 1.0 / ( 1 + exp((v + shift - v0_h_inf)/k_h_inf) )
 	

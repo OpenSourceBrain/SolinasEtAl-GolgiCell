@@ -12,7 +12,7 @@
 
        <status value="stable">
             <meta:comment>Does not include check in beta_s for x1=(v+V0beta_s)/Kbeta_s (when v > ~-22mV), but this shouldn't matter as beta_s ~ 0 for these values.
-                30mV for table may be too low an upper limit (peak of AP can go above this)</meta:comment>
+            PG: Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4</meta:comment>
             <meta:contributor>
                 <meta:name>Matteo Farinella</meta:name>
             </meta:contributor>
@@ -123,7 +123,7 @@
         </current_voltage_relation>
         
         <impl_prefs>
-             <table_settings max_v="30" min_v="-100" table_divisions="13000"/>
+             <table_settings max_v="100" min_v="-100" table_divisions="20000"/>
 	</impl_prefs>
 	
     </channel_type>

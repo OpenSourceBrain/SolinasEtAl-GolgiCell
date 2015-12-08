@@ -13,6 +13,9 @@ Published in:
              electroresponsiveness in cerebellar golgi cells
              Frontiers in Cellular Neuroscience 2:2
 
+        Note: Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4
+        PGleeson 12/2015
+
 ENDCOMMENT
 
 NEURON {
@@ -159,7 +162,7 @@ FUNCTION q10(celsius (deg))  {
 
 PROCEDURE rate(v (mV)) { 
 	TABLE o_fast_inf, o_slow_inf, tau_f, tau_s
-	DEPEND celsius FROM -100 TO 30 WITH 13000
+	DEPEND celsius FROM -100 TO 100 WITH 20000
 
 	o_fast_inf = r(v,rA,rB) * o_inf(v,Ehalf,c)
         o_slow_inf = (1 - r(v,rA,rB)) * o_inf(v,Ehalf,c)

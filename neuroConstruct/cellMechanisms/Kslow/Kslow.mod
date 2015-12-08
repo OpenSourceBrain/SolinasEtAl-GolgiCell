@@ -5,6 +5,9 @@ COMMENT
    
 	Author: E.DAngelo, T.Nieus, A. Fontana
 	Last revised: 8.5.2000
+
+        Note: Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4
+        PGleeson 12/2015
 ENDCOMMENT
 
 NEURON { 
@@ -89,7 +92,7 @@ LOCAL q10
 PROCEDURE rate(v (mV)) {LOCAL a_n, b_n, s_n  
 	TABLE n_inf, tau_n 
 	DEPEND Aalpha_n, Kalpha_n, V0alpha_n, 
-	       Abeta_n, Kbeta_n, V0beta_n, V0_ninf, B_ninf, celsius FROM -100 TO 30 WITH 13000 
+	       Abeta_n, Kbeta_n, V0beta_n, V0_ninf, B_ninf, celsius FROM -100 TO 100 WITH 20000 
 	a_n = alp_n(v)  
 	b_n = bet_n(v)
 
