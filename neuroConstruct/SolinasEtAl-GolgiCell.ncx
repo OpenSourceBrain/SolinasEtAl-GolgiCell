@@ -4189,6 +4189,9 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
     <string></string>
    </void>
   </void>
+  <void property="varTimeStep">
+   <boolean>true</boolean>
+  </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.genesis.GenesisSettings"/>
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
@@ -4200,7 +4203,7 @@ forall if (ismembrane(&quot;k_ion&quot;)) {
    <float>1000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_894</string>
+   <string>Sim_902</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>

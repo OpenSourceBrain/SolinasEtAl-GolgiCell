@@ -1,3 +1,5 @@
+/NeuroML2/time.dat
+/NeuroML2/simulator.props
 /NEURON*/test/*.dat
 /NEURON*/*.dat
 /NEURON*/Golgi_count.txt
