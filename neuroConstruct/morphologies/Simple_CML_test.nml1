@@ -78,6 +78,17 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
                 
+                <bio:mechanism name="NaR_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="1.7">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+                
+                <bio:mechanism name="KA_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="8.0">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
                 
                 <bio:mechanism name="hcn1f_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="0.05">

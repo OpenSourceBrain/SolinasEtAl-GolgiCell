@@ -10,10 +10,12 @@ chans = {}
 #chans['Kslow_CML']='Golgi_KM'
 #chans['CaHVA_CML']='Golgi_Ca_HVA'
 chans['CaLVA_CML']='Golgi_Ca_LVA'
+chans['NaR_CML']='Golgi_NaR'
+chans['KA_CML']='Golgi_KA'
 
 problematic = ['Im']
 
-gates = ['m', 'h', 'n', 's', 'u']
+gates = ['m', 'h', 'n', 's', 'u', 'f', 'a', 'b']
 
 temperatures = [20,23]
 

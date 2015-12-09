@@ -36,6 +36,21 @@ Channel information
 </tr>
     <tr>
 <td width="120px">
+            <sup><b>NaR_CML</b><br/>
+            <a href="../NaR_CML.channel.nml">NaR_CML.channel.nml</a><br/>
+            <b>Ion: na</b><br/>
+            <i>g = gmax * s * f </i><br/>
+            Resurgent Na+ channel</sup>
+</td>
+<td>
+<a href="NaR_CML.inf.png"><img alt="NaR_CML steady state" src="NaR_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="NaR_CML.tau.png"><img alt="NaR_CML time course" src="NaR_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
             <sup><b>KV_CML</b><br/>
             <a href="../KV_CML.channel.nml">KV_CML.channel.nml</a><br/>
             <b>Ion: k</b><br/>
@@ -47,6 +62,21 @@ Channel information
 </td>
 <td>
 <a href="KV_CML.tau.png"><img alt="KV_CML time course" src="KV_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
+            <sup><b>KA_CML</b><br/>
+            <a href="../KA_CML.channel.nml">KA_CML.channel.nml</a><br/>
+            <b>Ion: k</b><br/>
+            <i>g = gmax * a<sup>3</sup> * b </i><br/>
+            A type K+ channel</sup>
+</td>
+<td>
+<a href="KA_CML.inf.png"><img alt="KA_CML steady state" src="KA_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="KA_CML.tau.png"><img alt="KA_CML time course" src="KA_CML.tau.png" height="220"/></a>
 </td>
 </tr>
     <tr>
