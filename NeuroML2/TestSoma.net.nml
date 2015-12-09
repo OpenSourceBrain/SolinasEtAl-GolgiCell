@@ -22,7 +22,7 @@
 
 
 
-            <!--There are no synaptic connections present in the network-->
+            <!--There are no synaptic connections present in the network
 
 
         <inputList id="Input_4" component="Input_4" population="CG_TestCML">
@@ -33,7 +33,7 @@
 
         <inputList id="Input_3" component="Input_3" population="CG_TestCML">
             <input id="0" target="../CG_Test/0/TestSoma" destination="synapses"/>
-        </inputList>
+        </inputList>-->
 
 
 

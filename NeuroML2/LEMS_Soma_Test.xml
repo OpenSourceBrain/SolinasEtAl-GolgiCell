@@ -10,7 +10,20 @@
 
 
         <!--   Channel/synapse files-->
+    <Include file="Golgi_Na.channel.nml"/>
+    <Include file="Golgi_NaR.channel.nml"/>
+    <Include file="Golgi_NaP.channel.nml"/>
+    
     <Include file="Golgi_KA.channel.nml"/>
+    <Include file="Golgi_KM.channel.nml"/>
+    <Include file="Golgi_KV.channel.nml"/>
+    
+    <Include file="Golgi_Ca_HVA.channel.nml"/>
+    
+    <Include file="Golgi_hcn1f.channel.nml"/>
+    <Include file="Golgi_hcn1s.channel.nml"/>
+    <Include file="Golgi_hcn2f.channel.nml"/>
+    <Include file="Golgi_hcn2s.channel.nml"/>
 
     <Include file="LeakCond.channel.nml"/>
     
@@ -24,9 +37,9 @@
 
         <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
         is used to allow validation of this file according to the LEMS schema specified above...-->
-    <Component type="Simulation" id="sim1" length="600.0ms" step="0.05ms" target="network_Soma">
+    <Component type="Simulation" id="sim1" length="600.0ms" step="0.005ms" target="network_Soma">
         
-        <Display id="CG_v" title="Soma VOLTAGE" xmin="-60.0" xmax="660.0" ymin="-120.0" ymax="64.0" timeScale="1ms">
+        <Display id="CG_v" title="Soma VOLTAGE" xmin="-60.0" xmax="660.0" ymin="-75" ymax="50" timeScale="1ms">
             <Line id="VOLTAGE" timeScale="1ms" quantity="CG_Test/0/TestSoma/v" scale="1 mV" color="#000000"/>
         </Display>
         

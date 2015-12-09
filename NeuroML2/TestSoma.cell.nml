@@ -45,7 +45,29 @@
                 <channelDensity condDensity="0.025 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
                 
                 
-                <channelDensity condDensity="8.0 mS_per_cm2" id="KA_all" ionChannel="Golgi_KA" segmentGroup="all" ion="k" erev="-84.69 mV"/>
+                <channelDensity condDensity="0.19 mS_per_cm2" id="NaP_all" ionChannel="Golgi_NaP" ion="na" erev="87.39 mV"/>
+                
+                <channelDensity condDensity="1.7 mS_per_cm2" id="NaR_all" ionChannel="Golgi_NaR"ion="na" erev="87.39 mV"/>
+                
+                <channelDensity condDensity="48.0 mS_per_cm2" id="Na_all" ionChannel="Golgi_Na" ion="na" erev="87.39 mV"/>
+                
+                
+                <channelDensity condDensity="8.0 mS_per_cm2" id="KA_all" ionChannel="Golgi_KA"ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="1.0 mS_per_cm2" id="Kslow_all" ionChannel="Golgi_KM" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="32.0 mS_per_cm2" id="KV_all" ionChannel="Golgi_KV" ion="k" erev="-84.69 mV"/>
+                
+                
+                <channelDensity condDensity="0.05 mS_per_cm2" id="hcn1f_all" ionChannel="Golgi_hcn1f" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.05 mS_per_cm2" id="hcn1s_all" ionChannel="Golgi_hcn1s" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2f_all" ionChannel="Golgi_hcn2f" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_all" ionChannel="Golgi_hcn2s" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensityNernst condDensity="0.46 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>
                 
                 
                 <!--
