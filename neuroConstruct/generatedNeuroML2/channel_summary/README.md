@@ -1,7 +1,7 @@
 Channel information
 ===================
     
-<p style="font-family:arial">Channel information at: T = 23.0 degC, E_rev = 0 mV, [Ca2+] = 0.00043 mM</p>
+<p style="font-family:arial">Channel information at: T = 23.0 degC, E_rev = 0 mV, [Ca2+] = 0.0005 mM</p>
 
 <table>
     <tr>
@@ -92,6 +92,21 @@ Channel information
 </td>
 <td>
 <a href="Kslow_CML.tau.png"><img alt="Kslow_CML time course" src="Kslow_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
+            <sup><b>KC_CML</b><br/>
+            <a href="../KC_CML.channel.nml">KC_CML.channel.nml</a><br/>
+            <b>Ion: k</b><br/>
+            <i>g = gmax * c </i><br/>
+            BK type voltage and [Ca2+] dependent K+ channel</sup>
+</td>
+<td>
+<a href="KC_CML.inf.png"><img alt="KC_CML steady state" src="KC_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="KC_CML.tau.png"><img alt="KC_CML time course" src="KC_CML.tau.png" height="220"/></a>
 </td>
 </tr>
     <tr>

@@ -45,17 +45,19 @@ The scaling factor for converting current into change in ion concentration shoul
                 </bio:mechanism>
 
 
-                <bio:mechanism name="Kslow_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="1.0">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
 
                 <bio:mechanism name="KV_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="32.0">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
+                
+                <bio:mechanism name="KC_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="3.0">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+                
 
                 <bio:mechanism name="LeakCond" type="Channel Mechanism" passive_conductance="true">
                     <bio:parameter name="e" value="-55.0">
@@ -78,41 +80,6 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
                 
-                <bio:mechanism name="NaR_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="1.7">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-                
-                <bio:mechanism name="KA_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="8.0">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-                
-                <bio:mechanism name="hcn1f_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.05">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn1s_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.05">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2f_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="hcn2s_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="0.08">
-                        <bio:group>all</bio:group>
-                    </bio:parameter>
-                </bio:mechanism>
                 
 
                 <bio:spec_capacitance>
