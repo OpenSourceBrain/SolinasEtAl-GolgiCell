@@ -4,11 +4,12 @@ import os.path
 
 
 chans = {}
-chans['NaP_CML']='Golgi_NaP'
-chans['NaT_CML']='Golgi_Na'
-chans['KV_CML']='Golgi_KV'
-chans['Kslow_CML']='Golgi_KM'
-chans['CaHVA_CML']='Golgi_Ca_HVA'
+#chans['NaP_CML']='Golgi_NaP'
+#chans['NaT_CML']='Golgi_Na'
+#chans['KV_CML']='Golgi_KV'
+#chans['Kslow_CML']='Golgi_KM'
+#chans['CaHVA_CML']='Golgi_Ca_HVA'
+chans['CaLVA_CML']='Golgi_Ca_LVA'
 
 problematic = ['Im']
 

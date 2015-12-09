@@ -79,5 +79,20 @@ Channel information
 <a href="CaHVA_CML.tau.png"><img alt="CaHVA_CML time course" src="CaHVA_CML.tau.png" height="220"/></a>
 </td>
 </tr>
+    <tr>
+<td width="120px">
+            <sup><b>CaLVA_CML</b><br/>
+            <a href="../CaLVA_CML.channel.nml">CaLVA_CML.channel.nml</a><br/>
+            <b>Ion: ca2</b><br/>
+            <i>g = gmax * m<sup>2</sup> * h </i><br/>
+            Low voltage Activated Ca2+ channel. Uses name ca2 for calcium ion</sup>
+</td>
+<td>
+<a href="CaLVA_CML.inf.png"><img alt="CaLVA_CML steady state" src="CaLVA_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="CaLVA_CML.tau.png"><img alt="CaLVA_CML time course" src="CaLVA_CML.tau.png" height="220"/></a>
+</td>
+</tr>
 </table>
 

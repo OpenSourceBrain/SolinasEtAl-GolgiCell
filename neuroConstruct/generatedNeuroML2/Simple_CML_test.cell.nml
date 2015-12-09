@@ -3,6 +3,8 @@
 
     <include href="CaHVA_CML.channel.nml"/>
 
+    <include href="CaLVA_CML.channel.nml"/>
+
     <include href="Golgi_CALC_CML.nml"/>
 
     <include href="Kslow_CML.channel.nml"/>
@@ -51,6 +53,8 @@
         <biophysicalProperties id="biophys">
 
             <membraneProperties>
+                
+                <channelDensity condDensity="0.25 mS_per_cm2" id="CaLVA_CML_all" ionChannel="CaLVA_CML" ion="ca2" erev="132.458 mV"/>
                 
                 <channelDensity condDensity="1.0 mS_per_cm2" id="Kslow_CML_all" ionChannel="Kslow_CML" ion="k" erev="-84.69 mV"/>
                 
