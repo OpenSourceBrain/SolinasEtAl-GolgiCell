@@ -94,5 +94,65 @@ Channel information
 <a href="CaLVA_CML.tau.png"><img alt="CaLVA_CML time course" src="CaLVA_CML.tau.png" height="220"/></a>
 </td>
 </tr>
+    <tr>
+<td width="120px">
+            <sup><b>hcn1f_CML</b><br/>
+            <a href="../hcn1f_CML.channel.nml">hcn1f_CML.channel.nml</a><br/>
+            <b>Ion: h</b><br/>
+            <i>g = gmax * f </i><br/>
+            hcn1 channel - fast component</sup>
+</td>
+<td>
+<a href="hcn1f_CML.inf.png"><img alt="hcn1f_CML steady state" src="hcn1f_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="hcn1f_CML.tau.png"><img alt="hcn1f_CML time course" src="hcn1f_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
+            <sup><b>hcn1s_CML</b><br/>
+            <a href="../hcn1s_CML.channel.nml">hcn1s_CML.channel.nml</a><br/>
+            <b>Ion: h</b><br/>
+            <i>g = gmax * s </i><br/>
+            hcn1 channel - slow component</sup>
+</td>
+<td>
+<a href="hcn1s_CML.inf.png"><img alt="hcn1s_CML steady state" src="hcn1s_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="hcn1s_CML.tau.png"><img alt="hcn1s_CML time course" src="hcn1s_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
+            <sup><b>hcn2f_CML</b><br/>
+            <a href="../hcn2f_CML.channel.nml">hcn2f_CML.channel.nml</a><br/>
+            <b>Ion: h</b><br/>
+            <i>g = gmax * f </i><br/>
+            hcn2 channel - fast component</sup>
+</td>
+<td>
+<a href="hcn2f_CML.inf.png"><img alt="hcn2f_CML steady state" src="hcn2f_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="hcn2f_CML.tau.png"><img alt="hcn2f_CML time course" src="hcn2f_CML.tau.png" height="220"/></a>
+</td>
+</tr>
+    <tr>
+<td width="120px">
+            <sup><b>hcn2s_CML</b><br/>
+            <a href="../hcn2s_CML.channel.nml">hcn2s_CML.channel.nml</a><br/>
+            <b>Ion: h</b><br/>
+            <i>g = gmax * s </i><br/>
+            hcn2 channel - slow component</sup>
+</td>
+<td>
+<a href="hcn2s_CML.inf.png"><img alt="hcn2s_CML steady state" src="hcn2s_CML.inf.png" height="220"/></a>
+</td>
+<td>
+<a href="hcn2s_CML.tau.png"><img alt="hcn2s_CML time course" src="hcn2s_CML.tau.png" height="220"/></a>
+</td>
+</tr>
 </table>
 
