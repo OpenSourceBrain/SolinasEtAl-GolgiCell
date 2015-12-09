@@ -11,7 +11,7 @@
     <channel_type name="hcn2f_CML">
 
        <status value="stable">
-            <meta:comment>30mV for table may be too low an upper limit (peak of AP can go above this).
+            <meta:comment>Changed table values -100mV->100mV; see https://github.com/OpenSourceBrain/SolinasEtAl-GolgiCell/issues/4
 Note: no q10 temperature dependence in channel.
 Does not contain correction in original mod file for inf below -108.70.</meta:comment>
             <meta:contributor>
@@ -129,7 +129,7 @@ Last revised: May 2007</meta:comment>
         </current_voltage_relation> 
         
         <impl_prefs>
-		    <table_settings max_v="30" min_v="-100" table_divisions="13000"/>
+		    <table_settings max_v="100" min_v="-100" table_divisions="20000"/>
 	</impl_prefs>
         
         

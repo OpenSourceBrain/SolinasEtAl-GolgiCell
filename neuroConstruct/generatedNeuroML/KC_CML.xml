@@ -105,7 +105,7 @@
         </current_voltage_relation> 
         
         <impl_prefs>
-		<table_settings max_v="30" min_v="-100" table_divisions="13000"/>
+		<table_settings max_v="100" min_v="-100" table_divisions="20000"/>
         </impl_prefs>
         
     </channel_type>

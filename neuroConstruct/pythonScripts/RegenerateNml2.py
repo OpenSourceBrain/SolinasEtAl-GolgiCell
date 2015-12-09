@@ -30,6 +30,11 @@ projFile = File(os.getcwd(), "../SolinasEtAl-GolgiCell.ncx")
 simConfigs = []
 simConfigs.append("TestNML2")
 
+print("Generating NeuroML v1.8.1 files...")
+nc.generateNeuroML1(projFile, ['Fig. 2A: Pacemaking'])
+    
+
+print("Generating NeuroML v2 files...")
 nc.generateNeuroML2(projFile, simConfigs)
 
 # Some extra files have been committed for testing or to provide other LEMS/NeuroML 2 examples
