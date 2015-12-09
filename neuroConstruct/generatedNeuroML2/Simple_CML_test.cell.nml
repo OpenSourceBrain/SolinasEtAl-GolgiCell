@@ -65,7 +65,7 @@
 
                 <!--Reversal potential for ca in CaHVA_CML will be calculated by Nernst equation from internal & external calcium-->
 
-                <channelDensityNernst condDensity="4.6E-11 mS_per_cm2" id="CaHVA_CML_all" ionChannel="CaHVA_CML" ion="ca"/>
+                <channelDensityNernst condDensity="0.46 mS_per_cm2" id="CaHVA_CML_all" ionChannel="CaHVA_CML" ion="ca"/>
                 
 
                 <spikeThresh value="0 mV"/>

@@ -30,7 +30,7 @@
             <biophysics units="Physiological Units">
 
                 <bio:mechanism name="CaHVA_CML" type="Channel Mechanism">
-                    <bio:parameter name="gmax" value="4.6E-11">
+                    <bio:parameter name="gmax" value="0.46">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>

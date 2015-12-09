@@ -3,7 +3,7 @@
 
     <notes>
 
-Network structure (NeuroML 2beta4) for project: SolinasEtAl-GolgiCell saved with neuroConstruct v1.7.1 on: 21:17:30, 08-Dec-15
+Network structure (NeuroML 2beta4) for project: SolinasEtAl-GolgiCell saved with neuroConstruct v1.7.1 on: 11:02:48, 09-Dec-15
 
 Cell Group: CML_test contains 1 cells
 
@@ -29,7 +29,7 @@ Cell Group: CML_test contains 1 cells
                 <property tag="color" value="0.00390625 0.59375 0.2109375"/>
             </annotation>
             <instance id="0">
-                <location x="155.35257" y="329.4916" z="177.32187"/>
+                <location x="296.04605" y="236.8382" z="358.89175"/>
             </instance>
         </population>
 
