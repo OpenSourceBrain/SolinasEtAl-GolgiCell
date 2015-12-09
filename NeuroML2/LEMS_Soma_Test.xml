@@ -1,0 +1,48 @@
+<Lems xmlns="http://www.neuroml.org/lems/0.7.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/lems/0.7.2  https://raw.github.com/LEMS/LEMS/development/Schemas/LEMS/LEMS_v0.7.2.xsd">
+
+    <Target component="sim1" reportFile="simulator.props" timesFile="time.dat"/>
+
+        <!--Include standard NeuroML 2 ComponentType definitions-->
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+
+        <!--   Channel/synapse files-->
+    <Include file="Golgi_KA.channel.nml"/>
+
+    <Include file="LeakCond.channel.nml"/>
+    
+    <Include file="Golgi_CALC_CML.nml"/>
+
+        <!--   Cell files-->
+    <Include file="TestSoma.cell.nml"/>
+        <!--   Network file-->
+    <Include file="TestSoma.net.nml"/>
+    
+
+        <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
+        is used to allow validation of this file according to the LEMS schema specified above...-->
+    <Component type="Simulation" id="sim1" length="600.0ms" step="0.05ms" target="network_Soma">
+        
+        <Display id="CG_v" title="Soma VOLTAGE" xmin="-60.0" xmax="660.0" ymin="-120.0" ymax="64.0" timeScale="1ms">
+            <Line id="VOLTAGE" timeScale="1ms" quantity="CG_Test/0/TestSoma/v" scale="1 mV" color="#000000"/>
+        </Display>
+        
+        <Display id="CG_conc" title="Soma [Ca2+]" xmin="-60" xmax="660" ymin="-0.0006" ymax="0.006" timeScale="1ms">
+            <Line id="[Ca2+]" timeScale="1ms" quantity="CG_Test/0/TestSoma/caConc" scale="1 mM" color="#000000"/>
+        </Display>
+        
+        
+        
+        
+        <OutputFile id="v" fileName="Soma.v.dat">
+            <OutputColumn id="v" quantity="CG_Test/0/TestSoma/v"/>
+        </OutputFile>
+        
+        
+    </Component>
+
+
+</Lems>
