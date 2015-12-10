@@ -1,0 +1,55 @@
+
+load_file("nrngui.hoc")
+
+xopen("Golgi_template.hoc")
+
+
+
+load_file("sessions/Fig5Bi.hoc")     
+
+
+createcells()
+
+
+access Golgi[0].soma
+objref time_tr
+time_tr = new Vector()
+time_tr.record(&t)
+
+
+
+objref v_time
+v_time = new Vector()
+{ v_time.record(&t) }
+
+
+objref Soma_v[3]
+
+for i=0, 1 { Soma_v[i] = new Vector() 
+   Soma_v[i].record(&Golgi[i].soma.v(0.5))} 
+
+
+objref f_Soma_v
+
+
+run()
+
+
+
+f_Soma_v = new File()
+strdef filenameSoma
+{sprint(filenameSoma, "Soma_fig5Bi.dat")}
+f_Soma_v.wopen(filenameSoma)
+
+for i=0, Soma_v[0].size()-1 {
+ 
+    for j=0,2 {
+       if (j==0) {f_Soma_v.printf("%f\t", v_time.x[i]/1000)
+     }else { f_Soma_v.printf("%f\t",Soma_v[j-1].x[i]/1000) }
+       
+       }
+    f_Soma_v.printf("\n")
+}
+
+f_Soma_v.close()
+quit()
