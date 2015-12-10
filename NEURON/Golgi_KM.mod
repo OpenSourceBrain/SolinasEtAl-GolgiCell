@@ -8,9 +8,10 @@ COMMENT
 ENDCOMMENT
 
 NEURON { 
-	SUFFIX Golgi_KM 
+	SUFFIX Golgi_KM
 	USEION k READ ek WRITE ik 
-	RANGE gkbar, ik, g
+	RANGE gkbar, ik, g, V0_ninf
+
 	:RANGE Aalpha_n, Kalpha_n, V0alpha_n, alpha_n, beta_n 
 	:RANGE Abeta_n, Kbeta_n, V0beta_n
 	:RANGE V0_ninf, B_ninf
@@ -23,6 +24,7 @@ UNITS {
 } 
  
 PARAMETER { 
+    
 	Aalpha_n = 0.0033 (/ms)
 	Kalpha_n = 40 (mV)
 	V0alpha_n = -30 (mV)
@@ -31,7 +33,7 @@ PARAMETER {
 	Kbeta_n = -20 (mV)
 	V0beta_n = -30 (mV)
 	
-	V0_ninf = -35 (mV)
+	V0_ninf =   -35 (mV)          
 	B_ninf =  6 (mV)
 	
 	gkbar= 0.001 (mho/cm2)
@@ -87,9 +89,13 @@ LOCAL delta
 LOCAL q10
  
 PROCEDURE rate(v (mV)) {LOCAL a_n, b_n, s_n  
-	TABLE n_inf, tau_n 
-	DEPEND Aalpha_n, Kalpha_n, V0alpha_n, 
-	       Abeta_n, Kbeta_n, V0beta_n, V0_ninf, B_ninf, celsius FROM -100 TO 100 WITH 20000 
+     COMMENT
+     The lines below are under comment to allow changes of these parameters at the hoc level;
+     otherwise the changes to the default parameter values defined at the hoc level are not implemented.
+     ENDCOMMENT
+	:TABLE n_inf, tau_n 
+	:DEPEND Aalpha_n, Kalpha_n, V0alpha_n, 
+	       :Abeta_n, Kbeta_n, V0beta_n, V0_ninf, B_ninf, celsius FROM -100 TO 30 WITH 13000 
 	a_n = alp_n(v)  
 	b_n = bet_n(v)
 
