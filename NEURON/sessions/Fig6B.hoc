@@ -1,0 +1,79 @@
+/*added by Rokas Stanislovas (2015) */
+
+objectvar save_window_, save_window1_, save_window2_, save_window3_
+objref stimulus[1]
+objref Golgi[1]
+objref b
+
+proc createcells() {
+
+Golgi[0]=new Goc()
+
+v_init = -70
+ dt = 0.025
+ tstop=100
+
+
+Golgi[0].soma { el_Golgi_lkg= -62.0 }
+
+Golgi[0].axon { el_Golgi_lkg=-62.0 }
+
+for i = 0,2 Golgi[0].dend[i] {  el_Golgi_lkg= -62.0  } 
+
+
+// soma surface over which voltage-gated mechanisms are distributed
+
+Golgi[0].soma {
+soma_surf = area(0.5)*1e-8*nseg }   // in cm2
+
+conv_mA_nA = 1e6
+
+}
+
+
+proc setupgui() {
+load_file("nrngui.hoc")
+nrncontrolmenu()
+
+b=new VBox()
+
+
+{
+
+b.intercept(1)
+save_window_ = new Graph(0)
+save_window1_=new Graph(0)
+save_window2_=new Graph(0)
+save_window3_=new Graph(0)
+
+save_window_.size(-861.25,2086.25,-69.9167,39.9163)
+save_window1_.size(-861.25,2086.25,-69.9167,39.9163)
+save_window2_.size(-861.25,2086.25,-69.9167,39.9163)
+save_window3_.size(-861.25,2086.25,-69.9167,39.9163)
+
+{save_window_.view(80, -100, 15, 150, 300, 100, 550, 400)}
+{save_window1_.view(80, -20, 15, 40, 300, 100, 550, 400)}
+save_window2_.view(80, -0.7, 15, 1, 300, 100, 550, 300)
+{save_window3_.view(80, -150, 15, 2000, 300, 100, 550, 300)}
+
+
+
+graphList[0].append(save_window_)
+graphList[0].append(save_window1_)
+graphList[0].append(save_window2_)
+graphList[0].append(save_window3_)
+
+
+save_window_.addvar("Voltage response (mV)","Golgi[0].elec.v( 0.5 )", 2, 1, 0.8, 0.9, 2)
+save_window1_.addexpr("I K-C (nA)","conv_mA_nA*soma_surf*Golgi[0].soma.ik_Golgi_BK(0.5)", 3, 1, 0.8, 0.9, 2)
+save_window1_.addexpr("I K-V (nA)","conv_mA_nA*soma_surf*Golgi[0].soma.ik_Golgi_KV(0.5)",2,1, 0.8, 0.9, 2)
+save_window1_.addexpr("I Na-t (nA)","conv_mA_nA*soma_surf*Golgi[0].soma.ina_Golgi_Na(0.5)",4,1, 0.8, 0.9, 2)
+save_window1_.addexpr("I total (nA)","conv_mA_nA*soma_surf*Golgi[0].soma.ik_Golgi_BK(0.5)+conv_mA_nA*soma_surf*Golgi[0].soma.ik_Golgi_KV(0.5)+conv_mA_nA*soma_surf*Golgi[0].soma.ina_Golgi_Na(0.5)",5,1, 0.8, 0.9, 2)
+save_window2_.addexpr("I Ca-HVA (nA)","conv_mA_nA*soma_surf*Golgi[0].soma.ica_Golgi_Ca_HVA(0.5)",6,1, 0.8, 0.9, 2)
+save_window3_.addexpr("Ca in (nM)","1e6*Golgi[0].soma.cai(0.5)", 1, 1, 0.8, 0.9, 2)
+b.intercept(0)
+b.map("Ionic currents and intracellular calcium changes: Fig6B",500,0,700,600)
+}
+
+{doNotify()}
+}

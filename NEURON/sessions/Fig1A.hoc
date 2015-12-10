@@ -1,0 +1,25 @@
+/* added by Rokas Stanislovas (2015) */
+
+objref Golgi[1]
+objref Morphology_plot[1]
+
+proc createcells() {
+
+Golgi[0]= new Goc() }
+
+
+proc setupgui() {
+
+load_file("nrngui.hoc")
+
+ 
+objref Morphology_plot[1]
+ 
+Morphology_plot[0]= new PlotShape()
+
+
+
+
+Morphology_plot[0].exec_menu("View = plot")  }
+
+
