@@ -10,7 +10,7 @@
     <pulseGenerator id="Input_3" delay="100.0ms" duration="100.0ms" amplitude="-1.0E-5uA"/>
 
     
-    <network id="network_Soma" type="networkWithTemperature" temperature="34 degC">
+    <network id="network_Soma" type="networkWithTemperature" temperature="23 degC">
 
         
 
