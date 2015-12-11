@@ -1,0 +1,30 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+
+target: ../Test_fig5Bi.hoc
+engine: NEURON
+
+mep: .test_fig5Bi.mep
+experiments:
+  phar_pacemaking_control:
+    observables:
+      spike times:
+        file: 
+          path: ../Soma_fig5Bi.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+  phar_pacemaking_IK_slow_shift:
+    observables:
+      spike times:
+        file: 
+          path: ../Soma_fig5Bi.dat
+          columns: [0,2]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+  

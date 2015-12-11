@@ -1,0 +1,19 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+
+target: ../Test_fig6B.hoc
+engine: NEURON
+
+mep: .test_fig6B.mep
+experiments:
+  ionic_currents_and_calcium:
+    observables:
+      spike times:
+        file: 
+          path: ../Soma_fig6B.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+
