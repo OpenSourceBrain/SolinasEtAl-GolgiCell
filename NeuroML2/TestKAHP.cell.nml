@@ -44,22 +44,11 @@
             <membraneProperties>
                 
                 <channelDensity condDensity="0.021 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
-               
-                <channelDensity condDensity="0.038 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
                 
-                 <!--
-                <channelDensity condDensity="36.0 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
-               
+                <channelDensity condDensity="3.8e-6 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
                 
-                <channelDensity condDensity="32.0 mS_per_cm2" id="KV_CML_all" ionChannel="KV_CML" ion="k" erev="-84.69 mV"/>
-                
-                <channelDensity condDensity="0.19 mS_per_cm2" id="NaP_CML_all" ionChannel="NaP_CML" ion="na" erev="87.39 mV"/>
-                
-                <channelDensity condDensity="48.0 mS_per_cm2" id="NaT_CML_all" ionChannel="NaT_CML" ion="na" erev="87.39 mV"/>
-                
-
-
-                <channelDensityNernst condDensity="0.46 mS_per_cm2" id="CaHVA_CML_all" ionChannel="CaHVA_CML" ion="ca"/>-->
+                <!--
+                -->
                 
 
                 <spikeThresh value="0 mV"/>

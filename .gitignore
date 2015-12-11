@@ -7,6 +7,7 @@
 
 /NeuroML2/*.mod
 /NeuroML2/*.hoc
+/NeuroML2/*.dat
 
 /NEURON*/test/*.dat
 /NEURON*/*.dat
