@@ -1,0 +1,70 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+
+target: Test_fig9B.hoc
+engine: NEURON
+
+mep: .test_fig9B.mep
+experiments:
+  Subthreshold oscillations:Control block:I Na,I Na-R,I K-V,I K-A,I K-C,ICa-LVA,I-hcn2 block (mV):
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9B.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0
+  Subthreshold oscillations:Control block+50% I Na-P (mV):
+    observables:
+      resting:
+        file: 
+          path: Soma_fig9B.dat
+          columns: [0,2]
+          scaling: [1, 1]
+        tolerance: 1
+  Subthreshold oscillations:Control block+50% I Na-P +120pA (mV):
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9B.dat
+          columns: [0,3]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0
+  Subthreshold oscillations:Control block+I k-slow=0 (mV):
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9B.dat
+          columns: [0,4]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0
+  Subthreshold oscillations:Control block+I k-AHP=0 (mV):
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9B.dat
+          columns: [0,5]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0
+  Subthreshold oscillations:Control block+I k-AHP,I k-slow=0 (mV):
+     observables:
+      spike times:
+        file: 
+          path: Soma_fig9B.dat
+          columns: [0,6]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0

@@ -1,0 +1,121 @@
+/*added by Rokas Stanislovas (2015) */
+
+objectvar save_window_
+objectvar save_window_, save_window1_, save_window2_
+objref cclamp[21]
+objref depolarizing_stimulus[21]
+objref spike_count, spike_vector, current_vector
+objref obj1, obj2
+objref spike_times[19]
+objref spike_rate_helper[19]
+objref instantaneous_rate
+objref g
+objref Golgi[19]
+
+proc createcells() {
+
+for i=0,18 { Golgi[i]=new Goc()  }
+
+
+v_init = -70
+ dt = 0.025
+ tstop=1050
+
+
+for j=0,18 Golgi[j].soma { el_Golgi_lkg= -62.0 }
+
+for j=0,18 Golgi[j].axon { el_Golgi_lkg=-62.0 }
+
+for j=0,18 { for i = 0,2 Golgi[j].dend[i] {  el_Golgi_lkg= -62.0  } }
+
+
+
+for i= 0,18 Golgi[i].elec {
+
+  
+ cclamp[i]=new IClamp(0.5)
+ 
+ cclamp[i].del=0
+ cclamp[i].dur=2000
+ cclamp[i].amp=-0.035 
+
+
+}
+
+for i=0,18 Golgi[i].elec {
+
+depolarizing_stimulus[i]=new IClamp(0.5)
+depolarizing_stimulus[i].del=10
+depolarizing_stimulus[i].dur=1014
+depolarizing_stimulus[i].amp=0.02*(i+2)
+
+}
+}
+
+
+proc setupgui() {
+
+load_file("nrngui.hoc")
+nrncontrolmenu()
+
+run()
+
+current_vector= new Vector()
+
+for i=0,18   { current_vector.append(0.02*(i+2)) }
+
+current_vector.mul(1000)
+
+instantaneous_rate=new Vector()
+
+
+for i=0,18 {
+spike_times[i]=new Vector()
+spike_rate_helper[i]=new Vector()
+spike_times[i].deriv(Golgi[i].SpikeTrain,1,1)
+spike_rate_helper[i].resize(spike_times[i].size())
+spike_rate_helper[i].fill(1000)
+spike_rate_helper[i].div(spike_times[i]) 
+instantaneous_rate.append(spike_rate_helper[i].x[0])  }
+
+
+spike_count= new Vector() 
+spike_vector=new Vector()
+
+
+for i=0,18 {  spike_count.append(Golgi[i].SpikeTrain.size()) }
+
+spike_vector=spike_count.div(1.014)
+
+
+g=new VBox()
+
+{
+g.intercept(1)
+
+save_window_=new Graph(0)
+save_window_.size(-861.25,2086.25,-69.9167,39.9163)
+{save_window_.view(-100, 0, 550, 120, 300, 100, 550, 300)}
+
+
+
+save_window_.label(450,130,"Mean firing rate (spikes/sec)",0,1,1,1,1)
+save_window_.label(450,120,"Instantaneous firing rate(spikes/sec)",0,1,1,1,2)
+
+spike_vector.plot(save_window_,current_vector,1,1)
+instantaneous_rate.plot(save_window_,current_vector,2,1)
+
+
+
+g.intercept(0)
+g.map("Response to depolarization: Fig4Bii, frequency plot (sp/s versus current input in pA)",500,0,700,400)
+
+}
+
+{doNotify() }
+
+}
+
+
+
+

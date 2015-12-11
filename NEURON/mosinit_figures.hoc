@@ -1,0 +1,68 @@
+/* this file was added by Rokas Stanislovas (2015); demonstration panel for the results of the Solinas et al. paper (2007) */
+
+load_file("nrngui.hoc")
+
+strdef tstr
+
+xpanel("Golgi cell activity modes under different experimental conditions")
+
+xlabel("Click one of the below")
+xradiobutton("Schematics of the Golgi model: Fig1A","change(\"sessions/Fig1A\")")
+xradiobutton("Rebound Excitation: Fig3A", "change(\"sessions/Fig3A\")")
+xradiobutton("The response to depolarization: Fig4A","change(\"sessions/Fig4A\")")
+xradiobutton("Firing rate versus depolarizing current: Fig4Bii","change(\"sessions/Fig4Bii\")")
+xradiobutton("Pharmacology of pacemaking: Fig5A","change(\"sessions/Fig5A\")")
+xradiobutton("Pharmacology of pacemaking: Fig5Bi","change(\"sessions/Fig5Bi\")")
+xradiobutton("Pharmacology of pacemaking, frequency plot: Fig5Bii","change(\"sessions/Fig5Bii\")")
+xradiobutton("Ionic currents and intracellular calcium changes: Fig6A","change(\"sessions/Fig6A\")")
+xradiobutton("Ionic currents and intracellular calcium changes: Fig6B","change(\"sessions/Fig6B\")")
+xradiobutton("Ionic currents controlling response intensity and latency : Fig7A","change(\"sessions/Fig7A\")")
+xradiobutton("Ionic currents controlling response intensity and latency: Fig7B","change(\"sessions/Fig7B\")")
+xradiobutton("Subthreshold oscillations and spiking coupling: Fig9A","change(\"sessions/Fig9A\")")
+xradiobutton("Subthreshold oscillations and spiking coupling: Fig9B","change(\"sessions/Fig9B\")")
+xradiobutton("Subthreshold oscillations and spiking coupling: Fig9C","change(\"sessions/Fig9C\")")
+
+xpanel(5,100)
+
+
+
+xopen("Golgi_template.hoc")
+
+
+
+
+
+
+cvode.active(0)
+
+
+
+
+pwmcnt = PWManager[0].count 
+
+proc change() {local i
+	objref graphItem, save_window_
+	for i=0, n_graph_lists-1 {
+		graphList[i].remove_all()
+	}
+	flush_list.remove_all()
+	fast_flush_list.remove_all()
+	doNotify()
+	for (i= PWManager[0].count-1; i >= pwmcnt; i -= 1) {
+		PWManager[0].close(i)
+		doNotify()
+	}
+
+	
+	
+	sprint(tstr, "%s.hoc", $s1)
+	load_file(1, tstr) 
+    createcells()
+    setupgui()
+
+
+    
+    
+	
+}
+
