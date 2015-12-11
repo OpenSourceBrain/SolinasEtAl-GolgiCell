@@ -1,0 +1,134 @@
+/* added by Rokas Stanislovas (2015) */
+objectvar save_window_
+objref cclamp2[8], cclamp3[8]
+objref depolarizing_stimulus_c[8], depolarizing_stimulus_s[8]
+objref graph_box
+objref Golgi[16]
+objref current_vector
+objref spike_count_control, spike_count_shift
+objref spike_vector_control, spike_vector_shift
+objref g
+
+
+proc createcells() {
+v_init = -70
+ dt = 0.025
+ tstop=1400
+
+for i=0,15 { Golgi[i]=new Goc() }
+
+for i=0,7 Golgi[i].soma { el_Golgi_lkg=-62.0 } 
+for i=0,7 Golgi[i].axon { el_Golgi_lkg=-62.0 }
+ 
+for j=0,7 { for i = 0,2 Golgi[j].dend[i] {  el_Golgi_lkg= -62.0  } }
+
+for i= 0,7 Golgi[i].elec {
+
+ cclamp2[i]=new IClamp(0.5)
+ cclamp2[i].del=0
+ cclamp2[i].dur=2000
+ cclamp2[i].amp=-0.035 
+}
+
+for i=0,7 Golgi[i].elec {
+
+depolarizing_stimulus_c[i]=new IClamp(0.5)
+depolarizing_stimulus_c[i].del=200
+depolarizing_stimulus_c[i].dur=1000
+depolarizing_stimulus_c[i].amp=0.100+0.05*i
+
+}
+
+
+for i=8,15 Golgi[i].soma { el_Golgi_lkg=-62.0 } 
+for i=8,15 Golgi[i].axon { el_Golgi_lkg=-62.0 }
+ 
+for j=8,15 { for i = 0,2 Golgi[j].dend[i] {  el_Golgi_lkg= -62.0  } }
+
+for i=8,15 Golgi[i].soma {  
+     
+      V0_ninf_Golgi_KM=V0_ninf_Golgi_KM-6.5       }                     
+
+for i= 8,15 Golgi[i].elec {
+
+ cclamp3[i-8]=new IClamp(0.5)
+ cclamp3[i-8].del=0
+ cclamp3[i-8].dur=2000
+ cclamp3[i-8].amp=-0.035 
+}
+
+for i=8,15 Golgi[i].elec {
+
+depolarizing_stimulus_s[i-8]=new IClamp(0.5)
+depolarizing_stimulus_s[i-8].del=200
+depolarizing_stimulus_s[i-8].dur=1000
+depolarizing_stimulus_s[i-8].amp=0.100+0.05*(i-8)
+
+}
+}
+
+
+proc setupgui() {
+
+load_file("nrngui.hoc")
+nrncontrolmenu()
+run()
+
+current_vector= new Vector()
+
+for i=0,7 { current_vector.append(0.100+0.05*i) }
+current_vector.mul(1000)
+
+spike_count_control= new Vector() 
+spike_count_shift=new Vector()
+spike_vector_control=new Vector()
+spike_vector_shift=new Vector()
+
+for i=0,7 {  spike_count_control.append(Golgi[i].SpikeTrain.size()) }
+for i=8,15 {  spike_count_shift.append(Golgi[i].SpikeTrain.size()) }
+
+spike_vector_control=spike_count_control.div(1.000)
+spike_vector_shift=spike_count_shift.div(1.000)
+
+g=new VBox()
+
+{
+g.intercept(1)
+
+save_window_=new Graph(0)
+save_window_.size(-861.25,2086.25,-69.9167,39.9163)
+{save_window_.view(-100, 0, 550, 50, 300, 100, 550, 300)}
+
+
+save_window_.label(450,60,"Control",0,1,1,1,1)
+save_window_.label(450,62,"Ik-slow shift",0,1,1,1,2)
+
+spike_vector_control.plot(save_window_,current_vector,1,1)
+spike_vector_shift.plot(save_window_,current_vector,2,1)
+
+
+
+
+
+
+g.intercept(0)
+g.map("Pharmacology of pacemaking: Fig5Bii, frequency plot (sp/s versus current input in pA)",500,0,700,400)
+
+}
+
+{doNotify()}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

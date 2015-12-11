@@ -1,0 +1,26 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+
+system: Testing Golgi
+
+experiments:
+  Subthreshold oscillations:Control block:I Na,I Na-R,I K-V,I K-A,I K-C,ICa-LVA,I-hcn2 block (mV):
+    expected:
+      spike times:  [0.078475, 0.4639, 0.84205, 1.220475]
+  Subthreshold oscillations:Control block+50% I Na-P (mV):
+    expected:
+      resting:  -57
+  Subthreshold oscillations:Control block+50% I Na-P +120pA (mV):
+    expected:
+      spike times: [0.0153, 0.165075, 0.2855, 0.40615, 0.5275, 0.6495, 0.772025, 0.894925, 1.01815, 1.1416, 1.26525]
+  Subthreshold oscillations:Control block+I k-slow=0 (mV):
+    expected:
+      spike times: [0.0677, 0.4529, 0.831, 1.20845]
+  Subthreshold oscillations:Control block+I k-AHP=0 (mV):
+    expected:
+      spike times: [0.061225, 0.3369, 0.6158, 0.896775, 1.17895]
+  Subthreshold oscillations:Control block+I k-AHP,I k-slow=0 (mV):
+     expected:
+      spike times: [0.05535]
+
+  
+   

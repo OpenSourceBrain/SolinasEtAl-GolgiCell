@@ -1,0 +1,51 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+
+target: Test_fig9A.hoc
+engine: NEURON
+
+mep: .test_fig9A.mep
+experiments:
+  subthreshold oscillations and spike coupling control:
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9A.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+  subthreshold oscillations and spike coupling INa IK-V IK-C block:
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9A.dat
+          columns: [0,2]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0
+  subthreshold oscillations and spike coupling INa IK-V IK-C and Ihcn2 block:
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9A.dat
+          columns: [0,3]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0
+  subthreshold oscillations and spike coupling INa IK-V IK-C and Ihcn2 block and 10pA:
+    observables:
+      spike times:
+        file: 
+          path: Soma_fig9A.dat
+          columns: [0,4]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -0.05
+        tolerance: 0

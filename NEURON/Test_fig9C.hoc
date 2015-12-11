@@ -1,0 +1,42 @@
+
+load_file("nrngui.hoc")
+
+xopen("Golgi_template.hoc")
+
+
+
+load_file("sessions/Fig9C.hoc")     
+
+
+createcells()
+
+
+objref v_time
+v_time = new Vector()
+{ v_time.record(&t) }
+
+
+objref Soma_v
+{ Soma_v = new Vector() }
+{ Soma_v.record(&Golgi[0].soma.v(0.5))} 
+objref f_Soma_v
+
+
+run()
+
+
+
+f_Soma_v = new File()
+strdef filenameSoma
+{sprint(filenameSoma, "Soma_fig9C.dat")}
+f_Soma_v.wopen(filenameSoma)
+
+for i=0, Soma_v.size()-1 {
+   f_Soma_v.printf("%f\t%f\n", v_time.x[i]/1000, Soma_v.x[i]/1000)
+}
+
+f_Soma_v.close()
+
+
+
+quit()
