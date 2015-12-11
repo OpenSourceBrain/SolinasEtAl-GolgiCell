@@ -55,7 +55,7 @@ verbose =               False
 
 
 spike_times = []
-mep_file = open('../../NEURON/.test.mep')
+mep_file = open('../../NEURON/test/.test.mep')
 for line in mep_file:
     line = line.strip()
     if line.startswith('spike times: ['):

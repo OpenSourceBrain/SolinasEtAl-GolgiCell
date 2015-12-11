@@ -3,8 +3,6 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" 
          id="TestKAHP">
 
-    <include href="KAHP_CML.channel.nml"/>
-
     <include href="LeakCond.channel.nml"/>
 
 
@@ -15,8 +13,8 @@
         <morphology id="morphology_Simple_CML_test">
 
             <segment id="0" name="Soma">
-                <proximal x="0.0" y="0.0" z="0.0" diameter="11.0"/>
-                <distal x="0.0" y="37.766" z="0.0" diameter="11.0"/>
+                <proximal x="0.0" y="0.0" z="0.0" diameter="27"/>
+                <distal x="0.0" y="27" z="0.0" diameter="27"/>
             </segment>
 
             <segmentGroup id="Soma" neuroLexId="sao864921383">    <!--
@@ -45,13 +43,13 @@
 
             <membraneProperties>
                 
-                <channelDensity condDensity="0.025 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
+                <channelDensity condDensity="0.021 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
+               
+                <channelDensity condDensity="0.038 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
                 
-                <channelDensity condDensity="1.0 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
-                
-                <!--
+                 <!--
                 <channelDensity condDensity="36.0 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
-                
+               
                 
                 <channelDensity condDensity="32.0 mS_per_cm2" id="KV_CML_all" ionChannel="KV_CML" ion="k" erev="-84.69 mV"/>
                 
@@ -66,7 +64,7 @@
 
                 <spikeThresh value="0 mV"/>
 
-                <specificCapacitance value="0.9 uF_per_cm2"/>
+                <specificCapacitance value="1 uF_per_cm2"/>
 
                 <initMembPotential value="-65.0 mV"/>
 

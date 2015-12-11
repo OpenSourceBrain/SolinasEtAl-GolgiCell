@@ -13,7 +13,7 @@
     <Include file="KAHP_CML.channel.nml"/>
 
     <Include file="LeakCond.channel.nml"/>
-    <Include file="Golgi_CALC_CML.nml"/>
+    
     <Include file="CaClamp.nml"/>
 
         <!--   Cell files-->
@@ -31,13 +31,13 @@
         </Display>
         
         <Display id="GraphWin_0" title="Soma channels" xmin="-60.0" xmax="660.0" ymin="-0.1" ymax="1.1" timeScale="1ms">
-            <Line id="o1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o1/occupancy" scale="1" color="#FF0000"/>
-            <Line id="o2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o2/occupancy" scale="1" color="#FFFF00"/>
+            <Line id="o1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o1/occupancy" scale="1" color="#000000"/>
+            <Line id="o2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o2/occupancy" scale="1" color="#FF0000"/>
             
-            <Line id="c1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c1/occupancy" scale="1" color="#FFFFFF"/>
-            <Line id="c2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c2/occupancy" scale="1" color="#ccccFF"/>
-            <Line id="c3" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c3/occupancy" scale="1" color="#9999FF"/>
-            <Line id="c4" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c4/occupancy" scale="1" color="#4444FF"/>
+            <Line id="c1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c1/occupancy" scale="1" color="#0000ff"/>
+            <Line id="c2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c2/occupancy" scale="1" color="#00ff00"/>
+            <Line id="c3" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c3/occupancy" scale="1" color="#ff6600"/>
+            <Line id="c4" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c4/occupancy" scale="1" color="#7a5230"/>
         </Display>
         
         <Display id="CG_conc" title="Soma [Ca2+]" xmin="-60" xmax="660" ymin="-0.0006" ymax="0.006" timeScale="1ms">
@@ -52,13 +52,14 @@
         </OutputFile>
         
         <OutputFile id="states" fileName="KAHP.states.dat">
+            <OutputColumn id="o1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o1/occupancy"/>
+            <OutputColumn id="o2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o2/occupancy"/>
+            
             <OutputColumn id="c1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c1/occupancy"/>
             <OutputColumn id="c2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c2/occupancy"/>
             <OutputColumn id="c3" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c3/occupancy"/>
             <OutputColumn id="c4" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c4/occupancy"/>
             
-            <OutputColumn id="o1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o1/occupancy"/>
-            <OutputColumn id="o2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o2/occupancy"/>
         </OutputFile>
         
         
