@@ -37,21 +37,29 @@
 
         <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
         is used to allow validation of this file according to the LEMS schema specified above...-->
-    <Component type="Simulation" id="sim1" length="600.0ms" step="0.005ms" target="network_Soma">
+    <Component type="Simulation" id="sim1" length="1500.0ms" step="0.005ms" target="network_Soma">
         
-        <Display id="CG_v" title="Soma VOLTAGE" xmin="-60.0" xmax="660.0" ymin="-75" ymax="50" timeScale="1ms">
+        <Display id="CG_v" title="Soma VOLTAGE" xmin="-100.0" xmax="1600.0" ymin="-75" ymax="50" timeScale="1ms">
             <Line id="VOLTAGE" timeScale="1ms" quantity="CG_Test/0/TestSoma/v" scale="1 mV" color="#000000"/>
         </Display>
         
-        <Display id="CG_conc" title="Soma [Ca2+]" xmin="-60" xmax="660" ymin="-0.0006" ymax="0.006" timeScale="1ms">
+        <Display id="Rates" title="Rate variables" xmin="-100.0" xmax="1600.0" ymin="-0.1" ymax="1.1" timeScale="1ms">
+            <Line id="KA a" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/KA_all/Golgi_KA/a/q" scale="1" color="#000000"/>
+            <Line id="KA b" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/KA_all/Golgi_KA/b/q" scale="1" color="#FF0000"/>
+        </Display>
+        
+        <Display id="CG_conc" title="Soma [Ca2+]" xmin="-100.0" xmax="1600.0" ymin="-0.0006" ymax="0.006" timeScale="1ms">
             <Line id="[Ca2+]" timeScale="1ms" quantity="CG_Test/0/TestSoma/caConc" scale="1 mM" color="#000000"/>
         </Display>
         
         
-        
-        
         <OutputFile id="v" fileName="Soma.v.dat">
             <OutputColumn id="v" quantity="CG_Test/0/TestSoma/v"/>
+        </OutputFile>
+        
+        <OutputFile id="rates" fileName="KA.dat">
+            <OutputColumn id="a" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/KA_all/Golgi_KA/a/q"/>
+            <OutputColumn id="b" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/KA_all/Golgi_KA/b/q"/>
         </OutputFile>
         
         
