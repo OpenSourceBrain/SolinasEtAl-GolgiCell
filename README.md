@@ -10,3 +10,5 @@ Based on implementation in NEURON taken from: http://senselab.med.yale.edu/model
 
 For more information see 
 http://www.opensourcebrain.org/projects/cerebellum--cerebellar-golgi-cell--solinasetal-golgicell
+
+[![Build Status](https://travis-ci.org/OpenSourceBrain/SolinasEtAl-GolgiCell.svg)](https://travis-ci.org/OpenSourceBrain/SolinasEtAl-GolgiCell)
