@@ -1,15 +1,15 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
 
-target: Test_fig6B.hoc
+target: ../Test_fig7B.hoc
 engine: NEURON
 
-mep: .test_fig6B.mep
+mep: .test_fig7B.mep
 experiments:
-  ionic_currents_and_calcium:
+  Ionic_currents_intensity_latency:
     observables:
       spike times:
         file: 
-          path: Soma_fig6B.dat
+          path: ../Soma_fig7B.dat
           columns: [0,1]
           scaling: [1, 1]
         spike detection: 

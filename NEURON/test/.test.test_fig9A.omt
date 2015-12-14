@@ -1,6 +1,6 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
 
-target: Test_fig9A.hoc
+target: ../Test_fig9A.hoc
 engine: NEURON
 
 mep: .test_fig9A.mep
@@ -9,7 +9,7 @@ experiments:
     observables:
       spike times:
         file: 
-          path: Soma_fig9A.dat
+          path: ../Soma_fig9A.dat
           columns: [0,1]
           scaling: [1, 1]
         spike detection: 
@@ -20,7 +20,7 @@ experiments:
     observables:
       spike times:
         file: 
-          path: Soma_fig9A.dat
+          path: ../Soma_fig9A.dat
           columns: [0,2]
           scaling: [1, 1]
         spike detection: 
@@ -31,7 +31,7 @@ experiments:
     observables:
       spike times:
         file: 
-          path: Soma_fig9A.dat
+          path: ../Soma_fig9A.dat
           columns: [0,3]
           scaling: [1, 1]
         spike detection: 
@@ -42,7 +42,7 @@ experiments:
     observables:
       spike times:
         file: 
-          path: Soma_fig9A.dat
+          path: ../Soma_fig9A.dat
           columns: [0,4]
           scaling: [1, 1]
         spike detection: 

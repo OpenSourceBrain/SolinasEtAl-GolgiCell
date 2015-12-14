@@ -1,19 +1,19 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
 
-target: Test_fig9C.hoc
+target: ../Test_fig7A.hoc
 engine: NEURON
 
-mep: .test_fig9C.mep
+mep: .test_fig7A.mep
 experiments:
-  Subthreshold voltage oscillation under gnabar_Golgi_Na=0, gnabar_Golgi_NaR=0, gkbar_Golgi_KV=0, gkbar_Golgi_BK=0, gkbar_Golgi_KA=0, gbar_Golgi_hcn2=0,  gca2bar_Golgi_Ca_LVA=0:
+  Ionic_currents_intensity_latency:
     observables:
       spike times:
         file: 
-          path: Soma_fig9C.dat
+          path: ../Soma_fig7A.dat
           columns: [0,1]
           scaling: [1, 1]
         spike detection: 
           method: threshold
-          threshold: -0.05
+          threshold: 0
         tolerance: 0
 
