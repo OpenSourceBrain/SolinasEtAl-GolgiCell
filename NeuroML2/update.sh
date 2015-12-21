@@ -26,6 +26,7 @@ copyNml2 'KV_CML' 'Golgi_KV'
 copyNml2 'CaHVA_CML' 'Golgi_Ca_HVA'
 copyNml2 'CaLVA_CML' 'Golgi_Ca_LVA'
 
+copyNml2 'KC_CML' 'Golgi_BK'
 
 
 copyNml2 'hcn1f_CML' 'Golgi_hcn1f'

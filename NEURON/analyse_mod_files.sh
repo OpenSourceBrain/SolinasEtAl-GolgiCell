@@ -12,5 +12,7 @@ pynml-modchananalysis Golgi_KA -stepV 5 -temperature [20,23]
 pynml-modchananalysis Golgi_Ca_HVA -stepV 5 -temperature [20,23] 
 pynml-modchananalysis Golgi_Ca_LVA -stepV 5 -temperature [20,23] 
 
+pynml-modchananalysis Golgi_BK -stepV 5 -temperature [20,23] -caConc 5e-4
+
 
 #pynml-modchananalysis Golgi_hcn1 -stepV 5 -temperature [20,23] 
