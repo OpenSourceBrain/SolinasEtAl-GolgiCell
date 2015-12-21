@@ -71,9 +71,9 @@
                 <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_all" ionChannel="Golgi_hcn2s" ion="h" erev="-20.0 mV"/>-->
 
                 
-               <!-- <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>-->
+            <!--   <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>-->
 
-                <channelDensityNernst condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca"/>
+              <channelDensityNernst condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
 
                 
 
@@ -87,8 +87,9 @@
 
             <intracellularProperties>
 
-            <species id="ca" ion="ca" concentrationModel="Golgi_CALC_CML" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
-         
+            <species id="ca" ion="ca" concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+            
+            <species id="ca2" ion="ca2" concentrationModel="Golgi_CALC_ca2" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
 
                 <resistivity value="0.1 kohm_cm"/>
 
@@ -123,6 +124,10 @@
         <Exposure name="iCa" dimension="current"/>
         <Exposure name="caConc" dimension="concentration"/>
         <Exposure name="caConcExt" dimension="concentration"/>
+
+        <Exposure name="iCa2" dimension="current"/>
+        <Exposure name="caConc2" dimension="concentration"/>
+        <Exposure name="caConcExt2" dimension="concentration"/>
         
         <Text name="neuroLexId"/>
 
@@ -136,7 +141,7 @@
 
             <DerivedVariable name="debug" dimension="none" select="biophysicalProperties/membraneProperties/totChanCurrent"/>
             
-            <!--TODO replace this with just using first segment!!-->
+            
             <DerivedVariable name="surfaceArea" exposure="surfaceArea" dimension="area" select="morphology/segments[*]/surfaceArea" reduce="add"/>
             
             <DerivedVariable name="totSpecCap" dimension="specificCapacitance" exposure="totSpecCap" select="biophysicalProperties/totSpecCap"/>
@@ -148,6 +153,10 @@
             <DerivedVariable name="iCa" dimension="current" exposure="iCa" select="biophysicalProperties/membraneProperties/iCa"/>
             <DerivedVariable name="caConc" dimension="concentration" exposure="caConc"  select="biophysicalProperties/intracellularProperties/caConc"/>
             <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt"  select="biophysicalProperties/intracellularProperties/caConcExt"/>
+
+            <DerivedVariable name="iCa2" dimension="current" exposure="iCa2" select="biophysicalProperties/membraneProperties/iCa2"/>
+            <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="biophysicalProperties/intracellularProperties/caConc2"/>
+      <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="biophysicalProperties/intracellularProperties/caConcExt2"/>
 
             <TimeDerivative variable="v" value="(iChannels + iSyn) / totCap"/>
 
@@ -173,6 +182,12 @@
 
     </ComponentType>
 
-    
-</neuroml>
+
+
+
+
+
+
+
+  </neuroml>
 

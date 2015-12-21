@@ -28,7 +28,8 @@
 
     <Include file="LeakCond.channel.nml"/>
     
-    <Include file="Golgi_CALC_CML.nml"/>
+    <Include file="Golgi_CALC.nml"/>
+    <Include file="Golgi_CALC_ca2.nml"/>
 
         <!--   Cell files-->
     <Include file="TestSoma.cell.nml"/>
@@ -58,7 +59,7 @@
             <Line id="hcn1 slow" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn1s_all/Golgi_hcn1s/s/q" scale="1" color="#FF0000"/>-->
          <!-- <Line id="hcn2 fast" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2f_all/Golgi_hcn2f/f/q" scale="1" color="#FF0000"/>
             <Line id="hcn2 slow" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2s_all/Golgi_hcn2s/s/q" scale="1" color="#FF0000"/>-->
-          <!--<Line id="HVA s" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/s/q" scale="1" color="#000000"/>
+         <!-- <Line id="HVA s" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/s/q" scale="1" color="#000000"/>
           <Line id="HVA u" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/u/q" scale="1" color="#FF0000"/>-->
          <Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
          <Line id="LVA h" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/h/q" scale="1" color="#FF0000"/>
@@ -116,13 +117,14 @@
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2s_all/Golgi_hcn2s/s/q"/>
         </OutputFile>-->
       
-        <!--<OutputFile id="rates" fileName="CaHVA.dat">
+       <!-- <OutputFile id="rates" fileName="CaHVA.dat">
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/s/q"/>
         </OutputFile>
        <OutputFile id="rates" fileName="CaHVA.dat">
             <OutputColumn id="u" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/u/q"/>
         </OutputFile>-->
-       <OutputFile id="rates" fileName="CaLVA.dat">
+     
+    <OutputFile id="rates" fileName="CaLVA.dat">
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/m/q"/>
         </OutputFile>
        <OutputFile id="rates" fileName="CaLVA.dat">
