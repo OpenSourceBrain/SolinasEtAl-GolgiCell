@@ -19,6 +19,7 @@
     <Include file="Golgi_KV.channel.nml"/>
     
     <Include file="Golgi_Ca_HVA.channel.nml"/>
+     <Include file="Golgi_Ca_LVA.channel.nml"/>
     
     <Include file="Golgi_hcn1f.channel.nml"/>
     <Include file="Golgi_hcn1s.channel.nml"/>
