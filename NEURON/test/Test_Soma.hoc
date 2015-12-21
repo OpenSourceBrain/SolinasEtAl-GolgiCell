@@ -28,6 +28,7 @@ glbar_Golgi_lkg=2.1e-05
 //insert Golgi_hcn2
 
 //insert Golgi_Ca_HVA
+insert Golgi_Ca_LVA
 
 // Golgi_Ca_HVA uses ca
 insert Golgi_CALC
@@ -37,9 +38,7 @@ cai = cai0_ca_ion
 cai0_Golgi_CALC = cai0_ca_ion
 
 
-
-insert Golgi_Ca_LVA
-Golgi_Ca_LVA uses ca2
+//Golgi_Ca_LVA uses ca2
 
 insert Golgi_CALC_ca2
 
@@ -160,7 +159,7 @@ objref Soma_hcn2_o_slow
 {Soma_hcn2_o_slow=new Vector() }
 {Soma_hcn2_o_slow.record(&Soma.o_slow_Golgi_hcn2(0.5))} ***/
 
-/****objref Soma_Ca_HVA_s
+/***objref Soma_Ca_HVA_s
 objref Soma_Ca_HVA_u
 
 {Soma_Ca_HVA_s=new Vector() }
@@ -232,7 +231,7 @@ if (usegui==1) {
       graphList[0].append(GraphWin_3)
     }
 
-     GraphWin_4 = new Graph(0)
+    GraphWin_4 = new Graph(0)
     {GraphWin_4.size(0, tstop,0,0.005)}
     {GraphWin_4.view(0, 0, tstop, 0.005, 80, 330, 330, 250)}
    {
@@ -352,7 +351,7 @@ for i=0, Soma_v.size()-1 {
   f_Soma_Ca_HVA.printf("%f\t%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_s.x[i], Soma_Ca_HVA_u.x[i])
      // f_Soma_Ca_HVA.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_u.x[i])
 }
-f_Soma_Ca_HVA.close()****/
+f_Soma_Ca_HVA.close()*****/
 
 objref f_Soma_Ca_LVA
 f_Soma_Ca_LVA = new File()
