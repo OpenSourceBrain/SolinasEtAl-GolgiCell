@@ -17,6 +17,7 @@
     <Include file="Golgi_KA.channel.nml"/>
     <Include file="Golgi_KM.channel.nml"/>
     <Include file="Golgi_KV.channel.nml"/>
+    <Include file="Golgi_BK.channel.nml"/>
     
     <Include file="Golgi_Ca_HVA.channel.nml"/>
      <Include file="Golgi_Ca_LVA.channel.nml"/>
@@ -61,8 +62,9 @@
             <Line id="hcn2 slow" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2s_all/Golgi_hcn2s/s/q" scale="1" color="#FF0000"/>-->
          <!-- <Line id="HVA s" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/s/q" scale="1" color="#000000"/>
           <Line id="HVA u" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/u/q" scale="1" color="#FF0000"/>-->
-         <Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
-         <Line id="LVA h" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/h/q" scale="1" color="#FF0000"/>
+         <!--<Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
+         <Line id="LVA h" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/h/q" scale="1" color="#FF0000"/>-->
+        <Line id="BK c" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/BK_all/Golgi_BK/c/q" scale="1" color="#FF0000"/>
         </Display>
         
        <Display id="CG_conc" title="Soma [Ca2+]" xmin="-100.0" xmax="1600.0" ymin="-0.0006" ymax="0.006" timeScale="1ms">
@@ -124,12 +126,18 @@
             <OutputColumn id="u" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/u/q"/>
         </OutputFile>-->
      
-    <OutputFile id="rates" fileName="CaLVA.dat">
+  <!--  <OutputFile id="rates" fileName="CaLVA.dat">
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/m/q"/>
         </OutputFile>
        <OutputFile id="rates" fileName="CaLVA.dat">
             <OutputColumn id="u" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaLVA_all/Golgi_Ca_LVA/h/q"/>
+        </OutputFile>-->
+    
+        <OutputFile id="rates" fileName="BK.dat">
+            <OutputColumn id="c" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/BK_all/Golgi_BK/c/q"/>
         </OutputFile>
+
+       
 
 
         
