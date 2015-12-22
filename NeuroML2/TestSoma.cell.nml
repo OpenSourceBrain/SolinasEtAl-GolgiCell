@@ -38,9 +38,9 @@
 
             <!--Adding the biophysical parameters-->
 
-        <biophysicalProperties id="biophys">
+        <biophysicalProperties_twoCa id="biophys">
 
-            <membraneProperties>
+            <membraneProperties_twoCa>
                 
                 <channelDensity condDensity="0.021 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
                 
@@ -71,11 +71,11 @@
                 <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_all" ionChannel="Golgi_hcn2s" ion="h" erev="-20.0 mV"/>-->
 
                 
-            <!--   <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>-->
+         <!-- <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>-->
 
-              <!--<channelDensityNernst condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>-->
+           <channelDensityNernst condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
 
-               <channelDensity condDensity="3 mS_per_cm2" id="BK_all" ionChannel="Golgi_BK" ion="k" erev="-84.69 mV"/>--> 
+              <!-- <channelDensity condDensity="3 mS_per_cm2" id="BK_all" ionChannel="Golgi_BK" ion="k" erev="-84.69 mV"/>--> 
 
                 <spikeThresh value="0 mV"/>
 
@@ -83,19 +83,19 @@
 
                 <initMembPotential value="-65.0 mV"/>
 
-            </membraneProperties>
+            </membraneProperties_twoCa>
 
-            <intracellularProperties>
+            <intracellularProperties_twoCa>
 
-            <species id="ca" ion="ca" concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+            <!--<species id="ca" ion="ca"  concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>-->
             
-            <species id="ca2" ion="ca2" concentrationModel="Golgi_CALC_ca2" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+           <species id="ca2" ion="ca2"  concentrationModel="Golgi_CALC_ca2" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
 
                 <resistivity value="0.1 kohm_cm"/>
 
-            </intracellularProperties>
+            </intracellularProperties_twoCa>
 
-        </biophysicalProperties>
+        </biophysicalProperties_twoCa>
 
     </cell>
     
@@ -109,7 +109,7 @@
         
         <Child name="morphology" type="morphology"/>
 
-        <Child name="biophysicalProperties" type="biophysicalProperties"/>
+        <Child name="biophysicalProperties_twoCa" type="biophysicalProperties_twoCa"/>
 
         <Attachments name="synapses" type="basePointCurrent"/>
 
@@ -126,8 +126,8 @@
         <Exposure name="caConcExt" dimension="concentration"/>
 
         <Exposure name="iCa2" dimension="current"/>
-        <Exposure name="caConc2" dimension="concentration"/>
-        <Exposure name="caConcExt2" dimension="concentration"/>
+        <Exposure name="ca2Conc" dimension="concentration"/>
+        <Exposure name="ca2ConcExt" dimension="concentration"/>
         
         <Text name="neuroLexId"/>
 
@@ -136,27 +136,27 @@
             <StateVariable name="spiking" exposure="spiking" dimension="none"/>
             <StateVariable name="debugVal" exposure="debugVal" dimension="none"/>
 
-            <DerivedVariable name="initMembPot" dimension="voltage" select="biophysicalProperties/membraneProperties/initMembPotential/value"/>
-            <DerivedVariable name="thresh" dimension="voltage" select="biophysicalProperties/membraneProperties/spikeThresh/value"/>
+            <DerivedVariable name="initMembPot" dimension="voltage" select="biophysicalProperties_twoCa/membraneProperties_twoCa/initMembPotential/value"/>
+            <DerivedVariable name="thresh" dimension="voltage" select="biophysicalProperties_twoCa/membraneProperties_twoCa/spikeThresh/value"/>
 
-            <DerivedVariable name="debug" dimension="none" select="biophysicalProperties/membraneProperties/totChanCurrent"/>
+            <DerivedVariable name="debug" dimension="none" select="biophysicalProperties_twoCa/membraneProperties_twoCa/totChanCurrent"/>
             
             
             <DerivedVariable name="surfaceArea" exposure="surfaceArea" dimension="area" select="morphology/segments[*]/surfaceArea" reduce="add"/>
             
-            <DerivedVariable name="totSpecCap" dimension="specificCapacitance" exposure="totSpecCap" select="biophysicalProperties/totSpecCap"/>
+            <DerivedVariable name="totSpecCap" dimension="specificCapacitance" exposure="totSpecCap" select="biophysicalProperties_twoCa/totSpecCap"/>
             <DerivedVariable name="totCap" dimension="capacitance" value="totSpecCap * surfaceArea "/>
 
-            <DerivedVariable name="iChannels" dimension="current" exposure="iChannels" select="biophysicalProperties/membraneProperties/totChanCurrent"/>
+            <DerivedVariable name="iChannels" dimension="current" exposure="iChannels" select="biophysicalProperties_twoCa/membraneProperties_twoCa/totChanCurrent"/>
             <DerivedVariable name="iSyn" dimension="current" exposure="iSyn" select="synapses[*]/i" reduce="add" />
 
-            <DerivedVariable name="iCa" dimension="current" exposure="iCa" select="biophysicalProperties/membraneProperties/iCa"/>
-            <DerivedVariable name="caConc" dimension="concentration" exposure="caConc"  select="biophysicalProperties/intracellularProperties/caConc"/>
-            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt"  select="biophysicalProperties/intracellularProperties/caConcExt"/>
+            <DerivedVariable name="iCa" dimension="current" exposure="iCa" select="biophysicalProperties_twoCa/membraneProperties_twoCa/iCa"/>
+            <DerivedVariable name="caConc" dimension="concentration" exposure="caConc"  select="biophysicalProperties_twoCa/intracellularProperties_twoCa/caConc"/>
+            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt"  select="biophysicalProperties_twoCa/intracellularProperties_twoCa/caConcExt"/>
 
-            <DerivedVariable name="iCa2" dimension="current" exposure="iCa2" select="biophysicalProperties/membraneProperties/iCa2"/>
-            <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="biophysicalProperties/intracellularProperties/caConc2"/>
-      <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="biophysicalProperties/intracellularProperties/caConcExt2"/>
+            <DerivedVariable name="iCa2" dimension="current" exposure="iCa2" select="biophysicalProperties_twoCa/membraneProperties_twoCa/iCa2"/>
+            <DerivedVariable name="ca2Conc" dimension="concentration" exposure="ca2Conc" select="biophysicalProperties_twoCa/intracellularProperties_twoCa/ca2Conc"/>
+      <DerivedVariable name="ca2ConcExt" dimension="concentration" exposure="ca2ConcExt" select="biophysicalProperties_twoCa/intracellularProperties_twoCa/ca2ConcExt"/>
 
             <TimeDerivative variable="v" value="(iChannels + iSyn) / totCap"/>
 
@@ -182,11 +182,84 @@
 
     </ComponentType>
 
+   <ComponentType name="intracellularProperties_twoCa"
+        description="Biophysical properties related to the intracellular space within the _cell_, such as the _resistivity_ and the list of _species_ present. _caConc and _caConcExt are explicitly exposed here to facilitate accessing these values from other Components, even though _caConcExt is clearly not an intracellular property">
 
+        <Children name="resistivity" type="resistivity"/>
+        <Children name="speciesList" type="species"/>
 
+        <Exposure name="caConc" dimension="concentration"/>
+        <Exposure name="caConcExt" dimension="concentration"/>
+          
+        <Exposure name="ca2Conc" dimension="concentration"/>
+        <Exposure name="ca2ConcExt" dimension="concentration"/>
 
+        <Dynamics>
+            <DerivedVariable name="caConc" dimension="concentration" exposure="caConc" select="speciesList[ion='ca']/concentration" reduce="add" required="false"/>
+            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt" select="speciesList[ion='ca']/extConcentration" reduce="add" required="false"/>
 
+            <DerivedVariable name="ca2Conc" dimension="concentration" exposure="ca2Conc" select="speciesList[ion='ca2']/concentration" reduce="add" required="false"/>
+            <DerivedVariable name="ca2ConcExt" dimension="concentration" exposure="ca2ConcExt" select="speciesList[ion='ca2']/extConcentration" reduce="add" required="false"/>
+        </Dynamics>
+    </ComponentType>
 
+   <ComponentType name="membraneProperties_twoCa"
+       description="Properties specific to the membrane, such as the _populations of channels, _channelDensities, _specificCapacitance, etc.">
+        
+        <Child name="initMembPotential" type="initMembPotential"/>      <!--TEMP: needs to be removed... -->
+        <Child name="spikeThresh" type="spikeThresh"/>
+        <Children name="specificCapacitances" type="specificCapacitance"/>
+        <Children name="populations" type="baseChannelPopulation"/>
+        <Children name="channelDensities" type="baseChannelDensity"/>
+
+        <Exposure name="totChanCurrent" dimension="current"/>
+
+        <Exposure name="iCa" dimension="current"/>
+
+        <Exposure name="iCa2" dimension="current"/>
+
+        <Exposure name="totSpecCap" dimension="specificCapacitance"/>
+
+        <Requirement name="surfaceArea" dimension="area"/>
+
+        <Dynamics>
+            <!-- Note this is not ideal, but for a single compartment cell (which is all this Dynamics should be used for) there should 
+                 be only one specificCapacitance, referring to this compartment -->
+            <DerivedVariable name="totSpecCap" dimension="specificCapacitance" exposure="totSpecCap" select="specificCapacitances[*]/specCap" reduce="add"/>
+
+            <DerivedVariable name="totChanPopCurrent" dimension="current" select="populations[*]/i" reduce="add"/>
+            <DerivedVariable name="totChanDensCurrentDensity" dimension="currentDensity" select="channelDensities[*]/iDensity" reduce="add"/>
+
+            <DerivedVariable name="totChanCurrent" dimension="current" exposure="totChanCurrent" value="totChanPopCurrent + (totChanDensCurrentDensity * surfaceArea)"/>
+
+            <DerivedVariable name="totChanPopCurrentCa" dimension="current" select="populations[ion='ca']/i" reduce="add"/>
+            <DerivedVariable name="totChanDensCurrentDensityCa" dimension="currentDensity" select="channelDensities[ion='ca']/iDensity" reduce="add"/>
+
+            <DerivedVariable name="iCa" dimension="current" exposure="iCa" value="totChanPopCurrentCa + (totChanDensCurrentDensityCa * surfaceArea)"/>
+
+            <DerivedVariable name="totChanPopCurrentCa2" dimension="current" select="populations[ion='ca2']/i" reduce="add"/>
+            <DerivedVariable name="totChanDensCurrentDensityCa2" dimension="currentDensity" select="channelDensities[ion='ca2']/iDensity" reduce="add"/>
+
+            <DerivedVariable name="iCa2" dimension="current" exposure="iCa2" value="totChanPopCurrentCa2 + (totChanDensCurrentDensityCa2 * surfaceArea)"/>
+            
+
+        </Dynamics>
+
+    </ComponentType>
+
+    <ComponentType name="biophysicalProperties_twoCa"
+        description="The biophysical properties of the _cell_, including the _membraneProperties_ and the _intracellularProperties_">
+        <Child name="membraneProperties_twoCa" type="membraneProperties_twoCa"/>
+
+        <Child name="intracellularProperties_twoCa" type="intracellularProperties_twoCa"/>
+
+        <Exposure name="totSpecCap" dimension="specificCapacitance"/>
+
+        <Dynamics>
+            <DerivedVariable name="totSpecCap" dimension="specificCapacitance" exposure="totSpecCap" select="membraneProperties_twoCa/totSpecCap"/>
+        </Dynamics>
+
+    </ComponentType>
 
 
   </neuroml>
