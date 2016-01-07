@@ -3,7 +3,7 @@
 
     <notes>Internal calcium concentration due to calcium currents and pump from Solinas et al 2007</notes>
 
-    <decayingPoolConcentrationModel id="Golgi_CALC" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca" shellThickness="2.e-5cm"/>
+    <decayingPoolConcentrationModel id="Golgi_CALC" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca" shellThickness="2.0378e-7m"/>
 
 </neuroml>
 
