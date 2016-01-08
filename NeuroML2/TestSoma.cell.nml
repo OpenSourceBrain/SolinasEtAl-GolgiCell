@@ -71,8 +71,8 @@
                 <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_all" ionChannel="Golgi_hcn2s" ion="h" erev="-20.0 mV"/>-->
 
                 
-            <!-- <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>-->
-            <channelDensityNernst condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
+            <!--<channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>-->
+            <channelDensityNernst_ca2 condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
 
               <!-- <channelDensity condDensity="3 mS_per_cm2" id="BK_all" ionChannel="Golgi_BK" ion="k" erev="-84.69 mV"/>--> 
 
@@ -84,15 +84,7 @@
 
             </membraneProperties_twoCa>
 
-         <!--<intracellularProperties_twoCa>
-
-            <species id="ca" ion="ca"  concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
-            
-        <species id="ca2"  ion="ca2" concentrationModel="Golgi_CALC_ca2" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
-
-                <resistivity value="0.1 kohm_cm"/>
-
-            </intracellularProperties_twoCa>-->
+         
 
          
            <intracellularProperties>
@@ -111,6 +103,9 @@
             <species id="ca2"  ion="ca2" concentrationModel="Golgi_CALC_ca2" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
 
              
+                <resistivity value="0.1 kohm_cm"/>
+
+
             </intracellularProperties_independentCa>
 
 
@@ -148,6 +143,9 @@
        <Exposure name="iCa2" dimension="current"/>
         <Exposure name="caConc2" dimension="concentration"/>
         <Exposure name="caConcExt2" dimension="concentration"/>
+
+       <Exposure name="totChanDensCurrentDensityCa2_for_decay" dimension="currentDensity"/>
+
         
         <Text name="neuroLexId"/>
 
@@ -181,6 +179,9 @@
 
       <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="biophysicalProperties_twoCa/intracellularProperties_independentCa/caConcExt2"/>
 
+        <DerivedVariable name="totChanDensCurrentDensityCa2_for_decay"  dimension="currentDensity" exposure="totChanDensCurrentDensityCa2_for_decay"      select="biophysicalProperties_twoCa/membraneProperties_twoCa/totChanDensCurrentDensityCa2_for_decay"/>
+
+
             <TimeDerivative variable="v" value="(iChannels + iSyn) / totCap"/>
 
             <OnStart>
@@ -205,39 +206,14 @@
 
     </ComponentType>
 
-  <!-- <ComponentType name="intracellularProperties_twoCa"
-        description="Biophysical properties related to the intracellular space within the _cell_, such as the _resistivity_ and the list of _species_ present. _caConc and _caConcExt are explicitly exposed here to facilitate accessing these values from other Components, even though _caConcExt is clearly not an intracellular property">
-
-        <Children name="resistivity" type="resistivity"/>
-
-        <Children name="speciesList" type="species"/>
-
-        <Child name="speciesList_secondCa" type="species"/>
-
-        <Exposure name="caConc" dimension="concentration"/>
-        <Exposure name="caConcExt" dimension="concentration"/>
-
-
-       <Exposure name="caConc2" dimension="concentration"/>
-        <Exposure name="caConcExt2" dimension="concentration"/>
-
-       <Dynamics>
-           <DerivedVariable name="caConc" dimension="concentration" exposure="caConc" select="speciesList[ion='ca']/concentration" reduce="add" required="false"/>
-            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt" select="speciesList[ion='ca']/extConcentration" reduce="add" required="false"/>
-
-          <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="speciesList_secondCa[ion='ca2']/concentration" reduce="add" required="false"/>
-
-            <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="speciesList_secondCa[ion='ca2']/extConcentration" reduce="add" required="false"/>
-
-        </Dynamics>
-    </ComponentType>-->
+  
 
 
     <ComponentType name="intracellularProperties_independentCa">
 
         <Children name="speciesList_secondCa" type="species"/>
 
-        
+        <Children name="resistivity" type="resistivity"/>
 
        <Exposure name="caConc2" dimension="concentration"/>
         <Exposure name="caConcExt2" dimension="concentration"/>
@@ -268,7 +244,13 @@
 
         <Exposure name="iCa" dimension="current"/>
 
-        <Exposure name="iCa2" dimension="current"/>
+        <Exposure name="iCa2" dimension="current"/> 
+
+
+
+        <Exposure name="totChanDensCurrentDensityCa2_for_decay" dimension="currentDensity"/>
+
+
 
         <Exposure name="totSpecCap" dimension="specificCapacitance"/>
 
@@ -292,14 +274,16 @@
             <DerivedVariable name="totChanDensCurrentDensityCa2" dimension="currentDensity" select="channelDensities[ion='ca2']/iDensity" reduce="add"/>
 
             <DerivedVariable name="iCa2" dimension="current" exposure="iCa2" value="totChanPopCurrentCa2 + (totChanDensCurrentDensityCa2 * surfaceArea)"/>
-            
+
+              
+          <DerivedVariable name="totChanDensCurrentDensityCa2_for_decay" dimension="currentDensity" exposure="totChanDensCurrentDensityCa2_for_decay"      value="totChanDensCurrentDensityCa2"/>
 
         </Dynamics>
 
     </ComponentType>
 
     <ComponentType name="biophysicalProperties_twoCa"
-        description="The biophysical properties of the _cell_, including the _membraneProperties_ and the _intracellularProperties_">
+        description="The biophysical properties of the _cell_, including the _membraneProperties_ and the _intracellularProperties_ for a cell with two Ca pools">
 
         <Child name="membraneProperties_twoCa" type="membraneProperties_twoCa"/>
 
@@ -315,6 +299,57 @@
         <Dynamics>
             <DerivedVariable name="totSpecCap" dimension="specificCapacitance" exposure="totSpecCap" select="membraneProperties_twoCa/totSpecCap"/>
         </Dynamics>
+
+    </ComponentType>
+
+
+
+   <!-- the component below is  also needed to calculate Nernst on ca2 specifically -->
+
+
+ <ComponentType name="channelDensityNernst_ca2"
+        extends="baseChannelDensityCond"
+        description="This component is similar to the original component type _ channelDensityNernst _ but it is changed in order to have a reversal potential that depends on independent pool of Ca (ca2)">
+
+        <Constant name="R" dimension="idealGasConstantDims" value="8.3144621 J_per_K_per_mol" description="TODO: Make this a global constant!"/>
+        <Constant name="zCa" dimension="none" value="2" description="TODO: Make this a global constant!"/>
+        <Constant name="F" dimension="charge_per_mole" value="96485.3 C_per_mol" description="TODO: Make this a global constant!"/>
+
+        <ComponentReference name="ionChannel" type="baseIonChannel"/>
+
+        <Exposure name="erev" dimension="voltage"/> 
+        <Requirement name="temperature" dimension="temperature"/>
+        <Requirement name="caConc2" dimension="concentration"/>
+        <Requirement name="caConcExt2" dimension="concentration"/>
+
+        
+        <Text name="segmentGroup"/>
+        <Text name="ion"/> 
+        <Dynamics>
+
+            <DerivedVariable name="channelf" dimension="none" select="ionChannel/fopen"/>
+
+            <ConditionalDerivedVariable name="gDensity" dimension="conductanceDensity" exposure="gDensity">
+            	<Case condition="caConcExt2 .gt. 0" value="condDensity * channelf"/>
+            	<Case condition="caConcExt2 .leq. 0" value="0"/>
+            </ConditionalDerivedVariable>
+  
+            <ConditionalDerivedVariable name="erev" dimension="voltage" exposure="erev">
+            	<Case condition="caConcExt2 .gt. 0" value="(R * temperature / (zCa * F)) * log(caConcExt2 / caConc2)"/>
+            	<Case condition="caConcExt2 .leq. 0" value="0"/>
+            </ConditionalDerivedVariable>
+
+            
+            <ConditionalDerivedVariable name="iDensity" dimension="currentDensity" exposure="iDensity">
+            	<Case condition="caConcExt2 .gt. 0" value="gDensity * (erev - v)"/>
+            	<Case condition="caConcExt2 .leq. 0" value="0"/>
+            </ConditionalDerivedVariable>
+
+        </Dynamics>
+
+        <Structure>
+            <ChildInstance component="ionChannel"/>
+        </Structure>
 
     </ComponentType>
 

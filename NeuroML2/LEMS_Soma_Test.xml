@@ -62,7 +62,7 @@
             <Line id="hcn2 slow" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2s_all/Golgi_hcn2s/s/q" scale="1" color="#FF0000"/>-->
       <!--<Line id="HVA s" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/s/q" scale="1" color="#000000"/>
           <Line id="HVA u" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/u/q" scale="1" color="#FF0000"/>-->
-       <Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
+         <Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
          <Line id="LVA h" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/h/q" scale="1" color="#FF0000"/>
        <!-- <Line id="BK c" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/BK_all/Golgi_BK/c/q" scale="1" color="#FF0000"/>-->
         </Display>
@@ -122,14 +122,14 @@
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2s_all/Golgi_hcn2s/s/q"/>
         </OutputFile>-->
       
-  <!--<OutputFile id="rates_s" fileName="CaHVA_s.dat">
+ <!-- <OutputFile id="rates_s" fileName="CaHVA_s.dat">
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/s/q"/>
         </OutputFile>
        <OutputFile id="rates_u" fileName="CaHVA_u.dat">
             <OutputColumn id="u" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/u/q"/>
         </OutputFile>-->
      
-    <OutputFile id="rates_m" fileName="CaLVA_m.dat">
+        <OutputFile id="rates_m" fileName="CaLVA_m.dat">
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/m/q"/>
         </OutputFile>
         

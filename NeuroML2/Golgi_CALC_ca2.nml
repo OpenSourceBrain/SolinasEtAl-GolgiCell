@@ -3,10 +3,13 @@
 
     <notes>Internal calcium concentration due to calcium currents and pump from Solinas et al 2007</notes>
 
-   <decayingPoolConcentrationModel_independentCa id="Golgi_CALC_ca2" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca2" shellThickness="2.0378e-7m"/>
+   <decayingPoolConcentrationModel_independentCa id="Golgi_CALC_ca2" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca2" shellThickness="2.0e-7m"/>
 
          
-  <ComponentType name="decayingPoolConcentrationModel_independentCa" 
+  <!--
+     <decayingPoolConcentrationModel_independentCa id="Golgi_CALC_ca2" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca2"     shellThickness="2.0378e-7m"/>
+
+    <ComponentType name="decayingPoolConcentrationModel_independentCa"     
    extends="concentrationModel">
 
         <Parameter name="restingConc" dimension="concentration"/>
@@ -45,8 +48,8 @@
 
         </Dynamics>
 
-    </ComponentType>
-    <!--<ComponentType name="decayingPoolConcentrationModel_independentCa"
+    </ComponentType>-->
+   <!-- <ComponentType name="decayingPoolConcentrationModel_independentCa"
    extends="concentrationModel">
 
         <Parameter name="restingConc" dimension="concentration"/>
@@ -83,6 +86,46 @@
         </Dynamics>
 
     </ComponentType>-->
+
+ <ComponentType name="decayingPoolConcentrationModel_independentCa"
+   extends="concentrationModel">
+
+        <Parameter name="restingConc" dimension="concentration"/>
+        <Parameter name="decayConstant" dimension="time"/>
+        <Parameter name="shellThickness" dimension="length"/>
+       
+
+        <Constant name="Faraday" dimension="charge_per_mole" value="96485.3C_per_mol"/>
+       
+
+        <Requirement name="totChanDensCurrentDensityCa2_for_decay" dimension="currentDensity"/>
+
+        <Text name="ion"/> 
+
+        <Dynamics>
+
+            <StateVariable name="concentration" exposure="concentration" dimension="concentration"/>
+            <StateVariable name="extConcentration" exposure="extConcentration" dimension="concentration"/>
+           
+            
+
+            <TimeDerivative variable="concentration" value="(totChanDensCurrentDensityCa2_for_decay/ (2 * Faraday * shellThickness) - ((concentration - restingConc) / decayConstant))"/>
+
+            <OnStart>
+                <StateAssignment variable="concentration" value="initialConcentration"/>
+                <StateAssignment variable="extConcentration" value="initialExtConcentration"/>
+            </OnStart>
+            
+            <OnCondition test="concentration .lt. 0">
+                <StateAssignment variable="concentration" value="0"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType> 
+
+
+
 
 </neuroml>
 
