@@ -3,10 +3,10 @@
 
     <notes>Internal calcium concentration due to calcium currents and pump from Solinas et al 2007</notes>
 
-   <decayingPoolConcentrationModel_independentCa id="Golgi_CALC_ca2" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca2" shellThickness="2.0e-7m"/>
+   <!--<decayingPoolConcentrationModel_independentCa id="Golgi_CALC_ca2" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca2" shellThickness="2.0e-7m"/>-->
 
          
-  <!--
+  
      <decayingPoolConcentrationModel_independentCa id="Golgi_CALC_ca2" restingConc="5e-11mol_per_cm3"  decayConstant="0.769231ms" ion="ca2"     shellThickness="2.0378e-7m"/>
 
     <ComponentType name="decayingPoolConcentrationModel_independentCa"     
@@ -48,8 +48,11 @@
 
         </Dynamics>
 
-    </ComponentType>-->
-   <!-- <ComponentType name="decayingPoolConcentrationModel_independentCa"
+    </ComponentType>
+
+
+   <!--all components below produce the same results in TestSoma !!!!-->
+  <!-- <ComponentType name="decayingPoolConcentrationModel_independentCa"
    extends="concentrationModel">
 
         <Parameter name="restingConc" dimension="concentration"/>
@@ -87,7 +90,7 @@
 
     </ComponentType>-->
 
- <ComponentType name="decayingPoolConcentrationModel_independentCa"
+<!--<ComponentType name="decayingPoolConcentrationModel_independentCa"
    extends="concentrationModel">
 
         <Parameter name="restingConc" dimension="concentration"/>
@@ -122,7 +125,7 @@
 
         </Dynamics>
 
-    </ComponentType> 
+    </ComponentType> -->
 
 
 

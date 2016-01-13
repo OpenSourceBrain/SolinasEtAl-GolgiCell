@@ -87,28 +87,22 @@
             </membraneProperties_twoCa>
 
          
-
-         
-           <intracellularProperties>
-
-            <species id="ca" ion="ca"  concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
-            
-
-                <resistivity value="0.1 kohm_cm"/>
-
-            </intracellularProperties>
-
               
-            <intracellularProperties_independentCa>
+            <intracellularProperties_twoCa>
+
+
+              <species id="ca" ion="ca"  concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
 
            
             <species id="ca2"  ion="ca2" concentrationModel="Golgi_CALC_ca2" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+
+
 
              
                 <resistivity value="0.1 kohm_cm"/>
 
 
-            </intracellularProperties_independentCa>
+            </intracellularProperties_twoCa>
 
 
 
@@ -172,14 +166,14 @@
 
             <DerivedVariable name="iCa" dimension="current" exposure="iCa" select="biophysicalProperties_twoCa/membraneProperties_twoCa/iCa"/>
 
-            <DerivedVariable name="caConc" dimension="concentration" exposure="caConc"  select="biophysicalProperties_twoCa/intracellularProperties/caConc"/>
-            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt"  select="biophysicalProperties_twoCa/intracellularProperties/caConcExt"/>
+            <DerivedVariable name="caConc" dimension="concentration" exposure="caConc"  select="biophysicalProperties_twoCa/intracellularProperties_twoCa/caConc"/>
+            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt"  select="biophysicalProperties_twoCa/intracellularProperties_twoCa/caConcExt"/>
 
          <DerivedVariable name="iCa2" dimension="current" exposure="iCa2" select="biophysicalProperties_twoCa/membraneProperties_twoCa/iCa2"/>
 
-            <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="biophysicalProperties_twoCa/intracellularProperties_independentCa/caConc2"/>
+            <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="biophysicalProperties_twoCa/intracellularProperties_twoCa/caConc2"/>
 
-      <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="biophysicalProperties_twoCa/intracellularProperties_independentCa/caConcExt2"/>
+      <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="biophysicalProperties_twoCa/intracellularProperties_twoCa/caConcExt2"/>
 
         <DerivedVariable name="totChanDensCurrentDensityCa2_for_decay"  dimension="currentDensity" exposure="totChanDensCurrentDensityCa2_for_decay"      select="biophysicalProperties_twoCa/membraneProperties_twoCa/totChanDensCurrentDensityCa2_for_decay"/>
 
@@ -211,20 +205,29 @@
   
 
 
-    <ComponentType name="intracellularProperties_independentCa">
+    <ComponentType name="intracellularProperties_twoCa">
 
-        <Children name="speciesList_secondCa" type="species"/>
+        <Children name="speciesList" type="species"/>
 
         <Children name="resistivity" type="resistivity"/>
 
        <Exposure name="caConc2" dimension="concentration"/>
         <Exposure name="caConcExt2" dimension="concentration"/>
 
+         <Exposure name="caConc" dimension="concentration"/>
+        <Exposure name="caConcExt" dimension="concentration"/>
+
+
        <Dynamics>
 
-          <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="speciesList_secondCa[ion='ca2']/concentration" reduce="add" required="false"/>
+          <DerivedVariable name="caConc2" dimension="concentration" exposure="caConc2" select="speciesList[ion='ca2']/concentration" reduce="add" required="false"/>
 
-            <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="speciesList_secondCa[ion='ca2']/extConcentration" reduce="add" required="false"/>
+            <DerivedVariable name="caConcExt2" dimension="concentration" exposure="caConcExt2" select="speciesList[ion='ca2']/extConcentration" reduce="add" required="false"/>
+
+           <DerivedVariable name="caConc" dimension="concentration" exposure="caConc" select="speciesList[ion='ca']/concentration" reduce="add" required="false"/>
+
+            <DerivedVariable name="caConcExt" dimension="concentration" exposure="caConcExt" select="speciesList[ion='ca']/extConcentration" reduce="add" required="false"/>
+  
 
         </Dynamics>
     </ComponentType>
@@ -251,6 +254,7 @@
 
 
         <Exposure name="totChanDensCurrentDensityCa2_for_decay" dimension="currentDensity"/>
+
 
 
 
@@ -289,10 +293,10 @@
 
         <Child name="membraneProperties_twoCa" type="membraneProperties_twoCa"/>
 
-          <Child name="intracellularProperties" type="intracellularProperties"/> 
+          <Child name="intracellularProperties_twoCa" type="intracellularProperties_twoCa"/> 
 
 
-        <Child name="intracellularProperties_independentCa" type="intracellularProperties_independentCa"/>
+        
 
 
 
