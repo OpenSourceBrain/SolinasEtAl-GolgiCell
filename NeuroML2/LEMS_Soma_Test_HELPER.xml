@@ -33,7 +33,7 @@
     <Include file="Golgi_CALC_ca2.nml"/>
 
         <!--   Cell files-->
-    <Include file="TestSoma.cell.nml"/>
+    <Include file="TestSoma_HELPER.cell.nml"/>
         <!--   Network file-->
     <Include file="TestSoma.net.nml"/>
     
