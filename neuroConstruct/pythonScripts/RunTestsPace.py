@@ -37,7 +37,7 @@ simConfigs = []
 
 simConfigs.append("PacemakerTest")
 
-simDt =                 0.001
+simDt =                 0.0025
 
 simulators =            ["NEURON"]
 
@@ -88,7 +88,7 @@ def testAll(argv=None):
     spikeTimesToCheck = {'Golgi_CML_0': spike_times}
     
     
-    spikeTimeAccuracy = 2.6 # ms in 4000 ms
+    spikeTimeAccuracy = 7.2 # ms in 4000 ms
 
     report = simManager.checkSims(spikeTimesToCheck = spikeTimesToCheck,
                                   spikeTimeAccuracy = spikeTimeAccuracy)

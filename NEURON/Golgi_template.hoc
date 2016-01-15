@@ -6,7 +6,7 @@ Data Analysis: Sergio Solinas
 
 Work Progress: April 2004 - May 2007
 
-Developed At:  Università Degli Studi Di Pavia
+Developed At:  Universitï¿½ Degli Studi Di Pavia
 	       Dipartimento Di Scienze Fisiologiche
 	       Pavia - Italia
 	       
@@ -85,11 +85,14 @@ proc init() {
 	
 	cai0_ca_ion = 50e-6
 	ca2i0_ca2_ion = cai0_ca_ion
+
 	
 	cai = cai0_ca_ion
 	
 	ca2i = cai
 	ca2o = cao
+	cao0_ca_ion = 2
+	ca2o0_ca2_ion = 2
 	
 	cai0_Golgi_CALC = cai0_ca_ion
 	ca2i0_Golgi_CALC_ca2 = cai0_ca_ion
