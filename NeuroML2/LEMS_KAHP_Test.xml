@@ -10,7 +10,7 @@
 
 
         <!--   Channel/synapse files-->
-    <Include file="KAHP_CML.channel.nml"/>
+    <Include file="Golgi_KAHP.channel.nml"/>
 
     <Include file="LeakCond.channel.nml"/>
     
@@ -31,13 +31,13 @@
         </Display>
         
         <Display id="GraphWin_0" title="Soma channels" xmin="-60.0" xmax="1060.0" ymin="-0.1" ymax="1.1" timeScale="1ms">
-            <Line id="o1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o1/occupancy" scale="1" color="#000000"/>
-            <Line id="o2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o2/occupancy" scale="1" color="#FF0000"/>
+            <Line id="o1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/o1/occupancy" scale="1" color="#000000"/>
+            <Line id="o2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/o2/occupancy" scale="1" color="#FF0000"/>
             
-            <Line id="c1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c1/occupancy" scale="1" color="#0000ff"/>
-            <Line id="c2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c2/occupancy" scale="1" color="#00ff00"/>
-            <Line id="c3" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c3/occupancy" scale="1" color="#ff6600"/>
-            <Line id="c4" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c4/occupancy" scale="1" color="#7a5230"/>
+            <Line id="c1" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c1/occupancy" scale="1" color="#0000ff"/>
+            <Line id="c2" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c2/occupancy" scale="1" color="#00ff00"/>
+            <Line id="c3" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c3/occupancy" scale="1" color="#ff6600"/>
+            <Line id="c4" timeScale="1ms" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c4/occupancy" scale="1" color="#7a5230"/>
         </Display>
         
         <Display id="CG_conc" title="Soma [Ca2+]" xmin="-60" xmax="1060" ymin="-0.0006" ymax="0.006" timeScale="1ms">
@@ -46,12 +46,12 @@
         
         
         <OutputFile id="states" fileName="KAHP.states.dat">
-            <OutputColumn id="o1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o1/occupancy"/>
-            <OutputColumn id="o2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/o2/occupancy"/>
-            <OutputColumn id="c1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c1/occupancy"/>
-            <OutputColumn id="c2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c2/occupancy"/>
-            <OutputColumn id="c3" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c3/occupancy"/>
-            <OutputColumn id="c4" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/KAHP_CML_all/KAHP_CML/n/c4/occupancy"/>
+            <OutputColumn id="o1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/o1/occupancy"/>
+            <OutputColumn id="o2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/o2/occupancy"/>
+            <OutputColumn id="c1" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c1/occupancy"/>
+            <OutputColumn id="c2" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c2/occupancy"/>
+            <OutputColumn id="c3" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c3/occupancy"/>
+            <OutputColumn id="c4" quantity="CG_Test/0/TestKAHP/biophys/membraneProperties/Golgi_KAHP_all/Golgi_KAHP/n/c4/occupancy"/>
         </OutputFile>
         
         <OutputFile id="v" fileName="KAHP.v.dat">

@@ -5,7 +5,7 @@
 
     <include href="LeakCond.channel.nml"/>
 
-    <include href="KAHP_CML.channel.nml"/>
+    <include href="Golgi_KAHP.channel.nml"/>
 
     <cell id="TestKAHP">
 
@@ -46,7 +46,7 @@
                 
                 <channelDensity condDensity="0.021 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
                 
-                <channelDensity condDensity="3.8e-6 mS_per_cm2" id="KAHP_CML_all" ionChannel="KAHP_CML" ion="k" erev="-84.69 mV"/>
+                <channelDensity condDensity="3.8e-6 mS_per_cm2" id="Golgi_KAHP_all" ionChannel="Golgi_KAHP" ion="k" erev="-84.69 mV"/>
                 
                 <!--
                 -->

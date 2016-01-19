@@ -4,15 +4,12 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" 
          id="network_Soma">
 
-
+    <include href="TestSoma.cell.nml"/>
 
     <pulseGenerator id="Input_4" delay="200.0ms" duration="200.0ms" amplitude="-0.5E-5uA"/>
     <pulseGenerator id="Input_3" delay="800.0ms" duration="200.0ms" amplitude="4E-5uA"/>
-
-    
+  
     <network id="network_Soma" type="networkWithTemperature" temperature="23 degC">
-
-        
 
         <population id="CG_Test" component="TestSoma" type="populationList" size="1">
             <instance id="0">
@@ -20,24 +17,15 @@
             </instance>
         </population>
 
-
-
-            <!--There are no synaptic connections present in the network-->
-
+        <!--There are no synaptic connections present in the network-->
 
         <inputList id="Input_4" component="Input_4" population="CG_TestCML">
             <input id="0" target="../CG_Test/0/TestSoma" destination="synapses"/>
         </inputList>
 
-
-
         <inputList id="Input_3" component="Input_3" population="CG_TestCML">
             <input id="0" target="../CG_Test/0/TestSoma" destination="synapses"/>
         </inputList>
-
-
-
-
 
     </network>
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="KAHP_CML">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Golgi_KAHP">
 
     <notes>ChannelML file containing a single Channel description from Solinas et al 2007</notes>
 
-    <ionChannelKS id="KAHP_CML" conductance="10pS" species="k">
+    <ionChannelKS id="Golgi_KAHP" conductance="10pS" species="k">
 
         <notes>SK type Ca2+ dependent K+ channel (After HyperPolarizing), based on mod file supplied with Solinas et al 2007 (ModelDB 112685)</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                <rdf:Description rdf:about="KAHP_CML">
+                <rdf:Description rdf:about="Golgi_KAHP">
                     
                     <bqmodel:isDescribedBy xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
                         <rdf:Bag>
@@ -40,49 +40,49 @@
             <openState id="o2"/>
 <!--Transition: alpha_c1_c2, c1 -> c2-->
             <forwardTransition id="alpha_c1_c2" from="c1" to="c2">
-                <rate id="alpha_c1_c2_rate" type="KAHP_CML_n_alpha_c1_c2_rate"/>
+                <rate id="alpha_c1_c2_rate" type="Golgi_KAHP_n_alpha_c1_c2_rate"/>
             </forwardTransition>
 <!--Transition: beta_c2_c1, c2 -> c1-->
             <reverseTransition id="beta_c2_c1" from="c1" to="c2">
-                <rate id="beta_c2_c1_rate" type="KAHP_CML_n_beta_c2_c1_rate"/>
+                <rate id="beta_c2_c1_rate" type="Golgi_KAHP_n_beta_c2_c1_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c2_c3, c2 -> c3-->
             <forwardTransition id="alpha_c2_c3" from="c2" to="c3">
-                <rate id="alpha_c2_c3_rate" type="KAHP_CML_n_alpha_c2_c3_rate"/>
+                <rate id="alpha_c2_c3_rate" type="Golgi_KAHP_n_alpha_c2_c3_rate"/>
             </forwardTransition>
 <!--Transition: beta_c3_c2, c3 -> c2-->
             <reverseTransition id="beta_c3_c2" from="c2" to="c3">
-                <rate id="beta_c3_c2_rate" type="KAHP_CML_n_beta_c3_c2_rate"/>
+                <rate id="beta_c3_c2_rate" type="Golgi_KAHP_n_beta_c3_c2_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c3_c4, c3 -> c4-->
             <forwardTransition id="alpha_c3_c4" from="c3" to="c4">
-                <rate id="alpha_c3_c4_rate" type="KAHP_CML_n_alpha_c3_c4_rate"/>
+                <rate id="alpha_c3_c4_rate" type="Golgi_KAHP_n_alpha_c3_c4_rate"/>
             </forwardTransition>
 <!--Transition: beta_c4_c3, c4 -> c3-->
             <reverseTransition id="beta_c4_c3" from="c3" to="c4">
-                <rate id="beta_c4_c3_rate" type="KAHP_CML_n_beta_c4_c3_rate"/>
+                <rate id="beta_c4_c3_rate" type="Golgi_KAHP_n_beta_c4_c3_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c3_o1, c3 -> o1-->
             <forwardTransition id="alpha_c3_o1" from="c3" to="o1">
-                <rate id="alpha_c3_o1_rate" type="KAHP_CML_n_alpha_c3_o1_rate"/>
+                <rate id="alpha_c3_o1_rate" type="Golgi_KAHP_n_alpha_c3_o1_rate"/>
             </forwardTransition>
 <!--Transition: beta_o1_c3, o1 -> c3-->
             <reverseTransition id="beta_o1_c3" from="c3" to="o1">
-                <rate id="beta_o1_c3_rate" type="KAHP_CML_n_beta_o1_c3_rate"/>
+                <rate id="beta_o1_c3_rate" type="Golgi_KAHP_n_beta_o1_c3_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c4_o2, c4 -> o2-->
             <forwardTransition id="alpha_c4_o2" from="c4" to="o2">
-                <rate id="alpha_c4_o2_rate" type="KAHP_CML_n_alpha_c4_o2_rate"/>
+                <rate id="alpha_c4_o2_rate" type="Golgi_KAHP_n_alpha_c4_o2_rate"/>
             </forwardTransition>
 <!--Transition: beta_o2_c4, o2 -> c4-->
             <reverseTransition id="beta_o2_c4" from="c4" to="o2">
-                <rate id="beta_o2_c4_rate" type="KAHP_CML_n_beta_o2_c4_rate"/>
+                <rate id="beta_o2_c4_rate" type="Golgi_KAHP_n_beta_o2_c4_rate"/>
             </reverseTransition>
         </gateKS>
                             
     </ionChannelKS>
 
-    <ComponentType name="KAHP_CML_n_alpha_c1_c2_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_alpha_c1_c2_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -124,7 +124,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_beta_c2_c1_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_beta_c2_c1_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -166,7 +166,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_alpha_c2_c3_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_alpha_c2_c3_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -208,7 +208,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_beta_c3_c2_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_beta_c3_c2_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -250,7 +250,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_alpha_c3_c4_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_alpha_c3_c4_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -292,7 +292,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_beta_c4_c3_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_beta_c4_c3_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -334,7 +334,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_alpha_c3_o1_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_alpha_c3_o1_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -376,7 +376,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_beta_o1_c3_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_beta_o1_c3_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -418,7 +418,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_alpha_c4_o2_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_alpha_c4_o2_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
@@ -460,7 +460,7 @@
 
     </ComponentType>
 
-    <ComponentType name="KAHP_CML_n_beta_o2_c4_rate" extends="baseVoltageConcDepRate">
+    <ComponentType name="Golgi_KAHP_n_beta_o2_c4_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>

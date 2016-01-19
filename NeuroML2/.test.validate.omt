@@ -2,5 +2,5 @@
 
 # This test will validate all of the NeuroML 2 files in the current directory using: jnml -validate *.nml
 #  Missing  KAHP_CML.channel.nml  
-target: "Golgi*.channel.nml TestKAHP.net.nml"
+target: "Golgi*.channel.nml TestKAHP.net.nml TestSoma.net.nml"
 engine: jNeuroML_validate

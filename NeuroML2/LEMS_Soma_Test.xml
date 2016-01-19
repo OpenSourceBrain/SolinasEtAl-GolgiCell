@@ -10,17 +10,17 @@
 
 
         <!--   Channel/synapse files-->
-    <Include file="Golgi_Na.channel.nml"/>
+    <Include file="Golgi_NaT.channel.nml"/>
     <Include file="Golgi_NaR.channel.nml"/>
     <Include file="Golgi_NaP.channel.nml"/>
     
     <Include file="Golgi_KA.channel.nml"/>
-    <Include file="Golgi_KM.channel.nml"/>
+    <Include file="Golgi_Kslow.channel.nml"/>
     <Include file="Golgi_KV.channel.nml"/>
-    <Include file="Golgi_BK.channel.nml"/>
+    <Include file="Golgi_KC.channel.nml"/>
     
     <Include file="Golgi_Ca_HVA.channel.nml"/>
-     <Include file="Golgi_Ca_LVA.channel.nml"/>
+    <!--<Include file="Golgi_Ca_LVA.channel.nml"/>-->
     
     <Include file="Golgi_hcn1f.channel.nml"/>
     <Include file="Golgi_hcn1s.channel.nml"/>
@@ -30,7 +30,7 @@
     <Include file="LeakCond.channel.nml"/>
     
     <Include file="Golgi_CALC.nml"/>
-    <Include file="Golgi_CALC_ca2.nml"/>
+    <!--<Include file="Golgi_CALC_ca2.nml"/>-->
 
         <!--   Cell files-->
     <Include file="TestSoma.cell.nml"/>
@@ -60,20 +60,20 @@
             <Line id="hcn1 slow" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn1s_all/Golgi_hcn1s/s/q" scale="1" color="#FF0000"/>-->
          <!-- <Line id="hcn2 fast" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2f_all/Golgi_hcn2f/f/q" scale="1" color="#FF0000"/>
             <Line id="hcn2 slow" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/hcn2s_all/Golgi_hcn2s/s/q" scale="1" color="#FF0000"/>-->
-      <!--<Line id="HVA s" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/s/q" scale="1" color="#000000"/>
-          <Line id="HVA u" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/u/q" scale="1" color="#FF0000"/>-->
-         <Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
-         <Line id="LVA h" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/h/q" scale="1" color="#FF0000"/>
+      <Line id="HVA s" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/s/q" scale="1" color="#000000"/>
+          <Line id="HVA u" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/CaHVA_all/Golgi_Ca_HVA/u/q" scale="1" color="#FF0000"/>
+         <!--<Line id="LVA m" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/m/q" scale="1" color="#000000"/>
+         <Line id="LVA h" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/h/q" scale="1" color="#FF0000"/>-->
        <!-- <Line id="BK c" timeScale="1ms" quantity="CG_Test/0/TestSoma/biophys/membraneProperties/BK_all/Golgi_BK/c/q" scale="1" color="#FF0000"/>-->
         </Display>
         
        <Display id="CG_conc" title="Soma [Ca2+]" xmin="-100.0" xmax="1600.0" ymin="-0.0006" ymax="0.006" timeScale="1ms">
             <Line id="[Ca2+]ca" timeScale="1ms" quantity="CG_Test/0/TestSoma/caConc" scale="1 mM" color="#000000"/>
         </Display>
-
+<!--
         <Display id="CG_conc_ca2" title="Soma [Ca2+] ca2" xmin="-100.0" xmax="1600.0" ymin="-0.0006" ymax="0.006" timeScale="1ms">
             <Line id="[Ca2+]ca2" timeScale="1ms" quantity="CG_Test/0/TestSoma/caConc2" scale="1 mM" color="#000000"/>
-        </Display>
+        </Display>-->
         
         <OutputFile id="v" fileName="Soma.v.dat">
             <OutputColumn id="v" quantity="CG_Test/0/TestSoma/v"/>
@@ -127,7 +127,7 @@
         </OutputFile>
        <OutputFile id="rates_u" fileName="CaHVA_u.dat">
             <OutputColumn id="u" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaHVA_all/Golgi_Ca_HVA/u/q"/>
-        </OutputFile>-->
+        </OutputFile>
      
         <OutputFile id="rates_m" fileName="CaLVA_m.dat">
             <OutputColumn id="s" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/m/q"/>
@@ -135,7 +135,7 @@
         
        <OutputFile id="rates_h" fileName="CaLVA_h.dat">
             <OutputColumn id="u" quantity="CG_Test/0/TestSoma/biophys/membraneProperties_twoCa/CaLVA_all/Golgi_Ca_LVA/h/q"/>
-        </OutputFile>
+        </OutputFile>-->
 
         <OutputFile id="Ca" fileName="Ca.dat">
             <OutputColumn id="ca" quantity="CG_Test/0/TestSoma/caConc"/>
@@ -144,14 +144,14 @@
        <OutputFile id="iCa" fileName="iCa.dat">
             <OutputColumn id="ica" quantity="CG_Test/0/TestSoma/iCa"/>
         </OutputFile>
-        
+        <!--
       <OutputFile id="Ca2" fileName="Ca2.dat">
             <OutputColumn id="ca2" quantity="CG_Test/0/TestSoma/caConc2"/>
         </OutputFile>
 
        <OutputFile id="iCa2" fileName="iCa2.dat">
             <OutputColumn id="ica2" quantity="CG_Test/0/TestSoma/iCa2"/>
-        </OutputFile>
+        </OutputFile>-->
 
        
     
