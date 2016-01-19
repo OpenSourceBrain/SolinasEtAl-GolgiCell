@@ -5,6 +5,7 @@
 
     <include href="LeakCond.channel.nml"/>
 
+    <include href="KAHP_CML.channel.nml"/>
 
     <cell id="TestKAHP">
 

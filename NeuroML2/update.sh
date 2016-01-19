@@ -22,6 +22,7 @@ copyNml2 'NaR_CML' 'Golgi_NaR'
 copyNml2 'KA_CML' 'Golgi_KA'
 copyNml2 'Kslow_CML' 'Golgi_KM'
 copyNml2 'KV_CML' 'Golgi_KV'
+copyNml2 'KAHP_CML' 'KAHP_CML'
 
 copyNml2 'CaHVA_CML' 'Golgi_Ca_HVA'
 copyNml2 'CaLVA_CML' 'Golgi_Ca_LVA'

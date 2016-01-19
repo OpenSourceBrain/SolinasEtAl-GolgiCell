@@ -3,7 +3,7 @@
 
     <notes>ChannelML file containing a single Channel description from Solinas et al 2007</notes>
 
-    <ionChannel id="KAHP_CML" conductance="10pS" type="ionChannelKS" species="k">
+    <ionChannelKS id="KAHP_CML" conductance="10pS" species="k">
 
         <notes>SK type Ca2+ dependent K+ channel (After HyperPolarizing), based on mod file supplied with Solinas et al 2007 (ModelDB 112685)</notes>
                 
@@ -30,7 +30,7 @@
             </rdf:RDF>
         </annotation>
 
-        <gate id="n" type="gateKS" instances="1">
+        <gateKS id="n" instances="1">
             <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="23 degC"/>
             <closedState id="c1"/>
             <closedState id="c2"/>
@@ -78,9 +78,9 @@
             <reverseTransition id="beta_o2_c4" from="c4" to="o2">
                 <rate id="beta_o2_c4_rate" type="KAHP_CML_n_beta_o2_c4_rate"/>
             </reverseTransition>
-        </gate>
+        </gateKS>
                             
-    </ionChannel>
+    </ionChannelKS>
 
     <ComponentType name="KAHP_CML_n_alpha_c1_c2_rate" extends="baseVoltageConcDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
@@ -108,6 +108,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -117,7 +119,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(dirc2 * (ca_conc*1e6/diff)) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (dirc2 * (ca_conc*1e6/diff)) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -148,6 +150,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -157,7 +161,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(inVc1) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (inVc1) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -188,6 +192,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -197,7 +203,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(dirc3 * (ca_conc*1e6/diff)) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (dirc3 * (ca_conc*1e6/diff)) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -228,6 +234,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -237,7 +245,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(inVc2) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (inVc2) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -268,6 +276,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -277,7 +287,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(dirc4 * (ca_conc*1e6/diff)) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (dirc4 * (ca_conc*1e6/diff)) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -308,6 +318,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -317,7 +329,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(inVc3) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (inVc3) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -348,6 +360,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -357,7 +371,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(diro1) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (diro1) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -388,6 +402,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -397,7 +413,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(inVo1) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (inVo1) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -428,6 +444,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -437,7 +455,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(diro2) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (diro2) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -468,6 +486,8 @@
         <Constant name="dirc4" dimension="none" value="80"/>
         <!--Note: this parameter (diff) should ideally be defined only once within the ionChannel! Work in progress...-->
         <Constant name="diff" dimension="none" value="3"/>
+<!--Since the channel type is KS...-->
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -477,7 +497,7 @@
             <DerivedVariable name="inVc3" dimension="none" value="invc3"/>
             <DerivedVariable name="inVo1" dimension="none" value="invo1"/>
             <DerivedVariable name="inVo2" dimension="none" value="invo2"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(inVo2) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="rateScale * (inVo2) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>

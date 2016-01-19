@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Golgi_CML">
+
+    <include href="CaHVA_CML.channel.nml"/>
+
+    <include href="CaLVA_CML.channel.nml"/>
+
+    <include href="Golgi_CALC_ca2_CML.nml"/>
+
+    <include href="Golgi_CALC_CML.nml"/>
+
+    <include href="hcn1f_CML.channel.nml"/>
+
+    <include href="hcn1s_CML.channel.nml"/>
+
+    <include href="hcn2f_CML.channel.nml"/>
+
+    <include href="hcn2s_CML.channel.nml"/>
+
+    <include href="KA_CML.channel.nml"/>
+
+    <include href="KAHP_CML.channel.nml"/>
+
+    <include href="KC_CML.channel.nml"/>
+
+    <include href="Kslow_CML.channel.nml"/>
+
+    <include href="KV_CML.channel.nml"/>
+
+    <include href="LeakCond.channel.nml"/>
+
+    <include href="NaP_CML.channel.nml"/>
+
+    <include href="NaR_CML.channel.nml"/>
+
+    <include href="NaT_CML.channel.nml"/>
+
+    <cell id="Golgi_CML">
+
+        <notes>Multicompartmental model of cerebellar Golgi cell from: Solinas S, Forti L, Cesana E, Mapelli J, De Schutter E, D’Angelo E. (2007) Computational reconstruction of pacemaking and intrinsic electroresponsiveness in cerebellar Golgi cells. Front Cell Neurosci. 2007;1:2.</notes>
+
+        <morphology id="morphology_Golgi_CML">
+
+            <segment id="0" name="Soma">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="27.0"/>
+                <distal x="0.0" y="0.0" z="0.0" diameter="27.0"/>
+            </segment>
+
+            <segment id="1" name="dend2">
+                <parent segment="0" fractionAlong="0.5"/>
+                <proximal x="0.0" y="0.0" z="0.0" diameter="3.0"/>
+                <distal x="113.0" y="0.0" z="0.0" diameter="3.0"/>
+            </segment>
+
+            <segment id="2" name="dend_1">
+                <parent segment="0" fractionAlong="0.5"/>
+                <proximal x="0.0" y="0.0" z="0.0" diameter="3.0"/>
+                <distal x="72.0" y="87.0" z="4.0" diameter="3.0"/>
+            </segment>
+
+            <segment id="5" name="dend_3">
+                <parent segment="0" fractionAlong="0.5"/>
+                <proximal x="0.0" y="0.0" z="0.0" diameter="3.0"/>
+                <distal x="72.0" y="-87.0" z="4.0" diameter="3.0"/>
+            </segment>
+
+            <segment id="6" name="axon">
+                <parent segment="0" fractionAlong="0.5"/>
+                <proximal x="0.0" y="0.0" z="0.0" diameter="2.4"/>
+                <distal x="-1200.0" y="0.0" z="0.0" diameter="2.4"/>
+            </segment>
+
+            <segmentGroup id="Soma" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="0"/>
+            </segmentGroup>
+
+            <segmentGroup id="Section_1" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 10-->
+
+                <property tag="numberInternalDivisions" value="10"/>
+
+                <member segment="1"/>
+            </segmentGroup>
+
+            <segmentGroup id="dend_1" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 10-->
+
+                <property tag="numberInternalDivisions" value="10"/>
+
+                <member segment="2"/>
+            </segmentGroup>
+
+            <segmentGroup id="Section_3" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 10-->
+
+                <property tag="numberInternalDivisions" value="10"/>
+
+                <member segment="5"/>
+            </segmentGroup>
+
+            <segmentGroup id="Section_axon" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 100-->
+
+                <property tag="numberInternalDivisions" value="100"/>
+
+                <member segment="6"/>
+            </segmentGroup>
+
+            <segmentGroup id="all">
+                <include segmentGroup="Soma"/>
+                <include segmentGroup="Section_1"/>
+                <include segmentGroup="dend_1"/>
+                <include segmentGroup="Section_3"/>
+                <include segmentGroup="Section_axon"/>
+            </segmentGroup>
+
+            <segmentGroup id="soma_group" neuroLexId="GO:0043025">    <!--Soma group-->
+
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+
+            <segmentGroup id="dendrite_group" neuroLexId="GO:0030425">    <!--Dendrite group-->
+
+                <include segmentGroup="Section_1"/>
+                <include segmentGroup="dend_1"/>
+                <include segmentGroup="Section_3"/>
+            </segmentGroup>
+
+            <segmentGroup id="axon_group" neuroLexId="GO:0030424">    <!--Axon group-->
+
+                <include segmentGroup="Section_axon"/>
+            </segmentGroup>
+
+            
+        </morphology>
+
+            <!--Adding the biophysical parameters-->
+
+        <biophysicalProperties id="biophys">
+
+            <membraneProperties>
+                
+                <channelDensity condDensity="0.25 mS_per_cm2" id="CaLVA_CML_soma_group" ionChannel="CaLVA_CML" segmentGroup="soma_group" ion="ca2" erev="132.458 mV"/>
+                
+                <channelDensity condDensity="0.05 mS_per_cm2" id="hcn1f_CML_soma_group" ionChannel="hcn1f_CML" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.05 mS_per_cm2" id="hcn1s_CML_soma_group" ionChannel="hcn1s_CML" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2f_CML_soma_group" ionChannel="hcn2f_CML" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_CML_soma_group" ionChannel="hcn2s_CML" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
+                
+                <channelDensity condDensity="8.0 mS_per_cm2" id="KA_CML_soma_group" ionChannel="KA_CML" segmentGroup="soma_group" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="38.0 mS_per_cm2" id="KAHP_CML_soma_group" ionChannel="KAHP_CML" segmentGroup="soma_group" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="3.0 mS_per_cm2" id="KC_CML_soma_group" ionChannel="KC_CML" segmentGroup="soma_group" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="1.0 mS_per_cm2" id="Kslow_CML_soma_group" ionChannel="Kslow_CML" segmentGroup="soma_group" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="32.0 mS_per_cm2" id="KV_CML_soma_group" ionChannel="KV_CML" segmentGroup="soma_group" ion="k" erev="-84.69 mV"/>
+                
+                <channelDensity condDensity="0.021 mS_per_cm2" id="LeakCond_all" ionChannel="LeakCond" erev="-55.0 mV" ion="non_specific"/>
+                
+                <channelDensity condDensity="0.19 mS_per_cm2" id="NaP_CML_soma_group" ionChannel="NaP_CML" segmentGroup="soma_group" ion="na" erev="87.39 mV"/>
+                
+                <channelDensity condDensity="1.7 mS_per_cm2" id="NaR_CML_soma_group" ionChannel="NaR_CML" segmentGroup="soma_group" ion="na" erev="87.39 mV"/>
+                
+                <channelDensity condDensity="48.0 mS_per_cm2" id="NaT_CML_soma_group" ionChannel="NaT_CML" segmentGroup="soma_group" ion="na" erev="87.39 mV"/>
+                
+
+                <!--Reversal potential for ca in CaHVA_CML will be calculated by Nernst equation from internal & external calcium-->
+
+                <channelDensityNernst condDensity="0.46 mS_per_cm2" id="CaHVA_CML_soma_group" ionChannel="CaHVA_CML" segmentGroup="soma_group" ion="ca"/>
+                
+
+                <spikeThresh value="0.0 mV"/>
+
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+
+                <initMembPotential value="-60.0 mV"/>
+
+            </membraneProperties>
+
+            <intracellularProperties>
+
+                <species segmentGroup="soma_group" id="ca" ion="ca" concentrationModel="Golgi_CALC_CML" initialConcentration="5.0E-11 mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+
+                <species segmentGroup="soma_group" id="ca2" ion="ca2" concentrationModel="Golgi_CALC_ca2_CML" initialConcentration="5.0E-11 mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+
+                <resistivity value="0.1 kohm_cm"/>
+
+            </intracellularProperties>
+
+        </biophysicalProperties>
+
+    </cell>
+    
+</neuroml>

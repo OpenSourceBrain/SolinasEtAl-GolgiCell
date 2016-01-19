@@ -2,7 +2,7 @@
 <neuroml xmlns="http://morphml.org/neuroml/schema" xmlns:meta="http://morphml.org/metadata/schema" xmlns:mml="http://morphml.org/morphml/schema" xmlns:bio="http://morphml.org/biophysics/schema" xmlns:cml="http://morphml.org/channelml/schema" xmlns:net="http://morphml.org/networkml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://morphml.org/neuroml/schema  http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level3/NeuroML_Level3_v1.8.1.xsd" lengthUnits="micron">
 
     <cells>
-        <cell name="Simple_CML_test">
+        <cell name="Simple_CML_NoCa2">
 
             <meta:notes>A single segment/compartment cell</meta:notes>
 
@@ -40,13 +40,55 @@ The scaling factor for converting current into change in ion concentration shoul
  determined from ChannelML file for the CaPool...-->
 
                     <bio:parameter name="gmax" value="0.0">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn1f_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.05">
                         <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn1s_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.05">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn2f_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.08">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="hcn2s_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.08">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="KA_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="8.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="KAHP_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="38.0">
+                        <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
                 <bio:mechanism name="KC_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="3.0">
                         <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="Kslow_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="1.0">
+                        <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
@@ -67,6 +109,12 @@ The scaling factor for converting current into change in ion concentration shoul
 
                 <bio:mechanism name="NaP_CML" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="0.19">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="NaR_CML" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="0.17">
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -98,11 +146,11 @@ The scaling factor for converting current into change in ion concentration shoul
 
                 <bio:ion_props name="ca">
                     <bio:parameter name="conc_e" value="2.0E-6">
-                        <bio:group>all</bio:group>
+                        <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 
                     <bio:parameter name="conc_i" value="5.0E-11">
-                        <bio:group>all</bio:group>
+                        <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:ion_props>
             

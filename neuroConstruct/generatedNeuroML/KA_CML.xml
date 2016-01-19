@@ -107,7 +107,7 @@
                 <transition name="alpha" from="a0" to="a" expr_form="sigmoid" rate="0.8147 " scale="-23.32708" midpoint="-9.17203"/>
                 <transition name="beta" from="a" to="a0"  expr_form="generic" expr="0.1655 /( exp ((v + 18.27914)/19.47175 ))"/>
 
-                <steady_state name="inf" from="a0" to="a" expr_form="sigmoid" rate="1" scale=" -17" midpoint=" -38"/>
+                <steady_state name="inf" from="a0" to="a" expr_form="sigmoid" rate="1" scale="-17" midpoint="-38"/>
 
             </gate>
             
@@ -143,9 +143,9 @@
 		
 	                -->
 
-                <transition name="alpha" from="b0" to="b" expr_form="sigmoid" rate="0.0368 " scale=" 12.8433 " midpoint=" -111.33209"/>
+                <transition name="alpha" from="b0" to="b" expr_form="sigmoid" rate="0.0368 " scale="12.8433 " midpoint="-111.33209"/>
                 <transition name="beta"  from="b" to="b0" expr_form="sigmoid" rate="0.0345" scale="-8.90123" midpoint="-49.953"/>
-                <steady_state name="inf" from="b0" to="b" expr_form="sigmoid" rate="1" scale=" 8.4 " midpoint="-78.8"/>
+                <steady_state name="inf" from="b0" to="b" expr_form="sigmoid" rate="1" scale="8.4 " midpoint="-78.8"/>
 
             </gate>
             

@@ -112,10 +112,6 @@ The scaling factor for converting current into change in ion concentration shoul
                     <bio:parameter name="gmax" value="0.0">
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
-                    <bio:parameter name="thickness" value="0.20304">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
-
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
                 </bio:mechanism>
 
                 <bio:mechanism name="Golgi_CALC_CML" type="Ion Concentration">    <!--Note: Calcium pools are not proper ion channels, thus this parameter does not represent a proper maximum conductance.
@@ -123,10 +119,6 @@ The scaling factor for converting current into change in ion concentration shoul
  determined from ChannelML file for the CaPool...-->
 
                     <bio:parameter name="gmax" value="0.0">
-                        <bio:group>soma_group</bio:group>
-                    </bio:parameter>
-                    <bio:parameter name="thickness" value="0.20304">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
-
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -230,6 +222,28 @@ The scaling factor for converting current into change in ion concentration shoul
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:init_memb_potential>
+
+                <bio:ion_props name="ca">
+                    <bio:parameter name="conc_e" value="2.0E-6">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                
+                    <bio:parameter name="conc_i" value="5.0E-11">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:ion_props>
+            
+
+                <bio:ion_props name="ca2">
+                    <bio:parameter name="conc_e" value="2.0E-6">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                
+                    <bio:parameter name="conc_i" value="5.0E-11">
+                        <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:ion_props>
+            
 
                 <bio:ion_props name="k">
                     <bio:parameter name="e" value="-84.69">
