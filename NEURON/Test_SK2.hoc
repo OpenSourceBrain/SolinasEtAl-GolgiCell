@@ -3,7 +3,6 @@ usegui = 1
 {load_file("stdlib.hoc")}
 {load_file("stdgui.hoc")}
 
-
 create Soma
 access Soma
 
