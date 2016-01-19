@@ -5,6 +5,6 @@ system: Testing Golgi
 experiments:
   ionic_currents_and_calcium:
     expected:
-      spike times: [0.08805]
+      spike times: [0.0872]
 
 

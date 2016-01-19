@@ -34,11 +34,11 @@ objref Golgi[1]
 Golgi[0] = new Goc()
 
 v_init = -60
-dt = 0.025
+dt = 0.0025
 
 access Golgi[0].soma
 
-cvode.active(1)
+//cvode.active(1)
 
 
 // Set output

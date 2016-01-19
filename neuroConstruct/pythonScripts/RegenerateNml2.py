@@ -27,19 +27,16 @@ import ncutils as nc # Many useful functions such as SimManager.runMultipleSims 
 
 projFile = File(os.getcwd(), "../SolinasEtAl-GolgiCell.ncx")
 
-simConfigs = []
-simConfigs.append("TestNML2")
-
 print("Generating NeuroML v1.8.1 files...")
 nc.generateNeuroML1(projFile, ['Fig. 2A: Pacemaking'])
     
 
 print("Generating NeuroML v2 files...")
-nc.generateNeuroML2(projFile, simConfigs)
+nc.generateNeuroML2(projFile, ['Fig. 2A: Pacemaking'])
 
 # Some extra files have been committed for testing or to provide other LEMS/NeuroML 2 examples
 # This just pulls them from the repository, since they get wiped by the generateNeuroML2 function 
-extra_files = ['.test.*', 'channel_summary', 'analyse_chans.sh','compare_nml2_mods.py']
+extra_files = ['.test.*', 'channel_summary', 'analyse_chans.sh', 'compare_nml2_mods.py', '../generatedNeuroML/.test.validate.omt']
                
 if len(sys.argv)==2 and sys.argv[1] == "-f":
     extra_files.append('SolinasEtAl-GolgiCell.net.nml')

@@ -9,6 +9,7 @@
 /NeuroML2/*.hoc
 /NeuroML2/*.dat
 
+/NEURON*/old
 /NEURON*/test/*.dat
 /NEURON*/*.dat
 /NEURON*/Golgi_count.txt
