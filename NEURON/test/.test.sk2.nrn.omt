@@ -1,0 +1,28 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+
+target: Test_SK2.hoc
+engine: NEURON
+
+mep: .test.sk2.mep
+experiments:
+  o1:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,1]
+        spike detection: 
+          method: threshold
+          threshold: 0.018
+        tolerance: 0
+  o2:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,2]
+        spike detection: 
+          method: threshold
+          threshold: 0.5
+        tolerance: 0
+
