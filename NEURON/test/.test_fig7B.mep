@@ -5,6 +5,6 @@ system: Testing Golgi
 experiments:
   Ionic_currents_intensity_latency:
     expected:
-      spike times: [0.03785]
+      spike times: [0.037775]
 
 

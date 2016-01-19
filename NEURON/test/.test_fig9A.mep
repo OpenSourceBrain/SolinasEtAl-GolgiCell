@@ -5,15 +5,15 @@ system: Testing Golgi
 experiments:
   subthreshold oscillations and spike coupling control:
     expected:
-      spike times: [0.08805, 0.2911, 0.501825, 0.717325, 0.9287, 1.15155]
-
+      spike times: [0.0872, 0.289275, 0.49925, 0.7139, 0.9327, 1.15465]
   subthreshold oscillations and spike coupling INa IK-V IK-C block:
     expected:
-      spike times: [0.073925, 0.34375, 0.640425, 0.939775, 1.240125]
+      spike times: [0.0733, 0.342575, 0.638525, 0.937125, 1.2367]
   subthreshold oscillations and spike coupling INa IK-V IK-C and Ihcn2 block:
     expected:
-      spike times:  [0.1037, 0.4407, 0.80665, 1.1756]
+      spike times:  [0.10235, 0.437725, 0.80185, 1.168925]
   subthreshold oscillations and spike coupling INa IK-V IK-C and Ihcn2 block and 10pA:
     expected:
-      spike times: [0.070625, 0.3324, 0.62035, 0.9104, 1.201125]
+      spike times: [0.070075, 0.331475, 0.618775, 0.908225, 1.198325]
+
    
