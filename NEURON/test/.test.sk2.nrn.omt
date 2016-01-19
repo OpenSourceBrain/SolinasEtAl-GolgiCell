@@ -25,4 +25,24 @@ experiments:
           method: threshold
           threshold: 0.5
         tolerance: 0
+  c2:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,4]
+        spike detection: 
+          method: threshold
+          threshold: 0.1065
+        tolerance: 0
+  c3:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,5]
+        spike detection: 
+          method: threshold
+          threshold: 0.1065
+        tolerance: 0
 

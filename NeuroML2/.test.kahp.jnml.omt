@@ -2,3 +2,46 @@
 
 target: LEMS_KAHP_Test.xml 
 engine: jNeuroML
+
+mep: ../NEURON/test/.test.sk2.mep
+experiments:
+  o1:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,1]
+        spike detection: 
+          method: threshold
+          threshold: 0.018
+        tolerance: 0.00063
+  o2:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,2]
+        spike detection: 
+          method: threshold
+          threshold: 0.5
+        tolerance: 0.00066
+  c2:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,4]
+        spike detection: 
+          method: threshold
+          threshold: 0.1065
+        tolerance: 0.00058
+  c3:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,5]
+        spike detection: 
+          method: threshold
+          threshold: 0.1065
+        tolerance: 0.00071
