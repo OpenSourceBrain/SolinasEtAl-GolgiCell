@@ -3,6 +3,8 @@ usegui = 1
 {load_file("stdlib.hoc")}
 {load_file("stdgui.hoc")}
 
+useCaHVA = 0
+useCaLVA = 1
 
 create Soma
 access Soma
@@ -27,35 +29,40 @@ glbar_Golgi_lkg=2.1e-05
 //insert Golgi_hcn1
 //insert Golgi_hcn2
 
-insert Golgi_Ca_HVA
+if (useCaHVA==1) { insert Golgi_Ca_HVA }
 
-//insert Golgi_Ca_LVA
+if (useCaLVA==1) { 
+
+    insert Golgi_Ca_LVA 
+    //below line to decouple changes to due Ca and voltage: reduce peak conductance 2.5e-4 to a lower value
+
+    gca2bar_Golgi_Ca_LVA= 2.5e-15
+
+}
 
 
-//below line to decouple changes to due Ca and voltage: reduce peak conductance 2.5e-4 to a lower value
-
-//gca2bar_Golgi_Ca_LVA= 2.5e-5
 
 //insert Golgi_BK
 
 // Golgi_Ca_HVA uses ca
-insert Golgi_CALC
+if (useCaHVA==1) { 
+    insert Golgi_CALC
 
-cai0_ca_ion = 50e-6
-cai = cai0_ca_ion
-cai0_Golgi_CALC = cai0_ca_ion
+    cai0_ca_ion = 50e-6
+    cai = cai0_ca_ion
+    cai0_Golgi_CALC = cai0_ca_ion
+}
 
 
 //Golgi_Ca_LVA uses ca2
 
-/*
-insert Golgi_CALC_ca2
-ca2i0_ca2_ion = cai0_ca_ion
-ca2i = cai
-ca2o = cao
+if (useCaLVA==1) { 
+    insert Golgi_CALC_ca2
+    ca2i0_ca2_ion = 50e-6
+    ca2o0_ca2_ion = 2
 
-ca2i0_Golgi_CALC_ca2 = cai0_ca_ion
-*/
+    ca2i0_Golgi_CALC_ca2 = cai0_ca_ion
+}
 
 
 
@@ -107,14 +114,17 @@ objref Soma_v
 { Soma_v.record(&Soma.v(0.5))} 
 
 objref Soma_ca
-{ Soma_ca = new Vector() }
-{ Soma_ca.record(&Soma.cai(0.5))} 
+if (useCaHVA==1) { 
+    { Soma_ca = new Vector() }
+    { Soma_ca.record(&Soma.cai(0.5))} 
+}
 
-/*
+
 objref Soma_ca2
-{ Soma_ca2 = new Vector() }
-{ Soma_ca2.record(&Soma.ca2i(0.5))} 
-*/
+if (useCaLVA==1) { 
+    { Soma_ca2 = new Vector() }
+    { Soma_ca2.record(&Soma.ca2i(0.5))} 
+}
 
 
 
@@ -169,21 +179,26 @@ objref Soma_hcn2_o_slow
 objref Soma_Ca_HVA_s
 objref Soma_Ca_HVA_u
 
-{Soma_Ca_HVA_s=new Vector() }
-{Soma_Ca_HVA_s.record(&Soma.s_Golgi_Ca_HVA(0.5))}
+if (useCaHVA==1) { 
+    {Soma_Ca_HVA_s=new Vector() }
+    {Soma_Ca_HVA_s.record(&Soma.s_Golgi_Ca_HVA(0.5))}
 
-{Soma_Ca_HVA_u=new Vector() }
-{Soma_Ca_HVA_u.record(&Soma.u_Golgi_Ca_HVA(0.5))}
+    {Soma_Ca_HVA_u=new Vector() }
+    {Soma_Ca_HVA_u.record(&Soma.u_Golgi_Ca_HVA(0.5))}
+}
 
-/***
+
 objref Soma_Ca_LVA_m
 objref Soma_Ca_LVA_h
 
-{Soma_Ca_LVA_m=new Vector() }
-{Soma_Ca_LVA_m.record(&Soma.m_Golgi_Ca_LVA(0.5))}
+if (useCaLVA==1) { 
+    {Soma_Ca_LVA_m=new Vector() }
+    {Soma_Ca_LVA_m.record(&Soma.m_Golgi_Ca_LVA(0.5))}
 
-{Soma_Ca_LVA_h=new Vector() }
-{Soma_Ca_LVA_h.record(&Soma.h_Golgi_Ca_LVA(0.5))}***/
+    {Soma_Ca_LVA_h=new Vector() }
+    {Soma_Ca_LVA_h.record(&Soma.h_Golgi_Ca_LVA(0.5))}
+}
+
 
 /***objref Soma_BK_c
 {Soma_BK_c=new Vector() }
@@ -226,14 +241,19 @@ if (usegui==1) {
            // GraphWin_2.addexpr("hcn1 o_slow", "Soma.o_slow_Golgi_hcn1", 2, 1, 0.8, 0.9, 2)
             // GraphWin_2.addexpr("hcn2 o_fast", "Soma.o_fast_Golgi_hcn2", 2, 1, 0.8, 0.9, 2)
              //GraphWin_2.addexpr("hcn2 o_slow", "Soma.o_slow_Golgi_hcn2", 2, 1, 0.8, 0.9, 2)
-            GraphWin_2.addexpr("HVA s", "Soma.s_Golgi_Ca_HVA", 2, 1, 0.8, 0.9, 2)
-            GraphWin_2.addexpr("HVA u", "Soma.u_Golgi_Ca_HVA", 2, 1, 0.8, 0.9, 2)
-            //GraphWin_2.addexpr("LVA m", "Soma.m_Golgi_Ca_LVA", 2, 1, 0.8, 0.9, 2)
-           //GraphWin_2.addexpr("LVA h", "Soma.h_Golgi_Ca_LVA", 2, 1, 0.8, 0.9, 2)
+            if (useCaHVA==1) { 
+                GraphWin_2.addexpr("HVA s", "Soma.s_Golgi_Ca_HVA", 1, 1, 0.8, 0.9, 2)
+                GraphWin_2.addexpr("HVA u", "Soma.u_Golgi_Ca_HVA", 2, 1, 0.8, 0.9, 2)
+            }
+            if (useCaLVA==1) { 
+                GraphWin_2.addexpr("LVA m", "Soma.m_Golgi_Ca_LVA", 1, 1, 0.8, 0.9, 2)
+                GraphWin_2.addexpr("LVA h", "Soma.h_Golgi_Ca_LVA", 2, 1, 0.8, 0.9, 2)
+            }
               //GraphWin_2.addexpr("BK c", "Soma.c_Golgi_BK", 2, 1, 0.8, 0.9, 2)
         graphList[0].append(GraphWin_2)
     }
 
+if (useCaHVA==1) { 
     GraphWin_3 = new Graph(0)
     {GraphWin_3.size(0, tstop,0,0.005)}
     {GraphWin_3.view(0, 0, tstop, 0.005, 80, 330, 330, 250)}
@@ -241,7 +261,9 @@ if (usegui==1) {
      GraphWin_3.addexpr("cai", "Soma.cai", 1, 1, 0.8, 0.9, 2)
       graphList[0].append(GraphWin_3)
     }
-/*
+}
+
+if (useCaLVA==1) { 
     GraphWin_4 = new Graph(0)
     {GraphWin_4.size(0, tstop,0,0.005)}
     {GraphWin_4.view(0, 0, tstop, 0.005, 80, 330, 330, 250)}
@@ -249,8 +271,7 @@ if (usegui==1) {
      GraphWin_4.addexpr("ca2i", "Soma.ca2i", 1, 1, 0.8, 0.9, 2)
       graphList[0].append(GraphWin_4)
     }
-
-    */
+}
 
 }
 
@@ -353,91 +374,102 @@ for i=0, Soma_v.size()-1 {
 }
 f_Soma_hcn2.close()****/
 
+
 objref f_Soma_Ca_HVA
-f_Soma_Ca_HVA = new File()
-{sprint(filename, "Ca_HVA.dat")}
-f_Soma_Ca_HVA.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca_HVA.printf("%f\t%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_s.x[i], Soma_Ca_HVA_u.x[i])
-     // f_Soma_Ca_HVA.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_u.x[i])
-}
-f_Soma_Ca_HVA.close()
-
-
 objref f_Soma_Ca_HVA_s
-f_Soma_Ca_HVA_s = new File()
-{sprint(filename, "Ca_HVA_s.dat")}
-f_Soma_Ca_HVA_s.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca_HVA_s.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_s.x[i])
-     
-}
-f_Soma_Ca_HVA_s.close()
-
 objref f_Soma_Ca_HVA_u
-f_Soma_Ca_HVA_u = new File()
-{sprint(filename, "Ca_HVA_u.dat")}
-f_Soma_Ca_HVA_u.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca_HVA_u.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_u.x[i])
-     
+
+if (useCaHVA==1) { 
+    f_Soma_Ca_HVA = new File()
+    {sprint(filename, "Ca_HVA.dat")}
+    f_Soma_Ca_HVA.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca_HVA.printf("%f\t%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_s.x[i], Soma_Ca_HVA_u.x[i])
+         // f_Soma_Ca_HVA.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_u.x[i])
+    }
+    f_Soma_Ca_HVA.close()
+
+    f_Soma_Ca_HVA_s = new File()
+    {sprint(filename, "Ca_HVA_s.dat")}
+    f_Soma_Ca_HVA_s.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca_HVA_s.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_s.x[i])
+
+    }
+    f_Soma_Ca_HVA_s.close()
+
+    f_Soma_Ca_HVA_u = new File()
+    {sprint(filename, "Ca_HVA_u.dat")}
+    f_Soma_Ca_HVA_u.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca_HVA_u.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_HVA_u.x[i])
+
+    }
+    f_Soma_Ca_HVA_u.close()
 }
-f_Soma_Ca_HVA_u.close()
 
 
-/***
 objref f_Soma_Ca_LVA
-f_Soma_Ca_LVA = new File()
-{sprint(filename, "Ca_LVA.dat")}
-f_Soma_Ca_LVA.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca_LVA.printf("%f\t%f\t%f\n", v_time.x[i]/1000, Soma_Ca_LVA_m.x[i], Soma_Ca_LVA_h.x[i])
-     
-}
-f_Soma_Ca_LVA.close()
-
 objref f_Soma_Ca_LVA_m
-f_Soma_Ca_LVA_m = new File()
-{sprint(filename, "Ca_LVA_m.dat")}
-f_Soma_Ca_LVA_m.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca_LVA_m.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_LVA_m.x[i])
-     
-}
-f_Soma_Ca_LVA_m.close()
-
 objref f_Soma_Ca_LVA_h
-f_Soma_Ca_LVA_h = new File()
-{sprint(filename, "Ca_LVA_h.dat")}
-f_Soma_Ca_LVA_h.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca_LVA_h.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_LVA_h.x[i])
-     
+
+if (useCaLVA==1) { 
+    f_Soma_Ca_LVA = new File()
+    {sprint(filename, "Ca_LVA.dat")}
+    f_Soma_Ca_LVA.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca_LVA.printf("%f\t%f\t%f\n", v_time.x[i]/1000, Soma_Ca_LVA_m.x[i], Soma_Ca_LVA_h.x[i])
+
+    }
+    f_Soma_Ca_LVA.close()
+
+    f_Soma_Ca_LVA_m = new File()
+    {sprint(filename, "Ca_LVA_m.dat")}
+    f_Soma_Ca_LVA_m.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca_LVA_m.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_LVA_m.x[i])
+
+    }
+    f_Soma_Ca_LVA_m.close()
+
+    f_Soma_Ca_LVA_h = new File()
+    {sprint(filename, "Ca_LVA_h.dat")}
+    f_Soma_Ca_LVA_h.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca_LVA_h.printf("%f\t%f\n", v_time.x[i]/1000, Soma_Ca_LVA_h.x[i])
+
+    }
+    f_Soma_Ca_LVA_h.close()
 }
-f_Soma_Ca_LVA_h.close()***/
 
 
 
 objref f_Soma_Ca
-f_Soma_Ca = new File()
-{sprint(filename, "Ca.dat")}
-f_Soma_Ca.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca.printf("%f\t%f\n", v_time.x[i]/1000, Soma_ca.x[i])
-     
-}
-f_Soma_Ca.close()
 
-/**
-objref f_Soma_Ca2
-f_Soma_Ca2 = new File()
-{sprint(filename, "Ca2.dat")}
-f_Soma_Ca2.wopen(filename)
-for i=0, Soma_v.size()-1 {
-  f_Soma_Ca2.printf("%f\t%f\n", v_time.x[i]/1000, Soma_ca2.x[i])
-     
+if (useCaHVA==1) { 
+    f_Soma_Ca = new File()
+    {sprint(filename, "Ca.dat")}
+    f_Soma_Ca.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca.printf("%f\t%f\n", v_time.x[i]/1000, Soma_ca.x[i])
+
+    }
+    f_Soma_Ca.close()
 }
-f_Soma_Ca2.close()***/
+
+
+objref f_Soma_Ca2
+
+if (useCaLVA==1) { 
+    f_Soma_Ca2 = new File()
+    {sprint(filename, "Ca2.dat")}
+    f_Soma_Ca2.wopen(filename)
+    for i=0, Soma_v.size()-1 {
+      f_Soma_Ca2.printf("%f\t%f\n", v_time.x[i]/1000, Soma_ca2.x[i])
+
+    }
+    f_Soma_Ca2.close()
+}
 
 
 /****objref f_Soma_BK
