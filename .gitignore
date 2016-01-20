@@ -40,5 +40,5 @@ simulations
 *.bak
 *py.class
 *~
-
-
+/NeuroML2/Ca.dat.nrn
+/NeuroML2/Soma.v.dat.nrn
