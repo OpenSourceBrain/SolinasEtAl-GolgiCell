@@ -4,7 +4,7 @@ usegui = 1
 {load_file("stdgui.hoc")}
 
 useCaHVA = 1
-useCaLVA = 0
+useCaLVA = 1
 useNa = 1
 useKV = 1
 
@@ -99,7 +99,7 @@ Soma {
 
 
 tstop = 1500.0
-dt = 0.002
+dt = 0.001
 
 
 objref v_time

@@ -4,7 +4,6 @@
          id="TestSoma">
 
 
-
     <cell type="cellTwoCaPools" id="TestSoma">
 
         <notes>A single segment/compartment cell</notes>
@@ -71,8 +70,8 @@
                 <channelDensity condDensity="0.08 mS_per_cm2" id="hcn2s_all" ionChannel="Golgi_hcn2s" ion="h" erev="-20.0 mV"/>-->
 
                 
-                <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/><!---->
-                <!--<channelDensityNernst_ca2 condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>-->
+                <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>
+                <channelDensityNernst_ca2 condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
 
                 <!-- <channelDensityNernst_ca2 condDensity="0.025 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/> was ok -->
                 <!-- <channelDensityNernst_ca2 condDensity="0.00025 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/> was ok -->
@@ -87,9 +86,7 @@
             </membraneProperties_twoCa>
 
          
-              
             <intracellularProperties_twoCa>
-
 
                 <species id="ca" ion="ca"  concentrationModel="Golgi_CALC" initialConcentration="5e-11mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
 
@@ -97,9 +94,7 @@
 
                 <resistivity value="0.1 kohm_cm"/>
 
-
             </intracellularProperties_twoCa>
-
 
 
         </biophysicalProperties_twoCa>
@@ -306,8 +301,8 @@
 
 
     <ComponentType name="channelDensityNernst_ca2"
-                extends="baseChannelDensityCond"
-                description="This component is similar to the original component type _ channelDensityNernst _ but it is changed in order to have a reversal potential that depends on independent pool of Ca (ca2)">
+                   extends="baseChannelDensityCond"
+                   description="This component is similar to the original component type _ channelDensityNernst _ but it is changed in order to have a reversal potential that depends on independent pool of Ca (ca2)">
 
         <Constant name="R" dimension="idealGasConstantDims" value="8.3144621 J_per_K_per_mol" description="TODO: Make this a global constant!"/>
         <Constant name="zCa" dimension="none" value="2" description="TODO: Make this a global constant!"/>

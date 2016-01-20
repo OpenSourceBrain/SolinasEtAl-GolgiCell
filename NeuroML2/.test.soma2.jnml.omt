@@ -2,3 +2,17 @@
 
 target: LEMS_Soma_Test_HELPER.xml 
 engine: jNeuroML
+
+mep: ../NEURON/test/.test.soma.mep
+experiments:
+  pacemaking:
+    observables:
+      spike times:
+        file: 
+          path: Soma.v.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0.0028
