@@ -40,43 +40,43 @@
             <openState id="o2"/>
 <!--Transition: alpha_c1_c2, c1 -> c2-->
             <forwardTransition id="alpha_c1_c2" from="c1" to="c2">
-                <rate id="alpha_c1_c2_rate" type="Golgi_KAHP_n_alpha_c1_c2_rate"/>
+                <rate type="Golgi_KAHP_n_alpha_c1_c2_rate"/>
             </forwardTransition>
 <!--Transition: beta_c2_c1, c2 -> c1-->
             <reverseTransition id="beta_c2_c1" from="c1" to="c2">
-                <rate id="beta_c2_c1_rate" type="Golgi_KAHP_n_beta_c2_c1_rate"/>
+                <rate type="Golgi_KAHP_n_beta_c2_c1_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c2_c3, c2 -> c3-->
             <forwardTransition id="alpha_c2_c3" from="c2" to="c3">
-                <rate id="alpha_c2_c3_rate" type="Golgi_KAHP_n_alpha_c2_c3_rate"/>
+                <rate type="Golgi_KAHP_n_alpha_c2_c3_rate"/>
             </forwardTransition>
 <!--Transition: beta_c3_c2, c3 -> c2-->
             <reverseTransition id="beta_c3_c2" from="c2" to="c3">
-                <rate id="beta_c3_c2_rate" type="Golgi_KAHP_n_beta_c3_c2_rate"/>
+                <rate type="Golgi_KAHP_n_beta_c3_c2_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c3_c4, c3 -> c4-->
             <forwardTransition id="alpha_c3_c4" from="c3" to="c4">
-                <rate id="alpha_c3_c4_rate" type="Golgi_KAHP_n_alpha_c3_c4_rate"/>
+                <rate type="Golgi_KAHP_n_alpha_c3_c4_rate"/>
             </forwardTransition>
 <!--Transition: beta_c4_c3, c4 -> c3-->
             <reverseTransition id="beta_c4_c3" from="c3" to="c4">
-                <rate id="beta_c4_c3_rate" type="Golgi_KAHP_n_beta_c4_c3_rate"/>
+                <rate type="Golgi_KAHP_n_beta_c4_c3_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c3_o1, c3 -> o1-->
             <forwardTransition id="alpha_c3_o1" from="c3" to="o1">
-                <rate id="alpha_c3_o1_rate" type="Golgi_KAHP_n_alpha_c3_o1_rate"/>
+                <rate type="Golgi_KAHP_n_alpha_c3_o1_rate"/>
             </forwardTransition>
 <!--Transition: beta_o1_c3, o1 -> c3-->
             <reverseTransition id="beta_o1_c3" from="c3" to="o1">
-                <rate id="beta_o1_c3_rate" type="Golgi_KAHP_n_beta_o1_c3_rate"/>
+                <rate type="Golgi_KAHP_n_beta_o1_c3_rate"/>
             </reverseTransition>
 <!--Transition: alpha_c4_o2, c4 -> o2-->
             <forwardTransition id="alpha_c4_o2" from="c4" to="o2">
-                <rate id="alpha_c4_o2_rate" type="Golgi_KAHP_n_alpha_c4_o2_rate"/>
+                <rate type="Golgi_KAHP_n_alpha_c4_o2_rate"/>
             </forwardTransition>
 <!--Transition: beta_o2_c4, o2 -> c4-->
             <reverseTransition id="beta_o2_c4" from="c4" to="o2">
-                <rate id="beta_o2_c4_rate" type="Golgi_KAHP_n_beta_o2_c4_rate"/>
+                <rate type="Golgi_KAHP_n_beta_o2_c4_rate"/>
             </reverseTransition>
         </gateKS>
                             

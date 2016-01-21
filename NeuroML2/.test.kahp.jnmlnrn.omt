@@ -1,0 +1,47 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+
+target: LEMS_KAHP_Test.xml 
+engine: jNeuroML_NEURON
+
+mep: ../NEURON/test/.test.sk2.mep
+experiments:
+  o1:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,1]
+        spike detection: 
+          method: threshold
+          threshold: 0.018
+        tolerance: 0.00012
+  o2:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,2]
+        spike detection: 
+          method: threshold
+          threshold: 0.5
+        tolerance: 2.8e-5
+  c2:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,4]
+        spike detection: 
+          method: threshold
+          threshold: 0.1065
+        tolerance: 0.00025
+  c3:
+    observables:
+      spike times:
+        file: 
+          path: KAHP.states.dat
+          columns: [0,5]
+        spike detection: 
+          method: threshold
+          threshold: 0.1065
+        tolerance: 6.8e-5
