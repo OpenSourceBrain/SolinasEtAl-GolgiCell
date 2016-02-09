@@ -71,7 +71,6 @@
 
                 
                 <channelDensityNernst condDensity="0.460 mS_per_cm2" id="CaHVA_all" ionChannel="Golgi_Ca_HVA" ion="ca"/>
-                <channelDensityNernstCa2 condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
 
                 <!-- <channelDensityNernst_ca2 condDensity="0.025 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/> was ok -->
                 <!-- <channelDensityNernst_ca2 condDensity="0.00025 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/> was ok -->
@@ -82,6 +81,8 @@
                 <specificCapacitance value="1 uF_per_cm2"/>
 
                 <initMembPotential value="-65.0 mV"/>
+                
+                <channelDensityNernstCa2 condDensity="0.25 mS_per_cm2" id="CaLVA_all" ionChannel="Golgi_Ca_LVA" ion="ca2"/>
 
             </membraneProperties2CaPools>
 
