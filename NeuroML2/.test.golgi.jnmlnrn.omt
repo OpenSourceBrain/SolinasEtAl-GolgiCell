@@ -1,0 +1,18 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+
+target: LEMS_Golgi.xml 
+engine: jNeuroML_NEURON
+
+mep: ../NEURON/test/.test.mep
+experiments:
+  pacemaking:
+    observables:
+      spike times:
+        file: 
+          path: Soma.v.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0.003035
