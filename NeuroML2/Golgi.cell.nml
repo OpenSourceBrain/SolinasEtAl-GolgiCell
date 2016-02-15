@@ -25,7 +25,7 @@
     <include href="Golgi_CALC.nml"/>
     <include href="Golgi_CALC_ca2.nml"/>
 
-    <cell id="Golgi">
+    <cell2CaPools id="Golgi">
 
         <notes>Multicompartmental model of cerebellar Golgi cell from: Solinas S, Forti L, Cesana E, Mapelli J, De Schutter E, D’Angelo E. (2007) Computational reconstruction of pacemaking and intrinsic electroresponsiveness in cerebellar Golgi cells. Front Cell Neurosci. 2007;1:2.</notes>
 
@@ -146,11 +146,9 @@
 
             <!--Adding the biophysical parameters-->
 
-        <biophysicalProperties id="biophys">
+        <biophysicalProperties2CaPools id="biophys">
 
-            <membraneProperties>
-                
-                <channelDensity condDensity="0.25 mS_per_cm2" id="Golgi_Ca_LVA_soma_group" ionChannel="Golgi_Ca_LVA" segmentGroup="soma_group" ion="ca2" erev="132.458 mV"/>
+            <membraneProperties2CaPools>
                 
                 <channelDensity condDensity="0.05 mS_per_cm2" id="Golgi_hcn1f_soma_group" ionChannel="Golgi_hcn1f" segmentGroup="soma_group" ion="h" erev="-20.0 mV"/>
                 
@@ -188,9 +186,11 @@
 
                 <initMembPotential value="-60.0 mV"/>
 
-            </membraneProperties>
+                <channelDensityNernstCa2 condDensity="0.25 mS_per_cm2" id="Ca_LVA_soma_group" ionChannel="Golgi_Ca_LVA" segmentGroup="soma_group" ion="ca"/>
 
-            <intracellularProperties>
+            </membraneProperties2CaPools>
+
+            <intracellularProperties2CaPools>
 
                 <species segmentGroup="soma_group" id="ca" ion="ca" concentrationModel="Golgi_CALC" initialConcentration="5.0E-11 mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
 
@@ -198,10 +198,10 @@
 
                 <resistivity value="0.1 kohm_cm"/>
 
-            </intracellularProperties>
+            </intracellularProperties2CaPools>
 
-        </biophysicalProperties>
+        </biophysicalProperties2CaPools>
 
-    </cell>
+    </cell2CaPools>
     
 </neuroml>

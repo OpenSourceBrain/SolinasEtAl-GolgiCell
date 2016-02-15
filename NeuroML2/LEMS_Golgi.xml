@@ -139,10 +139,10 @@
             <OutputColumn id="ca" quantity="CG_Golgi/0/Golgi/caConc"/>
         </OutputFile>
 
+        <!--
        <OutputFile id="iCa" fileName="iCa.dat">
             <OutputColumn id="ica" quantity="CG_Golgi/0/Golgi/iCa"/>
         </OutputFile>
-        <!--
       <OutputFile id="Ca2" fileName="Ca2.dat">
             <OutputColumn id="ca2" quantity="CG_Golgi/0/Golgi/caConc2"/>
         </OutputFile>
