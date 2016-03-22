@@ -20,6 +20,10 @@
     <include file="Golgi_hcn1s.channel.nml"/>
     <include file="Golgi_hcn2f.channel.nml"/>
     <include file="Golgi_hcn2s.channel.nml"/>
+    
+    <!--   Channel/synapse files-->
+    <include file="Golgi_CALC.nml"/>
+    <include file="Golgi_CALC_ca2.nml"/>
 
     <cell2CaPools id="TestSoma">
 
