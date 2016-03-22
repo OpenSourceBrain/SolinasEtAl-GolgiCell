@@ -4,6 +4,24 @@
          id="TestSoma">
 
     <include href="LeakCond.channel.nml"/>
+    <include file="Golgi_NaT.channel.nml"/>
+    <include file="Golgi_NaR.channel.nml"/>
+    <include file="Golgi_NaP.channel.nml"/>
+    
+    <include file="Golgi_KA.channel.nml"/>
+    <include file="Golgi_Kslow.channel.nml"/>
+    <include file="Golgi_KV.channel.nml"/>
+    <include file="Golgi_KC.channel.nml"/>
+    
+    <include file="Golgi_Ca_HVA.channel.nml"/>
+    <include file="Golgi_Ca_LVA.channel.nml"/>
+    
+    <include file="Golgi_hcn1f.channel.nml"/>
+    <include file="Golgi_hcn1s.channel.nml"/>
+    <include file="Golgi_hcn2f.channel.nml"/>
+    <include file="Golgi_hcn2s.channel.nml"/>
+
+    <include file="LeakCond.channel.nml"/>
 
     <cell2CaPools id="TestSoma">
 
