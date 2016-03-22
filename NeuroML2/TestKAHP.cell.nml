@@ -6,6 +6,8 @@
     <include href="LeakCond.channel.nml"/>
 
     <include href="Golgi_KAHP.channel.nml"/>
+    
+    <include href="CaClamp.nml"/>
 
     <cell id="TestKAHP">
 
