@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" 
          id="TestSoma">
 
-    <include href="LeakCond.channel.nml"/>
+    <include file="LeakCond.channel.nml"/>
     <include file="Golgi_NaT.channel.nml"/>
     <include file="Golgi_NaR.channel.nml"/>
     <include file="Golgi_NaP.channel.nml"/>
@@ -20,8 +20,6 @@
     <include file="Golgi_hcn1s.channel.nml"/>
     <include file="Golgi_hcn2f.channel.nml"/>
     <include file="Golgi_hcn2s.channel.nml"/>
-
-    <include file="LeakCond.channel.nml"/>
 
     <cell2CaPools id="TestSoma">
 
