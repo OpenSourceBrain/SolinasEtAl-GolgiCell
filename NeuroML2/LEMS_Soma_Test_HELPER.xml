@@ -9,11 +9,7 @@
     <Include file="Simulation.xml"/>
 
 
-    <!--   Channel/synapse files-->
-    <Include file="Golgi_CALC.nml"/>
-    <Include file="Golgi_CALC_ca2.nml"/>
-
-        <!--   Cell files-->
+    <!--   Cell files-->
     <Include file="TestSoma_HELPER.cell.nml"/>
         <!--   Network file-->
     <Include file="TestSoma_HELPER.net.nml"/>
