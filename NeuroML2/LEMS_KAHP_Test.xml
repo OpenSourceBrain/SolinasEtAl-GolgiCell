@@ -14,8 +14,6 @@
 
     <Include file="LeakCond.channel.nml"/>
     
-    <Include file="CaClamp.nml"/>
-
         <!--   Cell files-->
     <Include file="TestKAHP.cell.nml"/>
         <!--   Network file-->
