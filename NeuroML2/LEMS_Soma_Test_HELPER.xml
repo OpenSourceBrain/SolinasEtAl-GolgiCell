@@ -9,26 +9,7 @@
     <Include file="Simulation.xml"/>
 
 
-        <!--   Channel/synapse files-->
-    <Include file="Golgi_NaT.channel.nml"/>
-    <Include file="Golgi_NaR.channel.nml"/>
-    <Include file="Golgi_NaP.channel.nml"/>
-    
-    <Include file="Golgi_KA.channel.nml"/>
-    <Include file="Golgi_Kslow.channel.nml"/>
-    <Include file="Golgi_KV.channel.nml"/>
-    <Include file="Golgi_KC.channel.nml"/>
-    
-    <Include file="Golgi_Ca_HVA.channel.nml"/>
-    <Include file="Golgi_Ca_LVA.channel.nml"/>
-    
-    <Include file="Golgi_hcn1f.channel.nml"/>
-    <Include file="Golgi_hcn1s.channel.nml"/>
-    <Include file="Golgi_hcn2f.channel.nml"/>
-    <Include file="Golgi_hcn2s.channel.nml"/>
-
-    <Include file="LeakCond.channel.nml"/>
-    
+    <!--   Channel/synapse files-->
     <Include file="Golgi_CALC.nml"/>
     <Include file="Golgi_CALC_ca2.nml"/>
 
