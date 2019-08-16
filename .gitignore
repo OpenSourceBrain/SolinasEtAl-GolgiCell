@@ -42,3 +42,4 @@ simulations
 *~
 /NeuroML2/Ca.dat.nrn
 /NeuroML2/Soma.v.dat.nrn
+/NEURON/tests.log
