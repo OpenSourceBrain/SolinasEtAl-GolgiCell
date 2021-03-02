@@ -5,11 +5,11 @@ system: Testing Golgi
 experiments:
   phar_pacemaking_control:
     expected:
-      spike times: [0.0872, 0.289275, 0.49925, 0.7139, 0.9327, 1.15465, 1.378925, 1.605025, 1.8326]
+      spike times: [0.0872, 0.289275, 0.499225, 0.7139, 0.9327, 1.154625, 1.378925, 1.605025, 1.832675]
 
   phar_pacemaking_Ih:
     expected:
-      spike times:  [0.173725, 0.54695, 0.9444, 1.367075, 1.81075]
+      spike times:  [0.1737, 0.546925, 0.944375, 1.367, 1.810675]
 
 
   phar_pacemaking_INaP:
