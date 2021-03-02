@@ -2,26 +2,22 @@
 
 language: python
 
-python: 
+python:
     - 2.7
     - 3.7
 
 env:
-    - OMV_ENGINE=NEURON:7.5 
-    - OMV_ENGINE=NEURON:7.6 
+    #- OMV_ENGINE=NEURON:7.5 
+    - OMV_ENGINE=NEURON:7.6
     - OMV_ENGINE=NEURON:7.7
     #- OMV_ENGINE=jNeuroML
     #- OMV_ENGINE=jNeuroML_NEURON
     #- OMV_ENGINE=jNeuroML_validate
     #- OMV_ENGINE=jNeuroML_validatev1
 
-install: 
+install:
     - pip install git+https://github.com/OpenSourceBrain/osb-model-validation
 
 script:
     - omv all -V
-    - omv list -V 
-    
-    
-    
-
+    - omv list -V
