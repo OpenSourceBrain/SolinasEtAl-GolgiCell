@@ -10,6 +10,7 @@ env:
     #- OMV_ENGINE=NEURON:7.5
     - OMV_ENGINE=NEURON:7.6
     - OMV_ENGINE=NEURON:7.7
+    - OMV_ENGINE=NEURON     # default version
     - OMV_ENGINE=jNeuroML
     - OMV_ENGINE=jNeuroML_NEURON
     - OMV_ENGINE=jNeuroML_validate
