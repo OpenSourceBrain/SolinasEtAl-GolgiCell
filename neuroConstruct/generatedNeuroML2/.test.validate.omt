@@ -2,5 +2,5 @@
 
 # This test will validate all of the NeuroML 2 files in the current directory using: jnml -validate *.nml
 #  Missing  KAHP_CML.channel.nml  
-target: "CaHVA_CML.channel.nml  hcn1f_CML.channel.nml  hcn2f_CML.channel.nml  KA_CML.channel.nml    Kslow_CML.channel.nml  LeakCond.channel.nml  NaR_CML.channel.nml CaLVA_CML.channel.nml  hcn1s_CML.channel.nml  hcn2s_CML.channel.nml KV_CML.channel.nml     NaP_CML.channel.nml   NaT_CML.channel.nml*.cell.nml *.net.nml"
+target: "CaHVA_CML.channel.nml hcn1f_CML.channel.nml hcn2f_CML.channel.nml KA_CML.channel.nml Kslow_CML.channel.nml LeakCond.channel.nml NaR_CML.channel.nml CaLVA_CML.channel.nml hcn1s_CML.channel.nml hcn2s_CML.channel.nml KV_CML.channel.nml NaP_CML.channel.nml NaT_CML.channel.nml *.cell.nml *.net.nml"
 engine: jNeuroML_validate
