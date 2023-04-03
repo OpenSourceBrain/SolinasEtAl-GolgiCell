@@ -14,7 +14,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0.018
-        tolerance: 0.00063
+        tolerance: 0.0006253908692932503
   o2:
     observables:
       spike times:
@@ -24,7 +24,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0.5
-        tolerance: 0.00066
+        tolerance: 0.0006540816511928143
   c2:
     observables:
       spike times:
@@ -34,7 +34,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0.1065
-        tolerance: 0.00058
+        tolerance: 0.0005743251679277049
   c3:
     observables:
       spike times:
@@ -44,4 +44,4 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0.1065
-        tolerance: 0.00071
+        tolerance: 0.0007027685120114187
