@@ -45,3 +45,4 @@ simulations
 /NEURON/tests.log
 /tests.log
 /NEURON_2007/*.log
+arm64

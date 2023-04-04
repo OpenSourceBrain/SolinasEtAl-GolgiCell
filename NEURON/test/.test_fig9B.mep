@@ -11,7 +11,7 @@ experiments:
       resting:  -57
   Subthreshold oscillations:Control block+50% I Na-P +120pA (mV):
     expected:
-      spike times: [0.0153, 0.165075, 0.2855, 0.40615, 0.5275, 0.6495, 0.772025, 0.894925, 1.01815, 1.1416, 1.26525]
+      spike times: [0.0153, 0.165075, 0.2855, 0.40615, 0.527525, 0.6495, 0.772025, 0.894925, 1.01815, 1.1416, 1.26525]
   Subthreshold oscillations:Control block+I k-slow=0 (mV):
     expected:
       spike times: [0.0677, 0.4529, 0.831, 1.20845]

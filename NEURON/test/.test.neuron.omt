@@ -15,5 +15,5 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0
+        tolerance: 0.000631  # non zero tolerance due to differences in times between ubuntu and mac...
 
