@@ -8,9 +8,8 @@ in cerebellar Golgi cells**. [Front Cell Neurosci. 2007;1:2](http://journal.fron
 
 Based on implementation in NEURON taken from: http://senselab.med.yale.edu/modeldb/ShowModel.asp?model=112685.
 
-For more information see 
+For more information see: 
 http://www.opensourcebrain.org/projects/cerebellum--cerebellar-golgi-cell--solinasetal-golgicell
-
 
 ### Reusing this model
 
